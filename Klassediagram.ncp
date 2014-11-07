@@ -16,16 +16,7 @@
       <Entity type="Class">
         <Name>Division</Name>
         <Access>Public</Access>
-        <Location left="163" top="359" />
-        <Size width="162" height="216" />
-        <Collapsed>False</Collapsed>
-        <Member type="Field">private int newField</Member>
-        <Modifier>None</Modifier>
-      </Entity>
-      <Entity type="Class">
-        <Name>Spilleplan</Name>
-        <Access>Public</Access>
-        <Location left="781" top="387" />
+        <Location left="62" top="334" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private int newField</Member>
@@ -43,7 +34,7 @@
       <Entity type="Class">
         <Name>Kamprapport</Name>
         <Access>Public</Access>
-        <Location left="770" top="48" />
+        <Location left="630" top="334" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private int newField</Member>
@@ -52,7 +43,7 @@
       <Entity type="Class">
         <Name>Sæson</Name>
         <Access>Public</Access>
-        <Location left="483" top="387" />
+        <Location left="367" top="334" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private int newField</Member>
@@ -60,7 +51,7 @@
       </Entity>
     </Entities>
     <Relationships>
-      <Relationship type="Association" first="3" second="0">
+      <Relationship type="Association" first="2" second="0">
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -76,25 +67,25 @@
         <StartMultiplicity>*</StartMultiplicity>
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
-      <Relationship type="Association" first="4" second="2">
-        <StartOrientation>Vertical</StartOrientation>
-        <EndOrientation>Vertical</EndOrientation>
+      <Relationship type="Association" first="1" second="4">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
         <StartMultiplicity>*</StartMultiplicity>
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
-      <Relationship type="Association" first="2" second="5">
+      <Relationship type="Association" first="3" second="4">
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
-        <Direction>Unidirectional</Direction>
-        <AssociationType>Association</AssociationType>
-        <StartMultiplicity>1</StartMultiplicity>
-        <EndMultiplicity>1</EndMultiplicity>
-      </Relationship>
-      <Relationship type="Association" first="1" second="5">
-        <StartOrientation>Horizontal</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>591</X>
+          <Y>463</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>554</X>
+          <Y>463</Y>
+        </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
         <StartMultiplicity>*</StartMultiplicity>
