@@ -8,15 +8,17 @@
         <Name>Klub</Name>
         <Access>Public</Access>
         <Location left="62" top="50" />
-        <Size width="162" height="196" />
+        <Size width="162" height="230" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private String klubNavn</Member>
         <Member type="Field">private String adresse</Member>
-        <Member type="Field">private String[] farver</Member>
+        <Member type="Field">private String[] hjemmefarver</Member>
+        <Member type="Field">private String[] udefarver</Member>
         <Member type="Field">private int sejre</Member>
         <Member type="Field">private int pointSum</Member>
         <Member type="Field">private int sæsonPlacering</Member>
-        <Member type="Field">private int målIAlt</Member>
+        <Member type="Field">private int antalMål</Member>
+        <Member type="Field">private String trænerNavn</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -31,7 +33,7 @@
       <Entity type="Class">
         <Name>Spillerprofil</Name>
         <Access>Public</Access>
-        <Location left="314" top="48" />
+        <Location left="314" top="50" />
         <Size width="162" height="230" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private String navn</Member>
@@ -49,14 +51,17 @@
         <Name>Kamprapport</Name>
         <Access>Public</Access>
         <Location left="314" top="520" />
-        <Size width="162" height="179" />
+        <Size width="162" height="230" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">private date spilledato</Member>
-        <Member type="Field">private time startTidspunkt</Member>
-        <Member type="Field">private time slutTidspunkt</Member>
+        <Member type="Field">private String spilledag</Member>
+        <Member type="Field">private String tidspunkt</Member>
+        <Member type="Field">private String hjemmehold</Member>
+        <Member type="Field">private String udehold</Member>
+        <Member type="Field">private String sted</Member>
         <Member type="Field">private String[] startOpstilling</Member>
         <Member type="Field">private int scoredeMål</Member>
         <Member type="Field">private int antalTilskuer</Member>
+        <Member type="Field">private int turneringsrunde</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -65,18 +70,7 @@
         <Location left="314" top="338" />
         <Size width="162" height="128" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">private date startDato</Member>
-        <Member type="Field">private date slutDato</Member>
-        <Member type="Field">private int turneringsrunde</Member>
-        <Modifier>None</Modifier>
-      </Entity>
-      <Entity type="Class">
-        <Name>Træner</Name>
-        <Access>Public</Access>
-        <Location left="516" top="50" />
-        <Size width="162" height="94" />
-        <Collapsed>False</Collapsed>
-        <Member type="Field">private String navn</Member>
+        <Member type="Field">private String periode</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -89,11 +83,17 @@
         <Member type="Field">private int bedømmelse</Member>
         <Modifier>None</Modifier>
       </Entity>
+      <Entity type="Class">
+        <Name>Turneringsrunde</Name>
+        <Access>Public</Access>
+        <Location left="581" top="190" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
     </Entities>
     <Relationships>
       <Relationship type="Association" first="2" second="0">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -102,8 +102,6 @@
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="0" second="1">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -112,8 +110,6 @@
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="1" second="4">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -122,8 +118,6 @@
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="3" second="4">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -140,6 +134,8 @@
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="1" second="3">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="False">
@@ -151,23 +147,9 @@
         <StartMultiplicity>1</StartMultiplicity>
         <EndMultiplicity>*</EndMultiplicity>
       </Relationship>
-      <Relationship type="Association" first="5" second="0">
-        <StartOrientation>Horizontal</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
-        <BendPoint relativeToStartShape="True">
-          <X>491</X>
-          <Y>30</Y>
-        </BendPoint>
-        <BendPoint relativeToStartShape="False">
-          <X>251</X>
-          <Y>91</Y>
-        </BendPoint>
-        <Direction>Unidirectional</Direction>
-        <AssociationType>Association</AssociationType>
-        <StartMultiplicity>1</StartMultiplicity>
-        <EndMultiplicity>1</EndMultiplicity>
-      </Relationship>
-      <Relationship type="Association" first="6" second="3">
+      <Relationship type="Association" first="5" second="3">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -277,16 +259,12 @@
     </Entities>
     <Relationships>
       <Relationship type="Association" first="4" second="7">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="6" second="0">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -301,32 +279,24 @@
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="5" second="0">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="0" second="2">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="2" second="4">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="3" second="1">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -337,8 +307,6 @@
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="1" second="4">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
