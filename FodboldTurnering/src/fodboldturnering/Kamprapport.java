@@ -10,19 +10,20 @@ package fodboldturnering;
  * @author Andreas
  */
 public class Kamprapport {
+
     private String spilledag, tidspunkt;
     private String sted;
     private String hjemmehold, udehold;
     private String[] startOpstilling;
     private int scoredeMål;
     private int antalTilskuer;
-    private int turneringsrunde;
+    private Turneringsrunde runde;
     private Dommer dommer;
 
-    public Kamprapport(String hjemmehold, String udehold, int turneringsrunde) {
+    public Kamprapport(String hjemmehold, String udehold, Turneringsrunde runde) {
         this.hjemmehold = hjemmehold;
         this.udehold = udehold;
-        this.turneringsrunde = turneringsrunde;
+        this.runde = runde;
         spilledag = "";
         tidspunkt = "";
         sted = "";
@@ -96,12 +97,12 @@ public class Kamprapport {
         this.antalTilskuer = antalTilskuer;
     }
 
-    public int getTurneringsrunde() {
-        return turneringsrunde;
+    public Turneringsrunde getRunde() {
+        return runde;
     }
 
-    public void setTurneringsrunde(int turneringsrunde) {
-        this.turneringsrunde = turneringsrunde;
+    public void setRunde(Turneringsrunde runde) {
+        this.runde = runde;
     }
 
     public Dommer getDommer() {
@@ -111,6 +112,5 @@ public class Kamprapport {
     public void setDommer(Dommer dommer) {
         this.dommer = dommer;
     }
-    
-    
+
 }
