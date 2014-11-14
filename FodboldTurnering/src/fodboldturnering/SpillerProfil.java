@@ -10,12 +10,13 @@ package fodboldturnering;
  * @author Andreas
  */
 public class SpillerProfil {
+
     private String navn;
     private int alder;
-    private int antalMål, antalKampe, antalAdvarsler, antalUdvisninger;
-    private int højesteMålScore;
+    private int antalMål, antalKampe, antalAdvarsler, antalUdvisninger, antalSelvmål;
+    private int maksMål;
     private int bedømmelse;
-    private int ranglistePoint;
+    private int samletPoint;
 
     public SpillerProfil(String navn) {
         this.navn = navn;
@@ -24,9 +25,10 @@ public class SpillerProfil {
         antalKampe = 0;
         antalAdvarsler = 0;
         antalUdvisninger = 0;
-        højesteMålScore = 0;
+        maksMål = 0;
         bedømmelse = 0;
-        ranglistePoint = 0;
+        samletPoint = 0;
+        antalSelvmål = 0;
     }
 
     public String getNavn() {
@@ -61,6 +63,14 @@ public class SpillerProfil {
         this.antalKampe = antalKampe;
     }
 
+    public int getAntalSelvmål() {
+        return antalSelvmål;
+    }
+
+    public void setAntalSelvmål(int antalSelvmål) {
+        this.antalSelvmål = antalSelvmål;
+    }
+
     public int getAntalAdvarsler() {
         return antalAdvarsler;
     }
@@ -77,12 +87,12 @@ public class SpillerProfil {
         this.antalUdvisninger = antalUdvisninger;
     }
 
-    public int getHøjesteMålScore() {
-        return højesteMålScore;
+    public int getMaksMål() {
+        return maksMål;
     }
 
-    public void setHøjesteMålScore(int højesteMålScore) {
-        this.højesteMålScore = højesteMålScore;
+    public void setMaksMål(int maksMål) {
+        this.maksMål = maksMål;
     }
 
     public int getBedømmelse() {
@@ -93,13 +103,12 @@ public class SpillerProfil {
         this.bedømmelse = bedømmelse;
     }
 
-    public int getRanglistePoint() {
-        return ranglistePoint;
+    public int getSamletPoint() {
+        return samletPoint;
     }
 
-    public void setRanglistePoint(int ranglistePoint) {
-        this.ranglistePoint = ranglistePoint;
+    public void setSamletPoint(int samletPoint) {
+        this.samletPoint = samletPoint;
     }
-    
-    
+
 }

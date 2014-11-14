@@ -14,12 +14,14 @@ public class Klub {
     private String adresse;
     private String[] hjemmefarver;
     private String[] udefarver;
-    private int sejre;
+    private int sejre, uafgjorte, tabte;
     private int pointSum;
+    private int antalKampe;
     private int sæsonPlacering;
     private int antalMål;
     private SpillerProfil[] spillere;
     private String trænerNavn;
+    private Division divisionsnummer;
 
     public Klub(String klubNavn) {
         this.klubNavn = klubNavn;
@@ -27,10 +29,21 @@ public class Klub {
         hjemmefarver = new String[3];
         udefarver = new String[3];
         sejre = 0;
+        uafgjorte = 0;
+        tabte = 0;
         pointSum = 0;
+        antalKampe = 0;
         sæsonPlacering = 0;
         antalMål = 0;
         spillere = new SpillerProfil[14];
+    }
+
+    public Division getDivisionsnummer() {
+        return divisionsnummer;
+    }
+
+    public void setDivisionsnummer(Division divisionsnummer) {
+        this.divisionsnummer = divisionsnummer;
     }
 
     public String getKlubNavn() {
@@ -73,6 +86,23 @@ public class Klub {
         this.sejre = sejre;
     }
 
+    public int getUafgjorte() {
+        return uafgjorte;
+    }
+
+    public void setUafgjorte(int uafgjorte) {
+        this.uafgjorte = uafgjorte;
+    }
+
+    public int getTabte() {
+        return tabte;
+    }
+
+    public void setTabte(int tabte) {
+        this.tabte = tabte;
+    }
+    
+
     public int getPointSum() {
         return pointSum;
     }
@@ -80,6 +110,15 @@ public class Klub {
     public void setPointSum(int pointSum) {
         this.pointSum = pointSum;
     }
+
+    public int getAntalKampe() {
+        return antalKampe;
+    }
+
+    public void setAntalKampe(int antalKampe) {
+        this.antalKampe = antalKampe;
+    }
+    
 
     public int getSæsonPlacering() {
         return sæsonPlacering;
