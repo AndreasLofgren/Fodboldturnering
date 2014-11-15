@@ -15,7 +15,7 @@ public class Kamprapport {
     private String sted;
     private String hjemmehold, udehold;
     private String[] startOpstilling;
-    private int scoredeMål;
+    private int scoredeMål, selvmål, guleKort, rødeKort;
     private int antalTilskuer;
     private Turneringsrunde runde;
     private Dommer dommer;
@@ -29,6 +29,9 @@ public class Kamprapport {
         sted = "";
         startOpstilling = new String[11];
         scoredeMål = 0;
+        selvmål = 0;
+        guleKort = 0;
+        rødeKort = 0;
         antalTilskuer = 0;
         dommer = new Dommer(dommer.getNavn());
     }
@@ -87,6 +90,30 @@ public class Kamprapport {
 
     public void setScoredeMål(int scoredeMål) {
         this.scoredeMål = scoredeMål;
+    }
+
+    public int getSelvmål() {
+        return selvmål;
+    }
+
+    public void setSelvmål(int selvmål) {
+        this.selvmål = selvmål;
+    }
+
+    public int getGuleKort() {
+        return guleKort;
+    }
+
+    public void setGuleKort(int guleKort) {
+        this.guleKort = guleKort;
+    }
+
+    public int getRødeKort() {
+        return rødeKort;
+    }
+
+    public void setRødeKort(int rødeKort) {
+        this.rødeKort = rødeKort;
     }
 
     public int getAntalTilskuer() {
