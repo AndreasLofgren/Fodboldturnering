@@ -19,7 +19,7 @@ public class Saeson {
         this.periode = periode;
         divisioner = new Division[3];
         kamprapporter = new Kamprapport[240];
-        turneringsrunder = new turneringsrunde[40];
+        turneringsrunder = new Turneringsrunde[40];
         
     } 
 
