@@ -14,12 +14,14 @@ public class Saeson {
     private Division[] divisioner;
     private Kamprapport[] kamprapporter;
     private Turneringsrunde[] turneringsrunder;
+    private SpillePlan spilleplan;
 
     public Saeson(String periode) {
         this.periode = periode;
         divisioner = new Division[3];
         kamprapporter = new Kamprapport[240];
         turneringsrunder = new Turneringsrunde[40];
+        spilleplan = new SpillePlan();
         
     } 
 
@@ -45,6 +47,22 @@ public class Saeson {
 
     public void setKamprapporter(Kamprapport[] kamprapporter) {
         this.kamprapporter = kamprapporter;
+    }
+
+    public Turneringsrunde[] getTurneringsrunder() {
+        return turneringsrunder;
+    }
+
+    public void setTurneringsrunder(Turneringsrunde[] turneringsrunder) {
+        this.turneringsrunder = turneringsrunder;
+    }
+
+    public SpillePlan getSpilleplan() {
+        return spilleplan;
+    }
+
+    public void setSpilleplan(SpillePlan spilleplan) {
+        this.spilleplan = spilleplan;
     }
     
     
