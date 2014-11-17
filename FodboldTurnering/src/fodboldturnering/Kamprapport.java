@@ -13,14 +13,15 @@ public class Kamprapport {
 
     private String spilledag, tidspunkt;
     private String sted;
-    private String hjemmehold, udehold;
+    private Klub hjemmehold;
+    private Klub udehold;
     private String[] startOpstilling;
     private int scoredeMål, selvmål, guleKort, rødeKort;
     private int antalTilskuer;
     private Turneringsrunde runde;
     private Dommer dommer;
 
-    public Kamprapport(String hjemmehold, String udehold, Turneringsrunde runde) {
+    public Kamprapport(Klub hjemmehold, Klub udehold, Turneringsrunde runde) {
         this.hjemmehold = hjemmehold;
         this.udehold = udehold;
         this.runde = runde;
@@ -60,21 +61,23 @@ public class Kamprapport {
         this.sted = sted;
     }
 
-    public String getHjemmehold() {
+    public Klub getHjemmehold() {
         return hjemmehold;
     }
 
-    public void setHjemmehold(String hjemmehold) {
+    public void setHjemmehold(Klub hjemmehold) {
         this.hjemmehold = hjemmehold;
     }
 
-    public String getUdehold() {
+    public Klub getUdehold() {
         return udehold;
     }
 
-    public void setUdehold(String udehold) {
+    public void setUdehold(Klub udehold) {
         this.udehold = udehold;
     }
+
+    
 
     public String[] getStartOpstilling() {
         return startOpstilling;
