@@ -5,7 +5,9 @@ use fodboldturnering;
 drop table if exists spiller;
 create table spiller
 (
-navn			varchar(20),
+fnavn			varchar(20),
+enavn			varchar(20),
+cpr				char(10),
 alder			int,
 antalMål		int,
 antalKampe		int,
@@ -53,7 +55,8 @@ hjemmehold		varchar(20),
 udehold			varchar(20),
 sted			varchar(20),
 scoredeMål		int,
-antalTilskuere	int
+antalTilskuere	int,
+rundenummer		int
 )
 Engine = InnoDB;
 
@@ -65,12 +68,7 @@ bedømmelse		int
 )
 Engine = InnoDB; 
 
-drop table if exists tuneringsrunde;
-create table turneringsrunde
-(
-rundenummer		int
-)
-Engine = InnoDB;
+
 
 
 
