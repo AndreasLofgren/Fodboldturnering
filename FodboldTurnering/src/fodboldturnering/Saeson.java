@@ -5,6 +5,8 @@
  */
 package fodboldturnering;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Andreas
@@ -21,7 +23,7 @@ public class Saeson {
         divisioner = new Division[3];
         kamprapporter = new Kamprapport[240];
         turneringsrunder = new Turneringsrunde[40];
-        spilleplan = new SpillePlan();
+        spilleplan = new SpillePlan(ArrayList<Klub> holdListe, ArrayList<Integer> rundeListe);
         
     } 
 

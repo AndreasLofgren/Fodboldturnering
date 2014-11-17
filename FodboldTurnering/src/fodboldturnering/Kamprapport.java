@@ -18,10 +18,10 @@ public class Kamprapport {
     private String[] startOpstilling;
     private int scoredeMål, selvmål, guleKort, rødeKort;
     private int antalTilskuer;
-    private Turneringsrunde runde;
+    private int runde;
     private Dommer dommer;
 
-    public Kamprapport(Klub hjemmehold, Klub udehold, Turneringsrunde runde) {
+    public Kamprapport(Klub hjemmehold, Klub udehold) {
         this.hjemmehold = hjemmehold;
         this.udehold = udehold;
         this.runde = runde;
@@ -76,9 +76,7 @@ public class Kamprapport {
     public void setUdehold(Klub udehold) {
         this.udehold = udehold;
     }
-
     
-
     public String[] getStartOpstilling() {
         return startOpstilling;
     }
@@ -127,11 +125,11 @@ public class Kamprapport {
         this.antalTilskuer = antalTilskuer;
     }
 
-    public Turneringsrunde getRunde() {
+    public int getRunde() {
         return runde;
     }
 
-    public void setRunde(Turneringsrunde runde) {
+    public void setRunde(int runde) {
         this.runde = runde;
     }
 
@@ -142,5 +140,12 @@ public class Kamprapport {
     public void setDommer(Dommer dommer) {
         this.dommer = dommer;
     }
+
+    @Override
+    public String toString() {
+        return "Hjemmehold: " + hjemmehold.getKlubNavn() + "\n" + "Udehold: " + udehold.getKlubNavn() +"\n";
+    }
+    
+    
 
 }

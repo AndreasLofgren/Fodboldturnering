@@ -15,7 +15,7 @@ public class KampBegivenhed {
     private String tidspunkt;
     
     public KampBegivenhed(String tidspunkt) {
-        rapport = new Kamprapport(rapport.getHjemmehold(), rapport.getUdehold(), rapport.getRunde());
+        rapport = new Kamprapport(rapport.getHjemmehold(), rapport.getUdehold());
         this.tidspunkt = tidspunkt;
     }
 
