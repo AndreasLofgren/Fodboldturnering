@@ -24,7 +24,7 @@ public class Kamprapport {
     public Kamprapport(Klub hjemmehold, Klub udehold) {
         this.hjemmehold = hjemmehold;
         this.udehold = udehold;
-        this.runde = runde;
+        runde = 0;
         spilledag = "";
         tidspunkt = "";
         sted = "";
