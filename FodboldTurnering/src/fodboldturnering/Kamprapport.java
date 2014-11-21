@@ -34,7 +34,7 @@ public class Kamprapport {
         guleKort = 0;
         rødeKort = 0;
         antalTilskuer = 0;
-        dommer = new Dommer(dommer.getNavn());
+        dommer = new Dommer("Erling Hansen");
     }
 
     public String getSpilledag() {

@@ -15,10 +15,9 @@ import java.util.Collections;
 public class SpillePlan {
 
     private ArrayList<Kamprapport> kampe;
-    private int runde;
 
     public SpillePlan(ArrayList<Klub> holdListe, ArrayList<Integer> rundeListe) {
-
+        kampe = new ArrayList<>();
         int antalHold = holdListe.size();
         ArrayList<Kamprapport> frieKampe = new ArrayList<>();
 
@@ -36,7 +35,8 @@ public class SpillePlan {
             rundenummer++;
             Collections.shuffle(frieKampe);
             ArrayList<Kamprapport> rundeKampe = new ArrayList<>();
-            for (int i = frieKampe.size() - 1; i >= 0; i++) {
+            for (int i = frieKampe.size() - 1; i >= 0; i--) {
+                System.out.println(i+" - "+frieKampe.size());
                 if (!isOneOfTheTeamsAlreadyInList(frieKampe.get(i), rundeKampe)) {
                     rundeKampe.add(frieKampe.remove(i));
                 }
@@ -58,7 +58,16 @@ public class SpillePlan {
     public boolean isOneOfTheTeamsAlreadyInList(Kamprapport kamp, ArrayList<Kamprapport> rundeKampe) {
         boolean found = false;
         for (int i = 0; i < rundeKampe.size(); i++) {
-            if (rundeKampe.get(i).equals(kamp)) {
+            if (rundeKampe.get(i).getHjemmehold().equals(kamp.getHjemmehold())) {
+                found = true;
+            }
+            if (rundeKampe.get(i).getHjemmehold().equals(kamp.getUdehold())) {
+                found = true;
+            }
+            if (rundeKampe.get(i).getUdehold().equals(kamp.getHjemmehold())) {
+                found = true;
+            }
+            if (rundeKampe.get(i).getUdehold().equals(kamp.getUdehold())) {
                 found = true;
             }
         }

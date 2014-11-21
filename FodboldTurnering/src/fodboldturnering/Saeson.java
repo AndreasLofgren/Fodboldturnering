@@ -15,15 +15,14 @@ public class Saeson {
     private String periode;
     private Division[] divisioner;
     private Kamprapport[] kamprapporter;
-    private Turneringsrunde[] turneringsrunder;
+    private int[] runder;
     private SpillePlan spilleplan;
 
     public Saeson(String periode) {
         this.periode = periode;
         divisioner = new Division[3];
         kamprapporter = new Kamprapport[240];
-        turneringsrunder = new Turneringsrunde[40];
-        spilleplan = new SpillePlan(ArrayList<Klub> holdListe, ArrayList<Integer> rundeListe);
+        runder = new int[40];
         
     } 
 
@@ -51,12 +50,12 @@ public class Saeson {
         this.kamprapporter = kamprapporter;
     }
 
-    public Turneringsrunde[] getTurneringsrunder() {
-        return turneringsrunder;
+    public int[] getTurneringsrunder() {
+        return runder;
     }
 
-    public void setTurneringsrunder(Turneringsrunde[] turneringsrunder) {
-        this.turneringsrunder = turneringsrunder;
+    public void setTurneringsrunder(int[] turneringsrunder) {
+        this.runder = turneringsrunder;
     }
 
     public SpillePlan getSpilleplan() {
