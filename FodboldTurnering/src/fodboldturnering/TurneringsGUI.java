@@ -76,43 +76,32 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jTidSe = new javax.swing.JTextField();
         jTextField12 = new javax.swing.JTextField();
         jHjemmeholdSe = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        jKampRedigerSe = new javax.swing.JButton();
+        jKampTilbageSe = new javax.swing.JButton();
         jLabel50 = new javax.swing.JLabel();
         jStartopstillingSe = new javax.swing.JComboBox();
         jLabel8 = new javax.swing.JLabel();
         jDommerSe = new javax.swing.JTextField();
-        jAfslutKamp = new javax.swing.JButton();
         jRundenrSe = new javax.swing.JTextField();
         jMålHjemmeSe = new javax.swing.JComboBox();
         jSelvmålHjemmeSe = new javax.swing.JComboBox();
-        jAdvarslerHjemmeSe = new javax.swing.JComboBox();
+        jAdvarselHjemmeSe = new javax.swing.JComboBox();
         jUdvisningHjemmeSe = new javax.swing.JComboBox();
         jTextField2 = new javax.swing.JTextField();
         jComboBox2 = new javax.swing.JComboBox();
         jMålUdeSe = new javax.swing.JComboBox();
         jSelvmålUdeSe = new javax.swing.JComboBox();
-        jAdvarslerUdeSe = new javax.swing.JComboBox();
-        jUdvisningerUdeSe = new javax.swing.JComboBox();
+        jAdvarselUdeSe = new javax.swing.JComboBox();
+        jUdvisningUdeSe = new javax.swing.JComboBox();
+        jBegivenhedSe = new javax.swing.JButton();
+        jCheckBox1 = new javax.swing.JCheckBox();
         jPanel4 = new javax.swing.JPanel();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
-        jMålHoldRediger = new javax.swing.JComboBox();
-        jMålSpillerRediger = new javax.swing.JComboBox();
-        jMålTidRediger = new javax.swing.JTextField();
-        jSelvmålTidRediger = new javax.swing.JTextField();
-        jSelvmålSpillerRediger = new javax.swing.JComboBox();
-        jSelvmålHoldRediger = new javax.swing.JComboBox();
-        jLabel11 = new javax.swing.JLabel();
-        jAdvarselTidRediger = new javax.swing.JTextField();
-        jAdvarselSpillerRediger = new javax.swing.JComboBox();
-        jAdvarselHoldRediger = new javax.swing.JComboBox();
-        jLabel12 = new javax.swing.JLabel();
-        jUdvisningTidRediger = new javax.swing.JTextField();
-        jUdvisningSpillerRediger = new javax.swing.JComboBox();
-        jUdvisningHoldRediger = new javax.swing.JComboBox();
-        jLabel13 = new javax.swing.JLabel();
+        jGemBegivenhed = new javax.swing.JButton();
+        jAnnullerBegivenhed = new javax.swing.JButton();
+        jBegivenhedHoldRediger = new javax.swing.JComboBox();
+        jBegivenhedSpillerRediger = new javax.swing.JComboBox();
+        jBegivenhedTidRediger = new javax.swing.JTextField();
+        jBegivenhedRediger = new javax.swing.JComboBox();
         jPanel5 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -239,8 +228,18 @@ public class TurneringsGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jOpretKamp.setText("Opret kamp");
+        jOpretKamp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jOpretKampActionPerformed(evt);
+            }
+        });
 
         jKamprapporter.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jKamprapporter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jKamprapporterActionPerformed(evt);
+            }
+        });
 
         jTurneringsstilling.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Division 1", "Division 2", "Division 3" }));
         jTurneringsstilling.addActionListener(new java.awt.event.ActionListener() {
@@ -252,6 +251,11 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jSøgefelt.setText("Søg efter spiller eller klub");
 
         jSøgeknap.setText("Søg");
+        jSøgeknap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSøgeknapActionPerformed(evt);
+            }
+        });
 
         jLabel48.setText("Kamprapporter");
 
@@ -264,19 +268,21 @@ public class TurneringsGUI extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel49)
-                    .addComponent(jLabel48)
-                    .addComponent(jTurneringsstilling, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jKamprapporter, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jOpretKamp))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(jSøgefelt, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jSøgeknap))))
-                .addContainerGap(15, Short.MAX_VALUE))
+                    .addComponent(jTurneringsstilling, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jKamprapporter, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jOpretKamp))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel49)
+                            .addComponent(jLabel48))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jSøgefelt, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jSøgeknap)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -311,8 +317,18 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jLabel5.setText("Tid");
 
         jOpretStartRapport.setText("Opret");
+        jOpretStartRapport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jOpretStartRapportActionPerformed(evt);
+            }
+        });
 
         jAnnullerStartRapport.setText("Annuller");
+        jAnnullerStartRapport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jAnnullerStartRapportActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Kamprapport");
 
@@ -338,20 +354,20 @@ public class TurneringsGUI extends javax.swing.JFrame {
                             .addComponent(jLabel6)
                             .addComponent(jLabel9))
                         .addGap(67, 67, 67)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jHjemmeOpret)
-                            .addComponent(jUdeOpret)
-                            .addComponent(jStedOpret)
-                            .addComponent(jDatoOpret)
-                            .addComponent(jTidOpret)
-                            .addComponent(jTeRundenrOpret, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jDommerOpret, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE))
-                        .addContainerGap(74, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jStedOpret)
+                                .addComponent(jDatoOpret)
+                                .addComponent(jTidOpret)
+                                .addComponent(jTeRundenrOpret, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jDommerOpret, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                                .addComponent(jUdeOpret))
+                            .addComponent(jHjemmeOpret, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jOpretStartRapport)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jAnnullerStartRapport)
-                        .addGap(19, 19, 19))))
+                        .addComponent(jAnnullerStartRapport)))
+                .addGap(19, 19, 19))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -405,9 +421,19 @@ public class TurneringsGUI extends javax.swing.JFrame {
 
         jHjemmeholdSe.setText("Hjemmehold");
 
-        jButton5.setText("Rediger");
+        jKampRedigerSe.setText("Rediger");
+        jKampRedigerSe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jKampRedigerSeActionPerformed(evt);
+            }
+        });
 
-        jButton6.setText("Tilbage");
+        jKampTilbageSe.setText("Tilbage");
+        jKampTilbageSe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jKampTilbageSeActionPerformed(evt);
+            }
+        });
 
         jLabel50.setText("vs");
 
@@ -417,15 +443,13 @@ public class TurneringsGUI extends javax.swing.JFrame {
 
         jDommerSe.setText("Dommer");
 
-        jAfslutKamp.setText("Afslut");
-
-        jRundenrSe.setText("nr");
+        jRundenrSe.setText("runde");
 
         jMålHjemmeSe.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mål" }));
 
         jSelvmålHjemmeSe.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selvmål" }));
 
-        jAdvarslerHjemmeSe.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Advarsler" }));
+        jAdvarselHjemmeSe.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Advarsler" }));
 
         jUdvisningHjemmeSe.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Udvisninger" }));
 
@@ -437,9 +461,18 @@ public class TurneringsGUI extends javax.swing.JFrame {
 
         jSelvmålUdeSe.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selvmål" }));
 
-        jAdvarslerUdeSe.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Advarsler" }));
+        jAdvarselUdeSe.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Advarsler" }));
 
-        jUdvisningerUdeSe.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Udvisninger" }));
+        jUdvisningUdeSe.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Udvisninger" }));
+
+        jBegivenhedSe.setText("Begivenhed");
+        jBegivenhedSe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBegivenhedSeActionPerformed(evt);
+            }
+        });
+
+        jCheckBox1.setText("Afsluttet kamp");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -455,47 +488,54 @@ public class TurneringsGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTidSe, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRundenrSe, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                        .addComponent(jRundenrSe, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jAfslutKamp)
-                        .addGap(52, 52, 52)
-                        .addComponent(jButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton6)
-                        .addGap(21, 21, 21))
+                        .addGap(167, 167, 167)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField12)
+                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(10, 10, 10))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jUdvisningHjemmeSe, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jAdvarslerHjemmeSe, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jMålHjemmeSe, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jDommerSe))
-                            .addComponent(jStartopstillingSe, javax.swing.GroupLayout.Alignment.LEADING, 0, 128, Short.MAX_VALUE)
-                            .addComponent(jHjemmeholdSe, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSelvmålHjemmeSe, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jUdvisningHjemmeSe, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jAdvarselHjemmeSe, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jMålHjemmeSe, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                                    .addComponent(jLabel8)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jDommerSe))
+                                .addComponent(jStartopstillingSe, javax.swing.GroupLayout.Alignment.LEADING, 0, 128, Short.MAX_VALUE)
+                                .addComponent(jHjemmeholdSe, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jSelvmålHjemmeSe, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jBegivenhedSe))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addComponent(jLabel50)
-                                .addGap(18, 18, 18)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField12)
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jUdvisningerUdeSe, 0, 143, Short.MAX_VALUE)
-                                        .addComponent(jMålUdeSe, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                    .addComponent(jLabel50)
+                                    .addComponent(jKampRedigerSe))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jSelvmålUdeSe, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jAdvarslerUdeSe, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap())))
+                                .addComponent(jKampTilbageSe)
+                                .addGap(21, 21, 21))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGap(39, 39, 39)
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jAdvarselUdeSe, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jSelvmålUdeSe, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jMålUdeSe, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                                        .addComponent(jUdvisningUdeSe, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap())))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jCheckBox1))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -526,7 +566,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jSelvmålHjemmeSe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jAdvarslerHjemmeSe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jAdvarselHjemmeSe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jUdvisningHjemmeSe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -534,92 +574,64 @@ public class TurneringsGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jSelvmålUdeSe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jAdvarslerUdeSe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jAdvarselUdeSe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jUdvisningerUdeSe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jUdvisningUdeSe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(jCheckBox1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jAfslutKamp)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6))
+                    .addComponent(jKampRedigerSe)
+                    .addComponent(jKampTilbageSe)
+                    .addComponent(jBegivenhedSe))
                 .addContainerGap())
         );
 
         jTabbedPane1.addTab("Se", jPanel3);
 
-        jButton7.setText("Gem");
+        jGemBegivenhed.setText("Gem");
+        jGemBegivenhed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jGemBegivenhedActionPerformed(evt);
+            }
+        });
 
-        jButton8.setText("Annuller");
+        jAnnullerBegivenhed.setText("Annuller");
+        jAnnullerBegivenhed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jAnnullerBegivenhedActionPerformed(evt);
+            }
+        });
 
-        jLabel10.setText("Mål");
+        jBegivenhedHoldRediger.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hjemmehold", "Udehold" }));
 
-        jMålHoldRediger.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hjemmehold", "Udehold" }));
+        jBegivenhedSpillerRediger.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Spiller" }));
 
-        jMålSpillerRediger.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Spiller" }));
+        jBegivenhedTidRediger.setText("Tid");
 
-        jMålTidRediger.setText("Tid");
-
-        jSelvmålTidRediger.setText("Tid");
-
-        jSelvmålSpillerRediger.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Spiller" }));
-
-        jSelvmålHoldRediger.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hjemmehold", "Udehold" }));
-
-        jLabel11.setText("Selvmål");
-
-        jAdvarselTidRediger.setText("Tid");
-
-        jAdvarselSpillerRediger.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Spiller" }));
-
-        jAdvarselHoldRediger.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hjemmehold", "Udehold" }));
-
-        jLabel12.setText("Advarsel");
-
-        jUdvisningTidRediger.setText("Tid");
-
-        jUdvisningSpillerRediger.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Spiller" }));
-
-        jUdvisningHoldRediger.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hjemmehold", "Udehold" }));
-
-        jLabel13.setText("Udvisning");
+        jBegivenhedRediger.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mål", "Selvmål", "Advarsel", "Udvisning" }));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel10))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jMålHoldRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSelvmålHoldRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jAdvarselHoldRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jUdvisningHoldRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addComponent(jBegivenhedRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jBegivenhedHoldRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jUdvisningSpillerRediger, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jAdvarselSpillerRediger, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSelvmålSpillerRediger, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jMålSpillerRediger, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jBegivenhedSpillerRediger, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(7, 7, 7)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSelvmålTidRediger, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jAdvarselTidRediger, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jUdvisningTidRediger, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jMålTidRediger, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jBegivenhedTidRediger, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(10, 10, 10)
-                .addComponent(jButton7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
-                .addComponent(jButton8)
+                .addComponent(jGemBegivenhed)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 210, Short.MAX_VALUE)
+                .addComponent(jAnnullerBegivenhed)
                 .addGap(19, 19, 19))
         );
         jPanel4Layout.setVerticalGroup(
@@ -627,42 +639,29 @@ public class TurneringsGUI extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jMålHoldRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jMålSpillerRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jMålTidRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(jBegivenhedHoldRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBegivenhedSpillerRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBegivenhedTidRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBegivenhedRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 274, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jSelvmålHoldRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSelvmålSpillerRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSelvmålTidRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(jAdvarselHoldRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jAdvarselSpillerRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jAdvarselTidRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(jUdvisningHoldRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jUdvisningSpillerRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jUdvisningTidRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton7)
-                    .addComponent(jButton8))
+                    .addComponent(jGemBegivenhed)
+                    .addComponent(jAnnullerBegivenhed))
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Rediger", jPanel4);
+        jTabbedPane1.addTab("Begivenhed", jPanel4);
 
         jLabel19.setText("Turneringsstilling");
 
         jScrollPane1.setViewportView(jHoldListe);
 
         jStillingTilbage.setText("Tilbage");
+        jStillingTilbage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jStillingTilbageActionPerformed(evt);
+            }
+        });
 
         jPlaceringsListe.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16" };
@@ -713,7 +712,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                             .addComponent(jLabel15)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel19))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel18)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -741,9 +740,9 @@ public class TurneringsGUI extends javax.swing.JFrame {
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel16)
-                                .addComponent(jLabel18))
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel16))
                             .addComponent(jLabel15)
                             .addComponent(jLabel14)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
@@ -784,8 +783,18 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jLabel26.setText("Kampe");
 
         jHoldRediger.setText("Rediger");
+        jHoldRediger.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jHoldRedigerActionPerformed(evt);
+            }
+        });
 
         jHoldTilbage.setText("Tilbage");
+        jHoldTilbage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jHoldTilbageActionPerformed(evt);
+            }
+        });
 
         jLabel51.setText("Sejre");
 
@@ -840,7 +849,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jHoldTabteSe, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jHoldMålSe, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE))
+                                .addComponent(jHoldMålSe, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jLabel52)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -928,8 +937,18 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jLabel62.setText("Point");
 
         jHoldAnnuller.setText("Annuller");
+        jHoldAnnuller.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jHoldAnnullerActionPerformed(evt);
+            }
+        });
 
         jHoldGem.setText("Gem");
+        jHoldGem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jHoldGemActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -971,7 +990,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jHoldPlaceringRediger)
                                     .addComponent(jHoldKampeRediger, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 59, Short.MAX_VALUE))
+                        .addGap(0, 92, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                         .addComponent(jHoldGem)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1027,8 +1046,18 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jLabel38.setText("Advarsler");
 
         jSpillerRediger.setText("Rediger");
+        jSpillerRediger.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSpillerRedigerActionPerformed(evt);
+            }
+        });
 
         jSpillerTilbage.setText("Tilbage");
+        jSpillerTilbage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSpillerTilbageActionPerformed(evt);
+            }
+        });
 
         jLabel39.setText("Spiller");
 
@@ -1049,7 +1078,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel39)
-                        .addGap(145, 292, Short.MAX_VALUE))
+                        .addGap(145, 325, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
@@ -1137,8 +1166,18 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jTabbedPane1.addTab("Spiller", jPanel8);
 
         jSpillerGem.setText("Gem");
+        jSpillerGem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSpillerGemActionPerformed(evt);
+            }
+        });
 
         jSpillerAnnuller.setText("Annuller");
+        jSpillerAnnuller.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSpillerAnnullerActionPerformed(evt);
+            }
+        });
 
         jLabel40.setText("Spiller");
 
@@ -1167,7 +1206,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addComponent(jLabel40)
-                        .addGap(0, 282, Short.MAX_VALUE))
+                        .addGap(0, 315, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                         .addComponent(jSpillerGem)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1246,8 +1285,8 @@ public class TurneringsGUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1261,7 +1300,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTurneringsstillingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTurneringsstillingActionPerformed
-        // TODO add your handling code here:
+        jTabbedPane1.setSelectedIndex(4);
     }//GEN-LAST:event_jTurneringsstillingActionPerformed
 
     private void jHoldKampeSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHoldKampeSeActionPerformed
@@ -1271,6 +1310,120 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private void jHoldKampeRedigerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHoldKampeRedigerActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jHoldKampeRedigerActionPerformed
+
+    private void jOpretKampActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jOpretKampActionPerformed
+        jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_jOpretKampActionPerformed
+
+    private void jSøgeknapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSøgeknapActionPerformed
+//        if (jSøgefelt.getText() == spiller) {
+//            jTabbedPane1.setSelectedIndex(7);
+//        }
+//        if (jSøgefelt.getText() == klub) {
+//            jTabbedPane1.setSelectedIndex(5);
+//        } else {
+//            System.out.println("Ugyldig søgning");
+//        }
+    }//GEN-LAST:event_jSøgeknapActionPerformed
+
+    private void jKamprapporterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jKamprapporterActionPerformed
+        jTabbedPane1.setSelectedIndex(2);
+    }//GEN-LAST:event_jKamprapporterActionPerformed
+
+    private void jOpretStartRapportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jOpretStartRapportActionPerformed
+        jTabbedPane1.setSelectedIndex(2);
+    }//GEN-LAST:event_jOpretStartRapportActionPerformed
+
+    private void jAnnullerStartRapportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAnnullerStartRapportActionPerformed
+        jTabbedPane1.setSelectedIndex(0);
+    }//GEN-LAST:event_jAnnullerStartRapportActionPerformed
+
+    private void jKampTilbageSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jKampTilbageSeActionPerformed
+        jTabbedPane1.setSelectedIndex(0);
+    }//GEN-LAST:event_jKampTilbageSeActionPerformed
+
+    private void jBegivenhedSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBegivenhedSeActionPerformed
+        jTabbedPane1.setSelectedIndex(3);
+    }//GEN-LAST:event_jBegivenhedSeActionPerformed
+
+    private void jKampRedigerSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jKampRedigerSeActionPerformed
+        jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_jKampRedigerSeActionPerformed
+
+    private void jAnnullerBegivenhedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAnnullerBegivenhedActionPerformed
+        jTabbedPane1.setSelectedIndex(2);
+    }//GEN-LAST:event_jAnnullerBegivenhedActionPerformed
+
+    private void jGemBegivenhedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jGemBegivenhedActionPerformed
+        if (jBegivenhedRediger.getSelectedItem() == "Mål") {
+            if (jBegivenhedHoldRediger.getSelectedItem() == "Hjemmehold") {
+                jMålHjemmeSe.addItem(jBegivenhedSpillerRediger + jBegivenhedTidRediger.getText());
+            } else {
+                jMålUdeSe.addItem(jBegivenhedSpillerRediger + jBegivenhedTidRediger.getText());
+            }
+        }
+        
+        if (jBegivenhedRediger.getSelectedItem() == "Selvmål") {
+            if (jBegivenhedHoldRediger.getSelectedItem() == "Hjemmehold") {
+                jSelvmålHjemmeSe.addItem(jBegivenhedSpillerRediger + jBegivenhedTidRediger.getText());
+            } else {
+                jSelvmålUdeSe.addItem(jBegivenhedSpillerRediger + jBegivenhedTidRediger.getText());
+            }
+        }
+        
+        if (jBegivenhedRediger.getSelectedItem() == "Advarsel") {
+            if (jBegivenhedHoldRediger.getSelectedItem() == "Hjemmehold") {
+                jAdvarselHjemmeSe.addItem(jBegivenhedSpillerRediger + jBegivenhedTidRediger.getText());
+            } else {
+                jAdvarselUdeSe.addItem(jBegivenhedSpillerRediger + jBegivenhedTidRediger.getText());
+            }
+        }
+        
+        if (jBegivenhedRediger.getSelectedItem() == "Udvisning") {
+            if (jBegivenhedHoldRediger.getSelectedItem() == "Hjemmehold") {
+                jUdvisningHjemmeSe.addItem(jBegivenhedSpillerRediger + jBegivenhedTidRediger.getText());
+            } else {
+                jUdvisningUdeSe.addItem(jBegivenhedSpillerRediger + jBegivenhedTidRediger.getText());
+            }
+        }
+        jTabbedPane1.setSelectedIndex(2);
+    }//GEN-LAST:event_jGemBegivenhedActionPerformed
+
+    private void jStillingTilbageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jStillingTilbageActionPerformed
+        jTabbedPane1.setSelectedIndex(0);
+    }//GEN-LAST:event_jStillingTilbageActionPerformed
+
+    private void jHoldRedigerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHoldRedigerActionPerformed
+        jTabbedPane1.setSelectedIndex(6);
+    }//GEN-LAST:event_jHoldRedigerActionPerformed
+
+    private void jHoldTilbageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHoldTilbageActionPerformed
+        jTabbedPane1.setSelectedIndex(0);
+    }//GEN-LAST:event_jHoldTilbageActionPerformed
+
+    private void jHoldGemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHoldGemActionPerformed
+        jTabbedPane1.setSelectedIndex(5);
+    }//GEN-LAST:event_jHoldGemActionPerformed
+
+    private void jHoldAnnullerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHoldAnnullerActionPerformed
+        jTabbedPane1.setSelectedIndex(5);
+    }//GEN-LAST:event_jHoldAnnullerActionPerformed
+
+    private void jSpillerRedigerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSpillerRedigerActionPerformed
+        jTabbedPane1.setSelectedIndex(8);
+    }//GEN-LAST:event_jSpillerRedigerActionPerformed
+
+    private void jSpillerTilbageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSpillerTilbageActionPerformed
+        jTabbedPane1.setSelectedIndex(0);
+    }//GEN-LAST:event_jSpillerTilbageActionPerformed
+
+    private void jSpillerGemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSpillerGemActionPerformed
+        jTabbedPane1.setSelectedIndex(7);
+    }//GEN-LAST:event_jSpillerGemActionPerformed
+
+    private void jSpillerAnnullerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSpillerAnnullerActionPerformed
+        jTabbedPane1.setSelectedIndex(7);
+    }//GEN-LAST:event_jSpillerAnnullerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1308,22 +1461,22 @@ public class TurneringsGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox jAdvarselHoldRediger;
-    private javax.swing.JComboBox jAdvarselSpillerRediger;
-    private javax.swing.JTextField jAdvarselTidRediger;
-    private javax.swing.JComboBox jAdvarslerHjemmeSe;
-    private javax.swing.JComboBox jAdvarslerUdeSe;
-    private javax.swing.JButton jAfslutKamp;
+    private javax.swing.JComboBox jAdvarselHjemmeSe;
+    private javax.swing.JComboBox jAdvarselUdeSe;
+    private javax.swing.JButton jAnnullerBegivenhed;
     private javax.swing.JButton jAnnullerStartRapport;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JComboBox jBegivenhedHoldRediger;
+    private javax.swing.JComboBox jBegivenhedRediger;
+    private javax.swing.JButton jBegivenhedSe;
+    private javax.swing.JComboBox jBegivenhedSpillerRediger;
+    private javax.swing.JTextField jBegivenhedTidRediger;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox jComboBox2;
     private javax.swing.JTextField jDatoOpret;
     private javax.swing.JTextField jDatoSe;
     private javax.swing.JTextField jDommerOpret;
     private javax.swing.JTextField jDommerSe;
+    private javax.swing.JButton jGemBegivenhed;
     private javax.swing.JTextField jHjemmeOpret;
     private javax.swing.JTextField jHjemmeholdSe;
     private javax.swing.JTextField jHoldAdresseSe;
@@ -1349,12 +1502,10 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private javax.swing.JTextField jHoldTrænerSe;
     private javax.swing.JTextField jHoldUafgjortRediger;
     private javax.swing.JTextField jHoldUafgjortSe;
+    private javax.swing.JButton jKampRedigerSe;
+    private javax.swing.JButton jKampTilbageSe;
     private javax.swing.JComboBox jKamprapporter;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -1421,10 +1572,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JComboBox jMålHjemmeSe;
-    private javax.swing.JComboBox jMålHoldRediger;
     private javax.swing.JList jMålListe;
-    private javax.swing.JComboBox jMålSpillerRediger;
-    private javax.swing.JTextField jMålTidRediger;
     private javax.swing.JComboBox jMålUdeSe;
     private javax.swing.JButton jOpretKamp;
     private javax.swing.JButton jOpretStartRapport;
@@ -1447,9 +1595,6 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JComboBox jSelvmålHjemmeSe;
-    private javax.swing.JComboBox jSelvmålHoldRediger;
-    private javax.swing.JComboBox jSelvmålSpillerRediger;
-    private javax.swing.JTextField jSelvmålTidRediger;
     private javax.swing.JComboBox jSelvmålUdeSe;
     private javax.swing.JTextField jSpillerAdvarselRediger;
     private javax.swing.JTextField jSpillerAdvarselSe;
@@ -1496,9 +1641,6 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private javax.swing.JComboBox jTurneringsstilling;
     private javax.swing.JTextField jUdeOpret;
     private javax.swing.JComboBox jUdvisningHjemmeSe;
-    private javax.swing.JComboBox jUdvisningHoldRediger;
-    private javax.swing.JComboBox jUdvisningSpillerRediger;
-    private javax.swing.JTextField jUdvisningTidRediger;
-    private javax.swing.JComboBox jUdvisningerUdeSe;
+    private javax.swing.JComboBox jUdvisningUdeSe;
     // End of variables declaration//GEN-END:variables
 }
