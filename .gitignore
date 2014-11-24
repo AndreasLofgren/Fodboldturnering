@@ -1,3 +1,5 @@
 /FodboldTurnering/build/
 *.properties
 *.xml
+*.properties
+*.xml
