@@ -165,7 +165,7 @@
                           <Component id="jSøgefelt" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jSøgeknap" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="166" max="32767" attributes="0"/>
+                      <EmptySpace pref="189" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -322,7 +322,7 @@
                           <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jDommerOpret" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="97" max="32767" attributes="0"/>
+                      <EmptySpace pref="120" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jOpretStartRapport" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jAnnullerStartRapport" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -420,40 +420,19 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jStedSe" min="-2" pref="98" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jDatoSe" min="-2" pref="76" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jTidSe" min="-2" pref="76" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jRundenrSe" pref="67" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
                           <Group type="102" attributes="0">
-                              <EmptySpace min="167" pref="167" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextField12" max="32767" attributes="0"/>
-                                  <Component id="jComboBox2" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                              <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="258" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jAntalTilskuer" min="-2" pref="111" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="232" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jUdvisningHjemmeSe" max="32767" attributes="0"/>
-                                      <Component id="jAdvarselHjemmeSe" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jMålHjemmeSe" alignment="0" max="32767" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jDommerSe" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Component id="jStartopstillingSe" alignment="0" pref="128" max="32767" attributes="0"/>
-                                      <Component id="jHjemmeholdSe" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jSelvmålHjemmeSe" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="jHjemmeholdSe" alignment="0" min="-2" pref="128" max="-2" attributes="0"/>
                                   <Component id="jBegivenhedSe" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jHjemmeScoring" alignment="1" min="-2" pref="36" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
@@ -466,31 +445,60 @@
                                       <Component id="jKampTilbageSe" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jAdvarselUdeSe" alignment="1" max="32767" attributes="0"/>
-                                                  <Component id="jSelvmålUdeSe" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="jMålUdeSe" alignment="0" max="32767" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace pref="37" max="32767" attributes="0"/>
-                                              <Component id="jUdvisningUdeSe" min="-2" pref="178" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                                      <Component id="jUdeScoring" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextField2" min="-2" pref="111" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jStedSe" min="-2" pref="98" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jDatoSe" min="-2" pref="76" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jTidSe" min="-2" pref="76" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jRundenrSe" pref="67" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="jUdvisningHjemmeSe" max="32767" attributes="0"/>
+                                          <Component id="jAdvarselHjemmeSe" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jMålHjemmeSe" alignment="0" max="32767" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jDommerSe" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Component id="jStartopstillingSe" alignment="0" pref="128" max="32767" attributes="0"/>
+                                          <Component id="jSelvmålHjemmeSe" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jUdvisningUdeSe" alignment="1" min="-2" pref="178" max="-2" attributes="0"/>
+                                          <Component id="jMålUdeSe" alignment="1" min="-2" pref="176" max="-2" attributes="0"/>
+                                          <Component id="jSelvmålUdeSe" alignment="1" min="-2" pref="176" max="-2" attributes="0"/>
+                                          <Component id="jAdvarselUdeSe" alignment="1" min="-2" pref="176" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="167" pref="167" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="jComboBox2" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jTextField12" max="32767" attributes="0"/>
+                                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
@@ -514,6 +522,11 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jHjemmeScoring" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jUdeScoring" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="12" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jStartopstillingSe" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -524,7 +537,7 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Component id="jMålHjemmeSe" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jSelvmålHjemmeSe" min="-2" max="-2" attributes="0"/>
@@ -544,8 +557,8 @@
                           </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jTextField2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="16" max="32767" attributes="0"/>
+                      <Component id="jAntalTilskuer" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -665,10 +678,13 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField2">
+            <Component class="javax.swing.JTextField" name="jAntalTilskuer">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Antal tilskurer"/>
+                <Property name="text" type="java.lang.String" value="Antal tilskuere"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jAntalTilskuerActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JComboBox" name="jComboBox2">
               <Properties>
@@ -728,6 +744,10 @@
                 <Property name="text" type="java.lang.String" value="Afsluttet kamp"/>
               </Properties>
             </Component>
+            <Component class="javax.swing.JTextField" name="jHjemmeScoring">
+            </Component>
+            <Component class="javax.swing.JTextField" name="jUdeScoring">
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel4">
@@ -772,7 +792,7 @@
                           <Component id="jBegivenhedTidRediger" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jBegivenhedRediger" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="274" max="32767" attributes="0"/>
+                      <EmptySpace pref="297" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jGemBegivenhed" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jAnnullerBegivenhed" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -916,7 +936,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane2" alignment="0" pref="259" max="32767" attributes="0"/>
+                          <Component id="jScrollPane2" alignment="0" pref="282" max="32767" attributes="0"/>
                           <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                           <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
                           <Component id="jScrollPane5" alignment="0" max="32767" attributes="0"/>
@@ -1231,7 +1251,7 @@
                           <Component id="jHoldPointSe" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jHoldMålSe" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="78" max="32767" attributes="0"/>
+                      <EmptySpace pref="101" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jHoldTilbage" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jHoldRediger" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1451,7 +1471,7 @@
                           <Component id="jHoldPointRediger" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jHoldMålRediger" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="181" max="32767" attributes="0"/>
+                      <EmptySpace pref="204" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jHoldAnnuller" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jHoldGem" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1652,7 +1672,7 @@
                           <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jSpillerSamletBedømmelseSe" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="17" max="32767" attributes="0"/>
+                      <EmptySpace pref="40" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jSpillerTilbage" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jSpillerRediger" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1858,7 +1878,7 @@
                           <Component id="jLabel76" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jSpillerSamletBedømmelseRediger" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="57" max="32767" attributes="0"/>
+                      <EmptySpace pref="80" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jSpillerAnnuller" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jSpillerGem" alignment="3" min="-2" max="-2" attributes="0"/>
