@@ -54,7 +54,8 @@ tidspunkt		varchar(20),
 hjemmehold		varchar(20),
 udehold			varchar(20),
 sted			varchar(20),
-scoredeMål		int,
+hjemmeMål		int,
+udeMål			int,
 antalTilskuere	int,
 rundenummer		int
 )

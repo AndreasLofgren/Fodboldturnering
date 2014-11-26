@@ -15,6 +15,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
      * Creates new form TurneringsGUI
      */
     public TurneringsGUI() {
+        DBHandler dbh = DBHandler.getInstance();
         initComponents();
     }
 
