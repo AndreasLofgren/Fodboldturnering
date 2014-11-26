@@ -19,10 +19,25 @@ public class Klub {
     private int antalKampe;
     private int sæsonPlacering;
     private int antalMål;
-    private SpillerProfil[] spillere;
     private String trænerNavn;
     private Division divisionsnummer;
 
+    public Klub(String klubNavn, String adresse, int sejre, int uafgjorte, int tabte, int pointSum, int antalKampe, int sæsonPlacering, int antalMål, String trænerNavn, Division divisionsnummer) {
+        this.klubNavn = klubNavn;
+        this.adresse = adresse;
+        this.sejre = sejre;
+        this.uafgjorte = uafgjorte;
+        this.tabte = tabte;
+        this.pointSum = pointSum;
+        this.antalKampe = antalKampe;
+        this.sæsonPlacering = sæsonPlacering;
+        this.antalMål = antalMål;
+        this.trænerNavn = trænerNavn;
+        this.divisionsnummer = divisionsnummer;
+    }
+
+    
+    
     public Klub(String klubNavn) {
         this.klubNavn = klubNavn;
         adresse = "";

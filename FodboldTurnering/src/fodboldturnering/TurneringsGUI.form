@@ -95,11 +95,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
+          <Component id="jTabbedPane1" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -165,7 +161,7 @@
                           <Component id="jSøgefelt" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jSøgeknap" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="189" max="32767" attributes="0"/>
+                      <EmptySpace pref="211" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -322,7 +318,7 @@
                           <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jDommerOpret" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="120" max="32767" attributes="0"/>
+                      <EmptySpace pref="142" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jOpretStartRapport" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jAnnullerStartRapport" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -495,7 +491,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="jTextField12" max="32767" attributes="0"/>
+                                      <Component id="jUdeSe" max="32767" attributes="0"/>
                                       <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -517,7 +513,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jHjemmeholdSe" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField12" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jUdeSe" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel50" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -525,7 +521,7 @@
                           <Component id="jHjemmeScoring" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jUdeScoring" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="12" max="32767" attributes="0"/>
+                      <EmptySpace pref="34" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jStartopstillingSe" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -587,15 +583,21 @@
                 <Property name="text" type="java.lang.String" value="Tid"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField12">
+            <Component class="javax.swing.JTextField" name="jUdeSe">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Udehold"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jUdeSeActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jHjemmeholdSe">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Hjemmehold"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jHjemmeholdSeActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jKampRedigerSe">
               <Properties>
@@ -626,6 +628,9 @@
                   </StringArray>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jStartopstillingSeActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel8">
               <Properties>
@@ -792,7 +797,7 @@
                           <Component id="jBegivenhedTidRediger" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jBegivenhedRediger" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="297" max="32767" attributes="0"/>
+                      <EmptySpace pref="319" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jGemBegivenhed" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jAnnullerBegivenhed" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -936,7 +941,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane2" alignment="0" pref="282" max="32767" attributes="0"/>
+                          <Component id="jScrollPane2" alignment="0" pref="304" max="32767" attributes="0"/>
                           <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                           <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
                           <Component id="jScrollPane5" alignment="0" max="32767" attributes="0"/>
@@ -1251,7 +1256,7 @@
                           <Component id="jHoldPointSe" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jHoldMålSe" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="101" max="32767" attributes="0"/>
+                      <EmptySpace pref="123" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jHoldTilbage" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jHoldRediger" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1332,6 +1337,9 @@
                   <StringArray count="0"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jHoldSpillerSeActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel51">
               <Properties>
@@ -1471,7 +1479,7 @@
                           <Component id="jHoldPointRediger" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jHoldMålRediger" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="204" max="32767" attributes="0"/>
+                      <EmptySpace pref="226" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jHoldAnnuller" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jHoldGem" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1672,7 +1680,7 @@
                           <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jSpillerSamletBedømmelseSe" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="40" max="32767" attributes="0"/>
+                      <EmptySpace pref="62" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jSpillerTilbage" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jSpillerRediger" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1878,7 +1886,7 @@
                           <Component id="jLabel76" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jSpillerSamletBedømmelseRediger" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="80" max="32767" attributes="0"/>
+                      <EmptySpace pref="102" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jSpillerAnnuller" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jSpillerGem" alignment="3" min="-2" max="-2" attributes="0"/>

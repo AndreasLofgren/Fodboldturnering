@@ -5,6 +5,8 @@
  */
 package fodboldturnering;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Andreas
@@ -75,7 +77,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jStedSe = new javax.swing.JTextField();
         jDatoSe = new javax.swing.JTextField();
         jTidSe = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
+        jUdeSe = new javax.swing.JTextField();
         jHjemmeholdSe = new javax.swing.JTextField();
         jKampRedigerSe = new javax.swing.JButton();
         jKampTilbageSe = new javax.swing.JButton();
@@ -304,7 +306,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jSøgefelt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSøgeknap))
-                .addContainerGap(189, Short.MAX_VALUE))
+                .addContainerGap(211, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Oversigt", jPanel1);
@@ -405,7 +407,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(jDommerOpret, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jOpretStartRapport)
                     .addComponent(jAnnullerStartRapport))
@@ -420,9 +422,19 @@ public class TurneringsGUI extends javax.swing.JFrame {
 
         jTidSe.setText("Tid");
 
-        jTextField12.setText("Udehold");
+        jUdeSe.setText("Udehold");
+        jUdeSe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jUdeSeActionPerformed(evt);
+            }
+        });
 
         jHjemmeholdSe.setText("Hjemmehold");
+        jHjemmeholdSe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jHjemmeholdSeActionPerformed(evt);
+            }
+        });
 
         jKampRedigerSe.setText("Rediger");
         jKampRedigerSe.addActionListener(new java.awt.event.ActionListener() {
@@ -441,6 +453,11 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jLabel50.setText("vs");
 
         jStartopstillingSe.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Startopstilling" }));
+        jStartopstillingSe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jStartopstillingSeActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("Dommer");
 
@@ -548,7 +565,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                                 .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addContainerGap())
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jTextField12)
+                                .addComponent(jUdeSe)
                                 .addGap(10, 10, 10))))))
         );
         jPanel3Layout.setVerticalGroup(
@@ -563,13 +580,13 @@ public class TurneringsGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jHjemmeholdSe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jUdeSe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel50))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jHjemmeScoring, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jUdeScoring, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jStartopstillingSe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -661,7 +678,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                     .addComponent(jBegivenhedSpillerRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBegivenhedTidRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBegivenhedRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 297, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 319, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jGemBegivenhed)
                     .addComponent(jAnnullerBegivenhed))
@@ -768,7 +785,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                         .addComponent(jLabel17)))
                 .addGap(11, 11, 11)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
                     .addComponent(jScrollPane1)
                     .addComponent(jScrollPane3)
                     .addComponent(jScrollPane5)
@@ -811,6 +828,12 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jHoldTilbage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jHoldTilbageActionPerformed(evt);
+            }
+        });
+
+        jHoldSpillerSe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jHoldSpillerSeActionPerformed(evt);
             }
         });
 
@@ -923,7 +946,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                     .addComponent(jHoldTabteSe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jHoldPointSe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jHoldMålSe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jHoldTilbage)
                     .addComponent(jHoldRediger))
@@ -1042,7 +1065,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                     .addComponent(jHoldTabteRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jHoldPointRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jHoldMålRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 204, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 226, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jHoldAnnuller)
                     .addComponent(jHoldGem))
@@ -1174,7 +1197,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel44)
                     .addComponent(jSpillerSamletBedømmelseSe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jSpillerTilbage)
                     .addComponent(jSpillerRediger))
@@ -1288,7 +1311,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel76)
                     .addComponent(jSpillerSamletBedømmelseRediger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jSpillerAnnuller)
                     .addComponent(jSpillerGem))
@@ -1308,10 +1331,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
@@ -1361,6 +1381,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jKampTilbageSeActionPerformed
 
     private void jBegivenhedSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBegivenhedSeActionPerformed
+        jBegivenhedHoldRediger.getSelectedIndex();
         jTabbedPane1.setSelectedIndex(3);
     }//GEN-LAST:event_jBegivenhedSeActionPerformed
 
@@ -1446,6 +1467,30 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private void jAntalTilskuerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAntalTilskuerActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jAntalTilskuerActionPerformed
+
+    private void jStartopstillingSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jStartopstillingSeActionPerformed
+        
+    }//GEN-LAST:event_jStartopstillingSeActionPerformed
+
+    private void jHjemmeholdSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHjemmeholdSeActionPerformed
+        SpillerHandler sh = new SpillerHandler();
+        sh.getSpiller(jHjemmeholdSe.getText());
+    }//GEN-LAST:event_jHjemmeholdSeActionPerformed
+
+    private void jUdeSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUdeSeActionPerformed
+        SpillerHandler sh = new SpillerHandler();
+        sh.getSpiller(jUdeSe.getText());
+    }//GEN-LAST:event_jUdeSeActionPerformed
+
+    private void jHoldSpillerSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHoldSpillerSeActionPerformed
+        SpillerHandler sh = new SpillerHandler();
+        ArrayList<SpillerProfil> sp = sh.getSpiller(jHoldNavnSe.getText());
+        for (int i = 0; i < sp.size(); i++) {
+            jHoldSpillerSe.addItem(sp.get(i));
+        }
+        
+        
+    }//GEN-LAST:event_jHoldSpillerSeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1658,12 +1703,12 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private javax.swing.JButton jSøgeknap;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTeRundenrOpret;
-    private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTidOpret;
     private javax.swing.JTextField jTidSe;
     private javax.swing.JComboBox jTurneringsstilling;
     private javax.swing.JTextField jUdeOpret;
     private javax.swing.JTextField jUdeScoring;
+    private javax.swing.JTextField jUdeSe;
     private javax.swing.JComboBox jUdvisningHjemmeSe;
     private javax.swing.JComboBox jUdvisningUdeSe;
     // End of variables declaration//GEN-END:variables
