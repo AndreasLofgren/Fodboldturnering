@@ -17,29 +17,22 @@ import java.sql.Statement;
  */
 public class SpillerHandler {
 
-    private SpillerProfil spiller;
     private DBHandler dbhandler;
 
     public SpillerHandler() {
-        dbhandler = new DBHandler();
+        dbhandler = DBHandler.getInstance();
     }
 
-    public String getNavn(String sql) {
-        String resultat = "";
+    public SpillerProfil getSpiller(String cpr) {
+        SpillerProfil resultat = null;
         try {
-            Connection conn = null;
-            Statement stmt = conn.createStatement();
+            String sql = "Select * From SpillerProfil Where cpr = '"+cpr+"';";
+            Statement stmt = dbhandler.getStmt();
             ResultSet rs = stmt.executeQuery(sql);
-            int i = 1;
 
-            while (rs.next()) {
-                if (rs.getString(i).equals(spiller.getNavn())) {
-                    resultat = rs.getString(i);
-                } else {
-                    i++;
-                }
+            if (rs.next()) {
+                
             }
-            
         } catch (SQLException ex) {
             System.out.println("SQLException" + ex.getMessage());
         }

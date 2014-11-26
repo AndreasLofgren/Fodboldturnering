@@ -11,32 +11,52 @@ package fodboldturnering;
  */
 public class SpillerProfil {
 
-    private String navn;
+    private String fnavn;
+    private String enavn;
     private int alder;
     private int antalMål, antalKampe, antalAdvarsler, antalUdvisninger, antalSelvmål;
     private int maksMål;
     private int bedømmelse;
     private int samletPoint;
+    private String cpr;
 
-    public SpillerProfil(String navn) {
-        this.navn = navn;
-        alder = 0;
-        antalMål = 0;
-        antalKampe = 0;
-        antalAdvarsler = 0;
-        antalUdvisninger = 0;
-        maksMål = 0;
-        bedømmelse = 0;
-        samletPoint = 0;
-        antalSelvmål = 0;
+    public SpillerProfil(String fnavn, String enavn, int alder, int antalMål, int antalKampe, int antalAdvarsler, int antalUdvisninger, int antalSelvmål, int maksMål, int bedømmelse, int samletPoint, String cpr) {
+        this.fnavn = fnavn;
+        this.enavn = enavn;
+        this.alder = alder;
+        this.antalMål = antalMål;
+        this.antalKampe = antalKampe;
+        this.antalAdvarsler = antalAdvarsler;
+        this.antalUdvisninger = antalUdvisninger;
+        this.antalSelvmål = antalSelvmål;
+        this.maksMål = maksMål;
+        this.bedømmelse = bedømmelse;
+        this.samletPoint = samletPoint;
+        this.cpr = cpr;
     }
 
-    public String getNavn() {
-        return navn;
+    public String getFnavn() {
+        return fnavn;
     }
 
-    public void setNavn(String navn) {
-        this.navn = navn;
+    public void setFnavn(String fnavn) {
+        this.fnavn = fnavn;
+    }
+
+    public String getEnavn() {
+        return enavn;
+    }
+
+    public void setEnavn(String enavn) {
+        this.enavn = enavn;
+    }
+
+    public String getCpr() {
+        return cpr;
+    }
+
+    public void setCpr(String cpr) {
+        this.cpr = cpr;
     }
 
     public int getAlder() {

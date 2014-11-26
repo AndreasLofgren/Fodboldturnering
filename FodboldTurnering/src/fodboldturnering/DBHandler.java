@@ -5,10 +5,13 @@
  */
 package fodboldturnering;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Scanner;
 
 /**
  *
@@ -17,28 +20,61 @@ import java.sql.Statement;
 public class DBHandler {
 
     private static DBHandler instance;
-    private String url;
-    private String brugernavn;
-    private String password;
+    private Statement stmt;
 
-    public DBHandler() {
-        url = "jdbc:mysql://localhost:3306/mycontacts";
-        brugernavn = "root";
-        password = "root";
+    private DBHandler() {
+        String[] params = loadFromFile();
+        for (String param : params) {
+            System.out.println(param);
+        }
+        startForbindelse(params);
+        
+    }
+    
+        public static DBHandler getInstance() {
+        if (instance == null) {
+            instance = new DBHandler();
+        }
+        return instance;
+    }
+    
+    public String[] loadFromFile() {
+        String filename = "Database.ini";
+        Scanner textScan;
+        String[] params = new String[5];
+        
+        System.out.print("Loading: " + filename + "...");
+        try {
+            File file = new File(filename);
+            textScan = new Scanner(file);
+            
+            int count = 0;
+            
+                while (textScan.hasNextLine() && count < 5) {
+                    params[count] = textScan.nextLine().trim();
+                    count++;
+                }
+            
+            textScan.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found: " + e.getMessage());
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Index out of bound: " + e.getMessage());
+        } catch (ArrayStoreException e) {
+            System.out.println("Wrong object: " + e.getMessage());
+        }
+        return params;
     }
 
-//    public static DBHandler getInstance() {
-//        if (instance == null) {
-//            instance = new DBHandler();
-//        }
-//        return instance;
-//    }
-    public void startForbindelse(String brugernavn, String password) {
+
+    
+    public void startForbindelse(String[] parameter) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn;
-            conn = DriverManager.getConnection(url, brugernavn, password);
-            Statement stmt = conn.createStatement();
+            String url = "jdbc:mysql://"+parameter[0]+":"+parameter[1]+"/"+parameter[2];
+            conn = DriverManager.getConnection(url, parameter[3], parameter[4]);
+            stmt = conn.createStatement();
             
         } catch (SQLException e) {
             System.out.println("SQLException" + e.getMessage());
@@ -47,10 +83,16 @@ public class DBHandler {
         }
     }
     
+    
+    
 //    public void lukForbindelse() {
 //        try {
 //            startForbindelse(brugernavn, password);
 //            conn.
 //        }
 //    }
+
+    public Statement getStmt() {
+        return stmt;
+    }
 }
