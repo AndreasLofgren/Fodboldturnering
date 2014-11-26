@@ -189,9 +189,11 @@
         <Name>Kamprapport</Name>
         <Access>Public</Access>
         <Location left="301" top="166" />
-        <Size width="182" height="111" />
+        <Size width="182" height="128" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private Dommer dommer</Member>
+        <Member type="Field">private Klub udehold</Member>
+        <Member type="Field">private Klub hjemmehold</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -215,9 +217,11 @@
         <Name>Sæson</Name>
         <Access>Public</Access>
         <Location left="301" top="442" />
-        <Size width="162" height="111" />
+        <Size width="182" height="128" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private Division[] divisioner</Member>
+        <Member type="Field">private Kamprapport[] kamprapporter</Member>
+        <Member type="Field">privateSpillePlan spilleplan</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -228,25 +232,8 @@
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
       </Entity>
-      <Entity type="Class">
-        <Name>FodboldTurnering</Name>
-        <Access>Public</Access>
-        <Location left="624" top="427" />
-        <Size width="162" height="94" />
-        <Collapsed>False</Collapsed>
-        <Member type="Field">private Sæson sæson</Member>
-        <Modifier>None</Modifier>
-      </Entity>
     </Entities>
     <Relationships>
-      <Relationship type="Association" first="6" second="4">
-        <Label>
-        </Label>
-        <StartOrientation>Horizontal</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
-        <Direction>Unidirectional</Direction>
-        <AssociationType>Association</AssociationType>
-      </Relationship>
       <Relationship type="Association" first="0" second="5">
         <Label>
         </Label>
@@ -295,7 +282,7 @@
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
-      <Relationship type="Association" first="1" second="4">
+      <Relationship type="Association" first="4" second="1">
         <Label>
         </Label>
         <StartOrientation>Vertical</StartOrientation>
@@ -310,7 +297,7 @@
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
           <X>314</X>
-          <Y>302</Y>
+          <Y>319</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
           <X>176</X>
