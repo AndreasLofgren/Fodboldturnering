@@ -18,14 +18,24 @@ public class Kamprapport {
     private Klub udehold;
     private String[] startOpstillingHjemme;
     private String[] startOpstillingUde;
-    private int scoredeMålHjemme;
-    private int scoredeMålUde;
-    private int selvmål, guleKort, rødeKort;
+    private int målHjemme;
+    private int målUde;
+    private int selvmålHjemme;
+    private int selvmålUde;
+    private int advarselHjemme;
+    private int advarselUde;
+    private int udvisningHjemme;
+    private int udvisningUde;
     private int antalTilskuer;
     private int runde;
     private Dommer dommer;
 
-    public Kamprapport(String spilledag, String tidspunkt, String sted, Klub hjemmehold, Klub udehold, String[] startOpstillingHjemme, String[] startOpstillingUde, int scoredeMålHjemme, int scoredeMålUde, int selvmål, int guleKort, int rødeKort, int antalTilskuer, int runde, Dommer dommer) {
+    public Kamprapport(Klub hjemmehold, Klub udehold) {
+        this.hjemmehold = hjemmehold;
+        this.udehold = udehold;
+    }  
+    
+    public Kamprapport(String spilledag, String tidspunkt, String sted, Klub hjemmehold, Klub udehold, String[] startOpstillingHjemme, String[] startOpstillingUde, int målHjemme, int målUde, int selvmålHjemme, int selvmålUde, int advarselHjemme, int advarselUde, int udvisningHjemme, int udvisningUde, int antalTilskuer, int runde, Dommer dommer) {
         this.spilledag = spilledag;
         this.tidspunkt = tidspunkt;
         this.sted = sted;
@@ -33,30 +43,17 @@ public class Kamprapport {
         this.udehold = udehold;
         this.startOpstillingHjemme = startOpstillingHjemme;
         this.startOpstillingUde = startOpstillingUde;
-        this.scoredeMålHjemme = scoredeMålHjemme;
-        this.scoredeMålUde = scoredeMålUde;
-        this.selvmål = selvmål;
-        this.guleKort = guleKort;
-        this.rødeKort = rødeKort;
+        this.målHjemme = målHjemme;
+        this.målUde = målUde;
+        this.selvmålHjemme = selvmålHjemme;
+        this.selvmålUde = selvmålUde;
+        this.advarselHjemme = advarselHjemme;
+        this.advarselUde = advarselUde;
+        this.udvisningHjemme = udvisningHjemme;
+        this.udvisningUde = udvisningUde;
         this.antalTilskuer = antalTilskuer;
         this.runde = runde;
         this.dommer = dommer;
-    }
-
-    public int getScoredeMålHjemme() {
-        return scoredeMålHjemme;
-    }
-
-    public void setScoredeMålHjemme(int scoredeMålHjemme) {
-        this.scoredeMålHjemme = scoredeMålHjemme;
-    }
-
-    public int getScoredeMålUde() {
-        return scoredeMålUde;
-    }
-
-    public void setScoredeMålUde(int scoredeMålUde) {
-        this.scoredeMålUde = scoredeMålUde;
     }
 
     public String getSpilledag() {
@@ -115,28 +112,68 @@ public class Kamprapport {
         this.startOpstillingUde = startOpstillingUde;
     }
 
-    public int getSelvmål() {
-        return selvmål;
+    public int getMålHjemme() {
+        return målHjemme;
     }
 
-    public void setSelvmål(int selvmål) {
-        this.selvmål = selvmål;
+    public void setMålHjemme(int målHjemme) {
+        this.målHjemme = målHjemme;
     }
 
-    public int getGuleKort() {
-        return guleKort;
+    public int getMålUde() {
+        return målUde;
     }
 
-    public void setGuleKort(int guleKort) {
-        this.guleKort = guleKort;
+    public void setMålUde(int målUde) {
+        this.målUde = målUde;
     }
 
-    public int getRødeKort() {
-        return rødeKort;
+    public int getSelvmålHjemme() {
+        return selvmålHjemme;
     }
 
-    public void setRødeKort(int rødeKort) {
-        this.rødeKort = rødeKort;
+    public void setSelvmålHjemme(int selvmålHjemme) {
+        this.selvmålHjemme = selvmålHjemme;
+    }
+
+    public int getSelvmålUde() {
+        return selvmålUde;
+    }
+
+    public void setSelvmålUde(int selvmålUde) {
+        this.selvmålUde = selvmålUde;
+    }
+
+    public int getAdvarselHjemme() {
+        return advarselHjemme;
+    }
+
+    public void setAdvarselHjemme(int advarselHjemme) {
+        this.advarselHjemme = advarselHjemme;
+    }
+
+    public int getAdvarselUde() {
+        return advarselUde;
+    }
+
+    public void setAdvarselUde(int advarselUde) {
+        this.advarselUde = advarselUde;
+    }
+
+    public int getUdvisningHjemme() {
+        return udvisningHjemme;
+    }
+
+    public void setUdvisningHjemme(int udvisningHjemme) {
+        this.udvisningHjemme = udvisningHjemme;
+    }
+
+    public int getUdvisningUde() {
+        return udvisningUde;
+    }
+
+    public void setUdvisningUde(int udvisningUde) {
+        this.udvisningUde = udvisningUde;
     }
 
     public int getAntalTilskuer() {
@@ -167,5 +204,4 @@ public class Kamprapport {
     public String toString() {
         return "Hjemmehold: " + hjemmehold.getKlubNavn() + "\n" + "Udehold: " + udehold.getKlubNavn() + "\n";
     }
-
 }
