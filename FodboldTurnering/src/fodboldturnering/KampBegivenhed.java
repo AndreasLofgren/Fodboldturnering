@@ -13,12 +13,13 @@ public class KampBegivenhed {
 
     private Kamprapport rapport;
     private String tidspunkt;
-    
-    public KampBegivenhed(String tidspunkt) {
-        rapport = new Kamprapport(rapport.getHjemmehold(), rapport.getUdehold());
+
+    public KampBegivenhed(Kamprapport rapport, String tidspunkt) {
+        this.rapport = rapport;
         this.tidspunkt = tidspunkt;
     }
-
+    
+    
     public String getTidspunkt() {
         return tidspunkt;
     }
@@ -28,7 +29,7 @@ public class KampBegivenhed {
     }
     
     public void registrerMål() {
-        rapport.setScoredeMål(rapport.getScoredeMål() + 1);
+        rapport.setScoredeMålHjemme(rapport.getScoredeMålHjemme()+ 1);
     }
     
     public void registrerSelvmål() {
