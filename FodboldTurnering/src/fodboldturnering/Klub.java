@@ -35,24 +35,7 @@ public class Klub {
         this.trænerNavn = trænerNavn;
         this.divisionsnummer = divisionsnummer;
     }
-
     
-    
-    public Klub(String klubNavn) {
-        this.klubNavn = klubNavn;
-        adresse = "";
-        hjemmefarver = new String[3];
-        udefarver = new String[3];
-        sejre = 0;
-        uafgjorte = 0;
-        tabte = 0;
-        pointSum = 0;
-        antalKampe = 0;
-        sæsonPlacering = 0;
-        antalMål = 0;
-        spillere = new SpillerProfil[14];
-    }
-
     public Division getDivisionsnummer() {
         return divisionsnummer;
     }
@@ -149,14 +132,6 @@ public class Klub {
 
     public void setAntalMål(int antalMål) {
         this.antalMål = antalMål;
-    }
-
-    public SpillerProfil[] getSpillere() {
-        return spillere;
-    }
-
-    public void setSpillere(SpillerProfil[] spillere) {
-        this.spillere = spillere;
     }
 
     public String getTrænerNavn() {

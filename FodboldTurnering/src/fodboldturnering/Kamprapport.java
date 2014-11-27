@@ -11,30 +11,52 @@ package fodboldturnering;
  */
 public class Kamprapport {
 
-    private String spilledag, tidspunkt;
+    private String spilledag;
+    private String tidspunkt;
     private String sted;
     private Klub hjemmehold;
     private Klub udehold;
-    private String[] startOpstilling;
-    private int scoredeMål, selvmål, guleKort, rødeKort;
+    private String[] startOpstillingHjemme;
+    private String[] startOpstillingUde;
+    private int scoredeMålHjemme;
+    private int scoredeMålUde;
+    private int selvmål, guleKort, rødeKort;
     private int antalTilskuer;
     private int runde;
     private Dommer dommer;
 
-    public Kamprapport(Klub hjemmehold, Klub udehold) {
+    public Kamprapport(String spilledag, String tidspunkt, String sted, Klub hjemmehold, Klub udehold, String[] startOpstillingHjemme, String[] startOpstillingUde, int scoredeMålHjemme, int scoredeMålUde, int selvmål, int guleKort, int rødeKort, int antalTilskuer, int runde, Dommer dommer) {
+        this.spilledag = spilledag;
+        this.tidspunkt = tidspunkt;
+        this.sted = sted;
         this.hjemmehold = hjemmehold;
         this.udehold = udehold;
-        runde = 0;
-        spilledag = "";
-        tidspunkt = "";
-        sted = "";
-        startOpstilling = new String[11];
-        scoredeMål = 0;
-        selvmål = 0;
-        guleKort = 0;
-        rødeKort = 0;
-        antalTilskuer = 0;
-        dommer = new Dommer("Erling Hansen");
+        this.startOpstillingHjemme = startOpstillingHjemme;
+        this.startOpstillingUde = startOpstillingUde;
+        this.scoredeMålHjemme = scoredeMålHjemme;
+        this.scoredeMålUde = scoredeMålUde;
+        this.selvmål = selvmål;
+        this.guleKort = guleKort;
+        this.rødeKort = rødeKort;
+        this.antalTilskuer = antalTilskuer;
+        this.runde = runde;
+        this.dommer = dommer;
+    }
+
+    public int getScoredeMålHjemme() {
+        return scoredeMålHjemme;
+    }
+
+    public void setScoredeMålHjemme(int scoredeMålHjemme) {
+        this.scoredeMålHjemme = scoredeMålHjemme;
+    }
+
+    public int getScoredeMålUde() {
+        return scoredeMålUde;
+    }
+
+    public void setScoredeMålUde(int scoredeMålUde) {
+        this.scoredeMålUde = scoredeMålUde;
     }
 
     public String getSpilledag() {
@@ -76,21 +98,21 @@ public class Kamprapport {
     public void setUdehold(Klub udehold) {
         this.udehold = udehold;
     }
-    
-    public String[] getStartOpstilling() {
-        return startOpstilling;
+
+    public String[] getStartOpstillingHjemme() {
+        return startOpstillingHjemme;
     }
 
-    public void setStartOpstilling(String[] startOpstilling) {
-        this.startOpstilling = startOpstilling;
+    public void setStartOpstillingHjemme(String[] startOpstillingHjemme) {
+        this.startOpstillingHjemme = startOpstillingHjemme;
     }
 
-    public int getScoredeMål() {
-        return scoredeMål;
+    public String[] getStartOpstillingUde() {
+        return startOpstillingUde;
     }
 
-    public void setScoredeMål(int scoredeMål) {
-        this.scoredeMål = scoredeMål;
+    public void setStartOpstillingUde(String[] startOpstillingUde) {
+        this.startOpstillingUde = startOpstillingUde;
     }
 
     public int getSelvmål() {
@@ -143,9 +165,7 @@ public class Kamprapport {
 
     @Override
     public String toString() {
-        return "Hjemmehold: " + hjemmehold.getKlubNavn() + "\n" + "Udehold: " + udehold.getKlubNavn() +"\n";
+        return "Hjemmehold: " + hjemmehold.getKlubNavn() + "\n" + "Udehold: " + udehold.getKlubNavn() + "\n";
     }
-    
-    
 
 }
