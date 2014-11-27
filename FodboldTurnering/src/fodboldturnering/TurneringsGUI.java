@@ -5,6 +5,8 @@
  */
 package fodboldturnering;
 
+import handler.DBHandler;
+import handler.SpillerHandler;
 import java.util.ArrayList;
 
 /**
