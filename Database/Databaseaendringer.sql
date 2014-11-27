@@ -64,15 +64,16 @@ tidspunkt		varchar(20),
 hjemmehold		varchar(20),
 udehold			varchar(20),
 sted			varchar(20),
-
-(hjemmeMål		int,
-udeMål			int,)
-
-selvmål			int,
-guleKort		int,
-rødeKort		int,
-
-antalTilskuere	int,
+hjemmeMål			int,
+udeMål				int,
+selvmålHjemme		int,
+selvmålUde			int,
+advarslerHjemme		int,
+advarslerUde		int,
+runde				int,
+udvisningerUde		int,
+udvisningerHjemme	int,
+antalTilskuere		int,
 rundenummer		int
 )
 Engine = InnoDB;

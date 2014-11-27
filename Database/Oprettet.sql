@@ -49,15 +49,21 @@ Engine = InnoDB;
 drop table if exists kamprapport;
 create table kamprapport
 (
-spilledag		varchar(20),
-tidspunkt		varchar(20),
-hjemmehold		varchar(20),
-udehold			varchar(20),
-sted			varchar(20),
-hjemmeMål		int,
-udeMål			int,
-antalTilskuere	int,
-rundenummer		int
+spilledag			varchar(20),
+tidspunkt			varchar(20),
+hjemmehold			varchar(20),
+udehold				varchar(20),
+sted				varchar(20),
+hjemmeMål			int,
+udeMål				int,
+selvmålHjemme		int,
+selvmålUde			int,
+advarslerHjemme		int,
+advarslerUde		int,
+runde				int,
+udvisningerUde		int,
+udvisningerHjemme	int,
+antalTilskuere		int
 )
 Engine = InnoDB;
 
