@@ -24,13 +24,13 @@ public class TurneringsGUI extends javax.swing.JFrame {
     public TurneringsGUI() {
         DBHandler dbh = DBHandler.getInstance();
         KampHandler kh = new KampHandler();
-
+        
         int count = 0;
         while (!kh.getKamprapporter().isEmpty()) {
             jKamprapporter.setSelectedItem(kh.getKamprapporter().get(count).toString());
             count++;
         }
-
+        
         initComponents();
     }
 
@@ -126,19 +126,25 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jStillingTilbage = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPlaceringsListe = new javax.swing.JList();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jResultatListe = new javax.swing.JList();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jMålListe = new javax.swing.JList();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jPointListe = new javax.swing.JList();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jHoldliste = new javax.swing.JTextArea();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jSejrliste = new javax.swing.JTextArea();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jUafgjortliste = new javax.swing.JTextArea();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTabtliste = new javax.swing.JTextArea();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jMålliste = new javax.swing.JTextArea();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jPointliste = new javax.swing.JTextArea();
         jPanel6 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jHoldPlaceringSe = new javax.swing.JTextField();
@@ -777,22 +783,6 @@ public class TurneringsGUI extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jPlaceringsListe);
 
-        jScrollPane3.setViewportView(jResultatListe);
-
-        jMålListe.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane4.setViewportView(jMålListe);
-
-        jPointListe.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane5.setViewportView(jPointListe);
-
         jLabel14.setText("Nr");
 
         jLabel15.setText("Hold");
@@ -801,11 +791,37 @@ public class TurneringsGUI extends javax.swing.JFrame {
 
         jLabel17.setText("Mål");
 
-        jLabel18.setText("Resultat");
+        jLabel18.setText("S");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane6.setViewportView(jTextArea1);
+        jHoldliste.setColumns(20);
+        jHoldliste.setRows(5);
+        jScrollPane6.setViewportView(jHoldliste);
+
+        jSejrliste.setColumns(20);
+        jSejrliste.setRows(5);
+        jSejrliste.setText("0\n0\n0\n0\n");
+        jScrollPane1.setViewportView(jSejrliste);
+
+        jUafgjortliste.setColumns(20);
+        jUafgjortliste.setRows(5);
+        jUafgjortliste.setText("0\n0\n0\n0\n0\n");
+        jScrollPane7.setViewportView(jUafgjortliste);
+
+        jTabtliste.setColumns(20);
+        jTabtliste.setRows(5);
+        jScrollPane8.setViewportView(jTabtliste);
+
+        jLabel10.setText("U");
+
+        jLabel11.setText("T");
+
+        jMålliste.setColumns(20);
+        jMålliste.setRows(5);
+        jScrollPane9.setViewportView(jMålliste);
+
+        jPointliste.setColumns(20);
+        jPointliste.setRows(5);
+        jScrollPane10.setViewportView(jPointliste);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -823,25 +839,36 @@ public class TurneringsGUI extends javax.swing.JFrame {
                             .addComponent(jLabel15)
                             .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel19))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel18)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18))
+                .addGap(14, 14, 14)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(22, 22, 22))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jStillingTilbage))
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                            .addComponent(jLabel17)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel16))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(30, 30, 30)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(19, 19, 19))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16)
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -851,21 +878,27 @@ public class TurneringsGUI extends javax.swing.JFrame {
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel16))
                             .addComponent(jLabel15)
-                            .addComponent(jLabel14)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel17)))
-                .addGap(11, 11, 11)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3)
-                    .addComponent(jScrollPane5)
-                    .addComponent(jScrollPane4)
-                    .addComponent(jScrollPane6))
+                            .addComponent(jLabel14))
+                        .addGap(11, 11, 11)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
+                            .addComponent(jScrollPane6)
+                            .addComponent(jScrollPane10)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel16))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane9)
+                            .addComponent(jScrollPane8)
+                            .addComponent(jScrollPane1)
+                            .addComponent(jScrollPane7))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jStillingTilbage)
                 .addContainerGap())
@@ -1416,7 +1449,14 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private void jTurneringsstillingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTurneringsstillingActionPerformed
         Turneringsstilling ts = new Turneringsstilling();
         ts.turneringsstillingPoint();
-        jHoldListe.
+        for (int i = 0; i < ts.turneringsstillingPoint().length; i++) {
+            jHoldliste.append(ts.turneringsstillingPoint()[1].getKlubNavn() + "\n");
+            jSejrliste.append(ts.turneringsstillingPoint()[1].getSejre() + "\n");
+            jUafgjortliste.append(ts.turneringsstillingPoint()[1].getUafgjorte() + "\n");
+            jTabtliste.append(ts.turneringsstillingPoint()[1].getTabte() + "\n");
+            jMålliste.append(ts.turneringsstillingPoint()[1].getAntalMål() + "\n");
+            jPointliste.append(ts.turneringsstillingPoint()[1].getPointSum() + "\n");
+        }        
         jTabbedPane1.setSelectedIndex(4);
     }//GEN-LAST:event_jTurneringsstillingActionPerformed
 
@@ -1436,14 +1476,14 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jSøgeResultater.removeAllItems();
         SpillerHandler sh = new SpillerHandler();
         HoldHandler hh = new HoldHandler();
-
+        
         while (!sh.getSpillere(jSøgefelt.getText()).isEmpty()) {
             jSøgeResultater.addItem(sh);
         }
         
-        if (hh.getKlubInfo(jSøgefelt.getText())!= null) {
+        if (hh.getKlubInfo(jSøgefelt.getText()) != null) {
             jSøgeResultater.addItem(sh);            
-        } 
+        }        
         if (jSøgeResultater.getItemCount() == 0) {
             System.out.println("Ugyldig søgning");
         }
@@ -1458,17 +1498,17 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jStedSe.setText(k1.getSted());
         jDatoSe.setText(k1.getSpilledag());
         jTidSe.setText(k1.getTidspunkt());
-        jRundenrSe.setText(""+k1.getRunde());
+        jRundenrSe.setText("" + k1.getRunde());
         jDommerSe.setText(k1.getDommer().getNavn());
         int count = 0;
         while (count < 11) {
-        jStartopstillingHjemmeSe.addItem(sh.getSpillere(jHjemmeholdSe.getText()).get(count));
-        count++;
+            jStartopstillingHjemmeSe.addItem(sh.getSpillere(jHjemmeholdSe.getText()).get(count));
+            count++;
         }
         count = 0;
         while (count < 11) {
-        jStartOpstillingUdeSe.addItem(sh.getSpillere(jUdeSe.getText()).get(count));
-        count++;
+            jStartOpstillingUdeSe.addItem(sh.getSpillere(jUdeSe.getText()).get(count));
+            count++;
         }
         
         jTabbedPane1.setSelectedIndex(2);
@@ -1509,7 +1549,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                 jMålUdeSe.addItem(jBegivenhedSpillerRediger + jBegivenhedTidRediger.getText());
             }
         }
-
+        
         if (jBegivenhedRediger.getSelectedItem() == "Selvmål") {
             if (jBegivenhedHoldRediger.getSelectedItem() == "Hjemmehold") {
                 jSelvmålHjemmeSe.addItem(jBegivenhedSpillerRediger + jBegivenhedTidRediger.getText());
@@ -1517,7 +1557,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                 jSelvmålUdeSe.addItem(jBegivenhedSpillerRediger + jBegivenhedTidRediger.getText());
             }
         }
-
+        
         if (jBegivenhedRediger.getSelectedItem() == "Advarsel") {
             if (jBegivenhedHoldRediger.getSelectedItem() == "Hjemmehold") {
                 jAdvarselHjemmeSe.addItem(jBegivenhedSpillerRediger + jBegivenhedTidRediger.getText());
@@ -1525,7 +1565,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                 jAdvarselUdeSe.addItem(jBegivenhedSpillerRediger + jBegivenhedTidRediger.getText());
             }
         }
-
+        
         if (jBegivenhedRediger.getSelectedItem() == "Udvisning") {
             if (jBegivenhedHoldRediger.getSelectedItem() == "Hjemmehold") {
                 jUdvisningHjemmeSe.addItem(jBegivenhedSpillerRediger + jBegivenhedTidRediger.getText());
@@ -1598,21 +1638,33 @@ public class TurneringsGUI extends javax.swing.JFrame {
         for (int i = 0; i < sp.size(); i++) {
             jHoldSpillerSe.addItem(sp.get(i));
         }
-
+        
 
     }//GEN-LAST:event_jHoldSpillerSeActionPerformed
 
     private void jSøgeResultaterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSøgeResultaterActionPerformed
+        HoldHandler hh = new HoldHandler();
+        SpillerHandler sh = new SpillerHandler();
+        for (int i = 0; i < hh.getKlubber().size(); i++) {
+            if (jSøgeResultater.getSelectedItem() == hh.getKlubber().get(i)) {
+                jTabbedPane1.setSelectedIndex(5);
+            }
+        }
         
+        if () {
+            jTabbedPane1.setSelectedIndex(7);
+        } else {
+            System.out.println("Ugyldig søgning");
+        }        
     }//GEN-LAST:event_jSøgeResultaterActionPerformed
 
     private void jHjemmeScoringActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHjemmeScoringActionPerformed
-        jHjemmeScoring.setText(""+jMålHjemmeSe.getItemCount()+jSelvmålUdeSe.getItemCount());
+        jHjemmeScoring.setText("" + jMålHjemmeSe.getItemCount() + jSelvmålUdeSe.getItemCount());
         jHjemmeScoring.setEditable(false);
     }//GEN-LAST:event_jHjemmeScoringActionPerformed
 
     private void jUdeScoringActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUdeScoringActionPerformed
-        jUdeScoring.setText(""+jMålUdeSe.getItemCount()+jSelvmålHjemmeSe.getItemCount());
+        jUdeScoring.setText("" + jMålUdeSe.getItemCount() + jSelvmålHjemmeSe.getItemCount());
         jUdeScoring.setEditable(false);
     }//GEN-LAST:event_jUdeScoringActionPerformed
 
@@ -1730,10 +1782,13 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private javax.swing.JTextField jHoldTrænerSe;
     private javax.swing.JTextField jHoldUafgjortRediger;
     private javax.swing.JTextField jHoldUafgjortSe;
+    private javax.swing.JTextArea jHoldliste;
     private javax.swing.JButton jKampRedigerSe;
     private javax.swing.JButton jKampTilbageSe;
     private javax.swing.JComboBox jKamprapporter;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -1800,8 +1855,8 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JComboBox jMålHjemmeSe;
-    private javax.swing.JList jMålListe;
     private javax.swing.JComboBox jMålUdeSe;
+    private javax.swing.JTextArea jMålliste;
     private javax.swing.JButton jOpretKamp;
     private javax.swing.JButton jOpretStartRapport;
     private javax.swing.JPanel jPanel1;
@@ -1814,15 +1869,17 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JList jPlaceringsListe;
-    private javax.swing.JList jPointListe;
-    private javax.swing.JList jResultatListe;
+    private javax.swing.JTextArea jPointliste;
     private javax.swing.JTextField jRundenrOpret;
     private javax.swing.JTextField jRundenrSe;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JTextArea jSejrliste;
     private javax.swing.JComboBox jSelvmålHjemmeSe;
     private javax.swing.JComboBox jSelvmålUdeSe;
     private javax.swing.JTextField jSpillerAdvarselRediger;
@@ -1864,10 +1921,11 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private javax.swing.JTextField jSøgefelt;
     private javax.swing.JButton jSøgeknap;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTabtliste;
     private javax.swing.JTextField jTidOpret;
     private javax.swing.JTextField jTidSe;
     private javax.swing.JComboBox jTurneringsstilling;
+    private javax.swing.JTextArea jUafgjortliste;
     private javax.swing.JTextField jUdeOpret;
     private javax.swing.JTextField jUdeScoring;
     private javax.swing.JTextField jUdeSe;

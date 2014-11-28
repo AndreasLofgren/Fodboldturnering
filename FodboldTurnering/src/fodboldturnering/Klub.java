@@ -141,6 +141,4 @@ public class Klub {
     public void setTrænerNavn(String trænerNavn) {
         this.trænerNavn = trænerNavn;
     }
-    
-    
 }
