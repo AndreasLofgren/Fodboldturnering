@@ -61,5 +61,10 @@ public class KampHandler {
         }
 
         return resultat;
+    }    
+    
+    public void opretKamprapport(String hjemmehold, String udehold, String dato, String tid, String sted, int rundenummer, String dommer) {
+        String sql = "insert into Kamprapport "
+                + "values ('" + hjemmehold + "', '" + udehold + "', '" + dato + "', '" + tid + "', '" + sted + "', " + rundenummer + ", '" + dommer + "');";
     }
 }

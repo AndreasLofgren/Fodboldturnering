@@ -6,6 +6,7 @@
 package fodboldturnering;
 
 import handler.DBHandler;
+import handler.DommerHandler;
 import handler.HoldHandler;
 import handler.KampHandler;
 import handler.SpillerHandler;
@@ -82,10 +83,10 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jOpretStartRapport = new javax.swing.JButton();
         jAnnullerStartRapport = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jTeRundenrOpret = new javax.swing.JTextField();
+        jRundenrOpret = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jDommerOpret = new javax.swing.JTextField();
+        jDommerKampOpret = new javax.swing.JComboBox();
         jPanel3 = new javax.swing.JPanel();
         jStedSe = new javax.swing.JTextField();
         jDatoSe = new javax.swing.JTextField();
@@ -95,7 +96,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jKampRedigerSe = new javax.swing.JButton();
         jKampTilbageSe = new javax.swing.JButton();
         jLabel50 = new javax.swing.JLabel();
-        jStartopstillingSe = new javax.swing.JComboBox();
+        jStartopstillingHjemmeSe = new javax.swing.JComboBox();
         jLabel8 = new javax.swing.JLabel();
         jDommerSe = new javax.swing.JTextField();
         jRundenrSe = new javax.swing.JTextField();
@@ -104,7 +105,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jAdvarselHjemmeSe = new javax.swing.JComboBox();
         jUdvisningHjemmeSe = new javax.swing.JComboBox();
         jAntalTilskuer = new javax.swing.JTextField();
-        jComboBox2 = new javax.swing.JComboBox();
+        jStartOpstillingUdeSe = new javax.swing.JComboBox();
         jMålUdeSe = new javax.swing.JComboBox();
         jSelvmålUdeSe = new javax.swing.JComboBox();
         jAdvarselUdeSe = new javax.swing.JComboBox();
@@ -122,8 +123,6 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jBegivenhedRediger = new javax.swing.JComboBox();
         jPanel5 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jHoldListe = new javax.swing.JList();
         jStillingTilbage = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPlaceringsListe = new javax.swing.JList();
@@ -138,6 +137,8 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jPanel6 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jHoldPlaceringSe = new javax.swing.JTextField();
@@ -278,6 +279,12 @@ public class TurneringsGUI extends javax.swing.JFrame {
 
         jLabel49.setText("Turneringsstilling");
 
+        jSøgeResultater.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSøgeResultaterActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -357,6 +364,12 @@ public class TurneringsGUI extends javax.swing.JFrame {
 
         jLabel9.setText("Dommer");
 
+        jDommerKampOpret.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jDommerKampOpretActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -376,14 +389,17 @@ public class TurneringsGUI extends javax.swing.JFrame {
                             .addComponent(jLabel9))
                         .addGap(67, 67, 67)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jStedOpret)
-                                .addComponent(jDatoOpret)
-                                .addComponent(jTidOpret)
-                                .addComponent(jTeRundenrOpret, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jDommerOpret, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
-                                .addComponent(jUdeOpret))
-                            .addComponent(jHjemmeOpret, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)))
+                            .addComponent(jHjemmeOpret, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jStedOpret, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                                        .addComponent(jDatoOpret)
+                                        .addComponent(jTidOpret)
+                                        .addComponent(jRundenrOpret, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jUdeOpret))
+                                    .addComponent(jDommerKampOpret, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jOpretStartRapport)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -417,12 +433,12 @@ public class TurneringsGUI extends javax.swing.JFrame {
                     .addComponent(jTidOpret, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTeRundenrOpret, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRundenrOpret, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addGap(6, 6, 6)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jDommerOpret, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jDommerKampOpret, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jOpretStartRapport)
@@ -433,10 +449,25 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jTabbedPane1.addTab("Opret", jPanel2);
 
         jStedSe.setText("Sted");
+        jStedSe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jStedSeActionPerformed(evt);
+            }
+        });
 
         jDatoSe.setText("Dato");
+        jDatoSe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jDatoSeActionPerformed(evt);
+            }
+        });
 
         jTidSe.setText("Tid");
+        jTidSe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTidSeActionPerformed(evt);
+            }
+        });
 
         jUdeSe.setText("Udehold");
         jUdeSe.addActionListener(new java.awt.event.ActionListener() {
@@ -468,18 +499,28 @@ public class TurneringsGUI extends javax.swing.JFrame {
 
         jLabel50.setText("vs");
 
-        jStartopstillingSe.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Startopstilling" }));
-        jStartopstillingSe.addActionListener(new java.awt.event.ActionListener() {
+        jStartopstillingHjemmeSe.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Startopstilling" }));
+        jStartopstillingHjemmeSe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jStartopstillingSeActionPerformed(evt);
+                jStartopstillingHjemmeSeActionPerformed(evt);
             }
         });
 
         jLabel8.setText("Dommer");
 
         jDommerSe.setText("Dommer");
+        jDommerSe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jDommerSeActionPerformed(evt);
+            }
+        });
 
         jRundenrSe.setText("runde");
+        jRundenrSe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRundenrSeActionPerformed(evt);
+            }
+        });
 
         jMålHjemmeSe.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mål" }));
 
@@ -496,7 +537,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Startopstilling" }));
+        jStartOpstillingUdeSe.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Startopstilling" }));
 
         jMålUdeSe.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mål" }));
 
@@ -514,6 +555,23 @@ public class TurneringsGUI extends javax.swing.JFrame {
         });
 
         jCheckBox1.setText("Afsluttet kamp");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+
+        jHjemmeScoring.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jHjemmeScoringActionPerformed(evt);
+            }
+        });
+
+        jUdeScoring.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jUdeScoringActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -565,7 +623,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                                         .addComponent(jLabel8)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jDommerSe))
-                                    .addComponent(jStartopstillingSe, javax.swing.GroupLayout.Alignment.LEADING, 0, 128, Short.MAX_VALUE)
+                                    .addComponent(jStartopstillingHjemmeSe, javax.swing.GroupLayout.Alignment.LEADING, 0, 128, Short.MAX_VALUE)
                                     .addComponent(jSelvmålHjemmeSe, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -578,7 +636,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                         .addGap(167, 167, 167)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jStartOpstillingUdeSe, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addContainerGap())
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jUdeSe)
@@ -604,8 +662,8 @@ public class TurneringsGUI extends javax.swing.JFrame {
                     .addComponent(jUdeScoring, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jStartopstillingSe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jStartopstillingHjemmeSe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jStartOpstillingUdeSe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
@@ -705,8 +763,6 @@ public class TurneringsGUI extends javax.swing.JFrame {
 
         jLabel19.setText("Turneringsstilling");
 
-        jScrollPane1.setViewportView(jHoldListe);
-
         jStillingTilbage.setText("Tilbage");
         jStillingTilbage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -747,6 +803,10 @@ public class TurneringsGUI extends javax.swing.JFrame {
 
         jLabel18.setText("Resultat");
 
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane6.setViewportView(jTextArea1);
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -761,9 +821,9 @@ public class TurneringsGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel15)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel19))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel18)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -802,10 +862,10 @@ public class TurneringsGUI extends javax.swing.JFrame {
                 .addGap(11, 11, 11)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1)
                     .addComponent(jScrollPane3)
                     .addComponent(jScrollPane5)
-                    .addComponent(jScrollPane4))
+                    .addComponent(jScrollPane4)
+                    .addComponent(jScrollPane6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jStillingTilbage)
                 .addContainerGap())
@@ -1354,6 +1414,9 @@ public class TurneringsGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTurneringsstillingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTurneringsstillingActionPerformed
+        Turneringsstilling ts = new Turneringsstilling();
+        ts.turneringsstillingPoint();
+        jHoldListe.
         jTabbedPane1.setSelectedIndex(4);
     }//GEN-LAST:event_jTurneringsstillingActionPerformed
 
@@ -1387,10 +1450,33 @@ public class TurneringsGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jSøgeknapActionPerformed
 
     private void jKamprapporterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jKamprapporterActionPerformed
+        Kamprapport k1;
+        SpillerHandler sh = new SpillerHandler();
+        
+        jHjemmeholdSe.setText(k1.getHjemmehold().getKlubNavn());
+        jUdeSe.setText(k1.getUdehold().getKlubNavn());
+        jStedSe.setText(k1.getSted());
+        jDatoSe.setText(k1.getSpilledag());
+        jTidSe.setText(k1.getTidspunkt());
+        jRundenrSe.setText(""+k1.getRunde());
+        jDommerSe.setText(k1.getDommer().getNavn());
+        int count = 0;
+        while (count < 11) {
+        jStartopstillingHjemmeSe.addItem(sh.getSpillere(jHjemmeholdSe.getText()).get(count));
+        count++;
+        }
+        count = 0;
+        while (count < 11) {
+        jStartOpstillingUdeSe.addItem(sh.getSpillere(jUdeSe.getText()).get(count));
+        count++;
+        }
+        
         jTabbedPane1.setSelectedIndex(2);
     }//GEN-LAST:event_jKamprapporterActionPerformed
 
     private void jOpretStartRapportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jOpretStartRapportActionPerformed
+        KampHandler kh = new KampHandler();
+        kh.opretKamprapport(jHjemmeOpret.getText(), jUdeOpret.getText(), jDatoOpret.getText(), jTidOpret.getText(), jStedOpret.getText(), Integer.parseInt(jRundenrOpret.getText()), jDommerOpret.getText());
         jTabbedPane1.setSelectedIndex(2);
     }//GEN-LAST:event_jOpretStartRapportActionPerformed
 
@@ -1490,18 +1576,20 @@ public class TurneringsGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jAntalTilskuerActionPerformed
 
-    private void jStartopstillingSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jStartopstillingSeActionPerformed
+    private void jStartopstillingHjemmeSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jStartopstillingHjemmeSeActionPerformed
 
-    }//GEN-LAST:event_jStartopstillingSeActionPerformed
+    }//GEN-LAST:event_jStartopstillingHjemmeSeActionPerformed
 
     private void jHjemmeholdSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHjemmeholdSeActionPerformed
         SpillerHandler sh = new SpillerHandler();
         sh.getSpillere(jHjemmeholdSe.getText());
+        jHjemmeholdSe.setEditable(false);
     }//GEN-LAST:event_jHjemmeholdSeActionPerformed
 
     private void jUdeSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUdeSeActionPerformed
         SpillerHandler sh = new SpillerHandler();
         sh.getSpillere(jUdeSe.getText());
+        jUdeSe.setEditable(false);
     }//GEN-LAST:event_jUdeSeActionPerformed
 
     private void jHoldSpillerSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHoldSpillerSeActionPerformed
@@ -1513,6 +1601,57 @@ public class TurneringsGUI extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jHoldSpillerSeActionPerformed
+
+    private void jSøgeResultaterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSøgeResultaterActionPerformed
+        
+    }//GEN-LAST:event_jSøgeResultaterActionPerformed
+
+    private void jHjemmeScoringActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHjemmeScoringActionPerformed
+        jHjemmeScoring.setText(""+jMålHjemmeSe.getItemCount()+jSelvmålUdeSe.getItemCount());
+        jHjemmeScoring.setEditable(false);
+    }//GEN-LAST:event_jHjemmeScoringActionPerformed
+
+    private void jUdeScoringActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUdeScoringActionPerformed
+        jUdeScoring.setText(""+jMålUdeSe.getItemCount()+jSelvmålHjemmeSe.getItemCount());
+        jUdeScoring.setEditable(false);
+    }//GEN-LAST:event_jUdeScoringActionPerformed
+
+    private void jDommerKampOpretActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDommerKampOpretActionPerformed
+        DommerHandler dh = new DommerHandler();
+        
+        int count = 0;
+        while (!dh.getDommere().isEmpty()) {
+            jDommerKampOpret.addItem(dh.getDommere().get(count));
+            count++;
+        }
+    }//GEN-LAST:event_jDommerKampOpretActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        if (jCheckBox1.isContentAreaFilled()) {
+            jAntalTilskuer.setEditable(false);
+            jBegivenhedSe.setEnabled(false);
+        }
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jDommerSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDommerSeActionPerformed
+        jDommerSe.setEditable(false);
+    }//GEN-LAST:event_jDommerSeActionPerformed
+
+    private void jStedSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jStedSeActionPerformed
+        jStedSe.setEditable(false);
+    }//GEN-LAST:event_jStedSeActionPerformed
+
+    private void jDatoSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDatoSeActionPerformed
+        jDatoSe.setEditable(false);
+    }//GEN-LAST:event_jDatoSeActionPerformed
+
+    private void jTidSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTidSeActionPerformed
+        jTidSe.setEditable(false);
+    }//GEN-LAST:event_jTidSeActionPerformed
+
+    private void jRundenrSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRundenrSeActionPerformed
+        jRundenrSe.setEditable(false);
+    }//GEN-LAST:event_jRundenrSeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1561,10 +1700,9 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private javax.swing.JComboBox jBegivenhedSpillerRediger;
     private javax.swing.JTextField jBegivenhedTidRediger;
     private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JTextField jDatoOpret;
     private javax.swing.JTextField jDatoSe;
-    private javax.swing.JTextField jDommerOpret;
+    private javax.swing.JComboBox jDommerKampOpret;
     private javax.swing.JTextField jDommerSe;
     private javax.swing.JButton jGemBegivenhed;
     private javax.swing.JTextField jHjemmeOpret;
@@ -1575,7 +1713,6 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private javax.swing.JButton jHoldGem;
     private javax.swing.JTextField jHoldKampeRediger;
     private javax.swing.JTextField jHoldKampeSe;
-    private javax.swing.JList jHoldListe;
     private javax.swing.JTextField jHoldMålRediger;
     private javax.swing.JTextField jHoldMålSe;
     private javax.swing.JTextField jHoldNavnSe;
@@ -1679,12 +1816,13 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private javax.swing.JList jPlaceringsListe;
     private javax.swing.JList jPointListe;
     private javax.swing.JList jResultatListe;
+    private javax.swing.JTextField jRundenrOpret;
     private javax.swing.JTextField jRundenrSe;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JComboBox jSelvmålHjemmeSe;
     private javax.swing.JComboBox jSelvmålUdeSe;
     private javax.swing.JTextField jSpillerAdvarselRediger;
@@ -1717,7 +1855,8 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private javax.swing.JTextField jSpillerUdvisningRediger;
     private javax.swing.JTextField jSpillerUdvisningSe;
     private javax.swing.JTextField jSpillerUdvisningSe1;
-    private javax.swing.JComboBox jStartopstillingSe;
+    private javax.swing.JComboBox jStartOpstillingUdeSe;
+    private javax.swing.JComboBox jStartopstillingHjemmeSe;
     private javax.swing.JTextField jStedOpret;
     private javax.swing.JTextField jStedSe;
     private javax.swing.JButton jStillingTilbage;
@@ -1725,7 +1864,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private javax.swing.JTextField jSøgefelt;
     private javax.swing.JButton jSøgeknap;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTeRundenrOpret;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTidOpret;
     private javax.swing.JTextField jTidSe;
     private javax.swing.JComboBox jTurneringsstilling;

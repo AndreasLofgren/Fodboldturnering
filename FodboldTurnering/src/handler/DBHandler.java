@@ -5,6 +5,8 @@
  */
 package handler;
 
+import fodboldturnering.Dommer;
+import fodboldturnering.Klub;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.sql.Connection;

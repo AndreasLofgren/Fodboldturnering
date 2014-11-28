@@ -234,6 +234,9 @@
                   <StringArray count="0"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jS&#xf8;geResultaterActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -265,15 +268,20 @@
                               </Group>
                               <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jStedOpret" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jDatoOpret" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTidOpret" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTeRundenrOpret" min="-2" pref="47" max="-2" attributes="0"/>
-                                      <Component id="jDommerOpret" pref="198" max="32767" attributes="0"/>
-                                      <Component id="jUdeOpret" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
                                   <Component id="jHjemmeOpret" pref="198" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jStedOpret" alignment="0" pref="198" max="32767" attributes="0"/>
+                                              <Component id="jDatoOpret" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jTidOpret" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jRundenrOpret" min="-2" pref="47" max="-2" attributes="0"/>
+                                              <Component id="jUdeOpret" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Component id="jDommerKampOpret" min="-2" pref="147" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -318,13 +326,13 @@
                       </Group>
                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTeRundenrOpret" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jRundenrOpret" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jDommerOpret" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jDommerKampOpret" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="142" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -393,7 +401,7 @@
                 <Property name="text" type="java.lang.String" value="Kamprapport"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTeRundenrOpret">
+            <Component class="javax.swing.JTextField" name="jRundenrOpret">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
@@ -405,7 +413,15 @@
                 <Property name="text" type="java.lang.String" value="Dommer"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jDommerOpret">
+            <Component class="javax.swing.JComboBox" name="jDommerKampOpret">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jDommerKampOpretActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -477,7 +493,7 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jDommerSe" max="32767" attributes="0"/>
                                           </Group>
-                                          <Component id="jStartopstillingSe" alignment="0" pref="128" max="32767" attributes="0"/>
+                                          <Component id="jStartopstillingHjemmeSe" alignment="0" pref="128" max="32767" attributes="0"/>
                                           <Component id="jSelvmålHjemmeSe" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
@@ -495,7 +511,7 @@
                               <EmptySpace min="167" pref="167" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="jComboBox2" max="32767" attributes="0"/>
+                                      <Component id="jStartOpstillingUdeSe" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
@@ -531,8 +547,8 @@
                       </Group>
                       <EmptySpace pref="34" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jStartopstillingSe" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jStartopstillingHjemmeSe" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jStartOpstillingUdeSe" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -580,16 +596,25 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sted"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jStedSeActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jDatoSe">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Dato"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jDatoSeActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jTidSe">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Tid"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTidSeActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jUdeSe">
               <Properties>
@@ -628,7 +653,7 @@
                 <Property name="text" type="java.lang.String" value="vs"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jStartopstillingSe">
+            <Component class="javax.swing.JComboBox" name="jStartopstillingHjemmeSe">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="1">
@@ -637,7 +662,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jStartopstillingSeActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jStartopstillingHjemmeSeActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel8">
@@ -649,11 +674,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Dommer"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jDommerSeActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jRundenrSe">
               <Properties>
                 <Property name="text" type="java.lang.String" value="runde"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRundenrSeActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JComboBox" name="jM&#xe5;lHjemmeSe">
               <Properties>
@@ -699,7 +730,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jAntalTilskuerActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox2">
+            <Component class="javax.swing.JComboBox" name="jStartOpstillingUdeSe">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="1">
@@ -756,10 +787,19 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Afsluttet kamp"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox1ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jHjemmeScoring">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jHjemmeScoringActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jUdeScoring">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jUdeScoringActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -893,12 +933,12 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane1" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane6" min="-2" pref="121" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="58" max="32767" attributes="0"/>
+                      <EmptySpace pref="17" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane3" min="-2" pref="70" max="-2" attributes="0"/>
@@ -950,10 +990,10 @@
                       <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jScrollPane2" alignment="0" pref="304" max="32767" attributes="0"/>
-                          <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                           <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
                           <Component id="jScrollPane5" alignment="0" max="32767" attributes="0"/>
                           <Component id="jScrollPane4" max="32767" attributes="0"/>
+                          <Component id="jScrollPane6" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jStillingTilbage" min="-2" max="-2" attributes="0"/>
@@ -968,22 +1008,6 @@
                 <Property name="text" type="java.lang.String" value="Turneringsstilling"/>
               </Properties>
             </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JList" name="jHoldListe">
-                  <Properties>
-                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="0"/>
-                    </Property>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
             <Component class="javax.swing.JButton" name="jStillingTilbage">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Tilbage"/>
@@ -1132,6 +1156,21 @@
                 <Property name="text" type="java.lang.String" value="Resultat"/>
               </Properties>
             </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane6">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextArea" name="jTextArea1">
+                  <Properties>
+                    <Property name="columns" type="int" value="20"/>
+                    <Property name="rows" type="int" value="5"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel6">

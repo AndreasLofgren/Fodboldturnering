@@ -9,6 +9,7 @@ import fodboldturnering.Dommer;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  *
@@ -37,5 +38,25 @@ public class DommerHandler {
             System.out.println("SQLException" + ex.getMessage());
         }
         return d;
+    }
+
+    public ArrayList<Dommer> getDommere() {
+        ArrayList<Dommer> resultat = new ArrayList<>();
+        try {
+            String sql = "Select * From Dommer;";
+            Statement stmt = dbhandler.getStmt();
+            ResultSet rs = stmt.executeQuery(sql);
+
+            while (rs.next()) {
+                String dnavn = rs.getString("navn");
+
+                Dommer d = new Dommer(dnavn);
+                resultat.add(d);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("SQLException" + ex.getMessage());
+        }
+        return resultat;
     }
 }
