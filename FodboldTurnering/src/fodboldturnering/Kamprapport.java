@@ -18,14 +18,6 @@ public class Kamprapport {
     private Klub udehold;
     private String[] startOpstillingHjemme;
     private String[] startOpstillingUde;
-    private int målHjemme;
-    private int målUde;
-    private int selvmålHjemme;
-    private int selvmålUde;
-    private int advarselHjemme;
-    private int advarselUde;
-    private int udvisningHjemme;
-    private int udvisningUde;
     private int antalTilskuer;
     private int runde;
     private Dommer dommer;
@@ -34,8 +26,8 @@ public class Kamprapport {
         this.hjemmehold = hjemmehold;
         this.udehold = udehold;
     }  
-    
-    public Kamprapport(String spilledag, String tidspunkt, String sted, Klub hjemmehold, Klub udehold, String[] startOpstillingHjemme, String[] startOpstillingUde, int målHjemme, int målUde, int selvmålHjemme, int selvmålUde, int advarselHjemme, int advarselUde, int udvisningHjemme, int udvisningUde, int antalTilskuer, int runde, Dommer dommer) {
+
+    public Kamprapport(String spilledag, String tidspunkt, String sted, Klub hjemmehold, Klub udehold, String[] startOpstillingHjemme, String[] startOpstillingUde, int antalTilskuer, int runde, Dommer dommer) {
         this.spilledag = spilledag;
         this.tidspunkt = tidspunkt;
         this.sted = sted;
@@ -43,19 +35,11 @@ public class Kamprapport {
         this.udehold = udehold;
         this.startOpstillingHjemme = startOpstillingHjemme;
         this.startOpstillingUde = startOpstillingUde;
-        this.målHjemme = målHjemme;
-        this.målUde = målUde;
-        this.selvmålHjemme = selvmålHjemme;
-        this.selvmålUde = selvmålUde;
-        this.advarselHjemme = advarselHjemme;
-        this.advarselUde = advarselUde;
-        this.udvisningHjemme = udvisningHjemme;
-        this.udvisningUde = udvisningUde;
         this.antalTilskuer = antalTilskuer;
         this.runde = runde;
         this.dommer = dommer;
     }
-
+    
     public String getSpilledag() {
         return spilledag;
     }
@@ -112,70 +96,6 @@ public class Kamprapport {
         this.startOpstillingUde = startOpstillingUde;
     }
 
-    public int getMålHjemme() {
-        return målHjemme;
-    }
-
-    public void setMålHjemme(int målHjemme) {
-        this.målHjemme = målHjemme;
-    }
-
-    public int getMålUde() {
-        return målUde;
-    }
-
-    public void setMålUde(int målUde) {
-        this.målUde = målUde;
-    }
-
-    public int getSelvmålHjemme() {
-        return selvmålHjemme;
-    }
-
-    public void setSelvmålHjemme(int selvmålHjemme) {
-        this.selvmålHjemme = selvmålHjemme;
-    }
-
-    public int getSelvmålUde() {
-        return selvmålUde;
-    }
-
-    public void setSelvmålUde(int selvmålUde) {
-        this.selvmålUde = selvmålUde;
-    }
-
-    public int getAdvarselHjemme() {
-        return advarselHjemme;
-    }
-
-    public void setAdvarselHjemme(int advarselHjemme) {
-        this.advarselHjemme = advarselHjemme;
-    }
-
-    public int getAdvarselUde() {
-        return advarselUde;
-    }
-
-    public void setAdvarselUde(int advarselUde) {
-        this.advarselUde = advarselUde;
-    }
-
-    public int getUdvisningHjemme() {
-        return udvisningHjemme;
-    }
-
-    public void setUdvisningHjemme(int udvisningHjemme) {
-        this.udvisningHjemme = udvisningHjemme;
-    }
-
-    public int getUdvisningUde() {
-        return udvisningUde;
-    }
-
-    public void setUdvisningUde(int udvisningUde) {
-        this.udvisningUde = udvisningUde;
-    }
-
     public int getAntalTilskuer() {
         return antalTilskuer;
     }
@@ -202,6 +122,6 @@ public class Kamprapport {
 
     @Override
     public String toString() {
-        return "Hjemmehold: " + hjemmehold.getKlubNavn() + "\n" + "Udehold: " + udehold.getKlubNavn() + "\n";
+        return hjemmehold.getKlubNavn() + " vs " + udehold.getKlubNavn() + "\n";
     }
 }

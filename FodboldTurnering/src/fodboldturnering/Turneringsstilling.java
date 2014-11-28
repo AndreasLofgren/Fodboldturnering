@@ -20,7 +20,7 @@ public class Turneringsstilling {
         nummer = new Division(nummer.getDivisionsnummer());
 
         for (int i = 0; i < 10; i++) {
-            holdliste[i] = new Klub(hold.getKlubNavn());
+            holdliste[i] = new Klub();
         }
     }
 
