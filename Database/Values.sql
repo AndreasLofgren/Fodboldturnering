@@ -47,6 +47,6 @@ values
 ('Hvidovre', null, 0, 0, 0, 0, 'Træner45'),
 ('Nykøbing FC', null, 0, 0, 0, 0, 'Træner46'),
 ('Rishøj', null, 0, 0, 0, 0, 'Træner47'),
-('Svebølle', null, 0, 0, 0, 0, 'Træner48'),
+('Svebølle', null, 0, 0, 0, 0, 'Træner48')
 
-);
+;

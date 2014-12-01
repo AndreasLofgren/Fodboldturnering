@@ -5,9 +5,8 @@
  */
 package handler;
 
+import fodboldturnering.Klub;
 import fodboldturnering.SpillerProfil;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -20,9 +19,12 @@ import java.util.ArrayList;
 public class SpillerHandler {
 
     private DBHandler dbhandler;
+    private HoldHandler holdhandler;
 
     public SpillerHandler() {
         dbhandler = DBHandler.getInstance();
+        holdhandler = new HoldHandler();
+        
     }
 
     public SpillerProfil getSpiller(String navn) {
@@ -44,8 +46,9 @@ public class SpillerHandler {
             int maksMål = rs.getInt("maksMål");
             int bedømmelse = rs.getInt("bedømmelse");
             int samletPoint = rs.getInt("samletPoint");
+            Klub klub = holdhandler.getKlubInfo(rs.getString("klubNavn"));
             
-            sp = new SpillerProfil(cpr, fnavn, enavn, alder, mål, kampe, advarsler, udvisninger, selvmål, maksMål, bedømmelse, samletPoint);
+            sp = new SpillerProfil(cpr, fnavn, enavn, alder, mål, kampe, advarsler, udvisninger, selvmål, maksMål, bedømmelse, samletPoint, klub);
             
         } catch (SQLException ex) {
             System.out.println("SQLException" + ex.getMessage());
@@ -53,10 +56,10 @@ public class SpillerHandler {
         return sp;
     }
 
-    public ArrayList<SpillerProfil> getSpillere(String klub) {
+    public ArrayList<SpillerProfil> getSpillere(String hold) {
         ArrayList<SpillerProfil> resultat = new ArrayList<>();
         try {
-            String sql = "Select * From SpillerProfil Where klubnavn = '" + klub + "';";
+            String sql = "Select * From SpillerProfil Where klubnavn = '" + hold + "';";
             Statement stmt = dbhandler.getStmt();
             ResultSet rs = stmt.executeQuery(sql);
 
@@ -73,8 +76,9 @@ public class SpillerHandler {
                 int maksMål = rs.getInt("maksMål");
                 int bedømmelse = rs.getInt("bedømmelse");
                 int samletPoint = rs.getInt("samletPoint");
+                Klub klub = holdhandler.getKlubInfo(rs.getString(hold));
 
-                SpillerProfil sp = new SpillerProfil(cpr, fnavn, enavn, alder, mål, kampe, advarsler, udvisninger, selvmål, maksMål, bedømmelse, samletPoint);
+                SpillerProfil sp = new SpillerProfil(cpr, fnavn, enavn, alder, mål, kampe, advarsler, udvisninger, selvmål, maksMål, bedømmelse, samletPoint, klub);
                 resultat.add(sp);
             }
         } catch (SQLException ex) {

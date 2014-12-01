@@ -107,8 +107,8 @@
         <Container class="javax.swing.JPanel" name="jPanel1">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Oversigt">
-                <Property name="tabTitle" type="java.lang.String" value="Oversigt"/>
+              <JTabbedPaneConstraints tabName="Spilleplan">
+                <Property name="tabTitle" type="java.lang.String" value="Spilleplan"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -120,11 +120,6 @@
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jTurneringsstilling" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jKamprapporter" max="32767" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jOpretKamp" min="-2" max="-2" attributes="0"/>
-                          </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
@@ -133,12 +128,20 @@
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
+                              <Component id="jKamprapporter" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jOpretKamp" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="jSøgeResultater" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jSøgefelt" pref="266" max="32767" attributes="0"/>
+                                  <Component id="jSøgefelt" pref="260" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jSøgeknap" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jButton5" max="32767" attributes="0"/>
+                                  <Component id="jSøgeknap" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -165,8 +168,11 @@
                           <Component id="jSøgeknap" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jSøgeResultater" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="173" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jSøgeResultater" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="170" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -209,6 +215,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="S&#xf8;g efter spiller eller klub"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jS&#xf8;gefeltActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jS&#xf8;geknap">
               <Properties>
@@ -235,13 +244,18 @@
                 </Property>
               </Properties>
             </Component>
+            <Component class="javax.swing.JButton" name="jButton5">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="V&#xe6;lg"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Opret">
-                <Property name="tabTitle" type="java.lang.String" value="Opret"/>
+              <JTabbedPaneConstraints tabName="Kamprapport">
+                <Property name="tabTitle" type="java.lang.String" value="Kamprapport"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -265,15 +279,18 @@
                               </Group>
                               <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jStedOpret" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jDatoOpret" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTidOpret" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTeRundenrOpret" min="-2" pref="47" max="-2" attributes="0"/>
-                                      <Component id="jDommerOpret" pref="198" max="32767" attributes="0"/>
-                                      <Component id="jUdeOpret" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
                                   <Component id="jHjemmeOpret" pref="198" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jStedOpret" alignment="0" pref="198" max="32767" attributes="0"/>
+                                          <Component id="jDatoOpret" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jTidOpret" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jRundenrOpret" min="-2" pref="47" max="-2" attributes="0"/>
+                                          <Component id="jUdeOpret" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jDommerOpret" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -318,7 +335,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTeRundenrOpret" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jRundenrOpret" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
@@ -393,7 +410,7 @@
                 <Property name="text" type="java.lang.String" value="Kamprapport"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTeRundenrOpret">
+            <Component class="javax.swing.JTextField" name="jRundenrOpret">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
@@ -405,7 +422,12 @@
                 <Property name="text" type="java.lang.String" value="Dommer"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jDommerOpret">
+            <Component class="javax.swing.JComboBox" name="jDommerOpret">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -477,7 +499,7 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jDommerSe" max="32767" attributes="0"/>
                                           </Group>
-                                          <Component id="jStartopstillingSe" alignment="0" pref="128" max="32767" attributes="0"/>
+                                          <Component id="jStartopstillingHjemmeSe" alignment="0" pref="128" max="32767" attributes="0"/>
                                           <Component id="jSelvmålHjemmeSe" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
@@ -495,7 +517,7 @@
                               <EmptySpace min="167" pref="167" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="jComboBox2" max="32767" attributes="0"/>
+                                      <Component id="jStartOpstillingUdeSe" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
@@ -531,8 +553,8 @@
                       </Group>
                       <EmptySpace pref="34" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jStartopstillingSe" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jStartopstillingHjemmeSe" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jStartOpstillingUdeSe" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -628,7 +650,7 @@
                 <Property name="text" type="java.lang.String" value="vs"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jStartopstillingSe">
+            <Component class="javax.swing.JComboBox" name="jStartopstillingHjemmeSe">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="1">
@@ -637,7 +659,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jStartopstillingSeActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jStartopstillingHjemmeSeActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel8">
@@ -699,7 +721,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jAntalTilskuerActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox2">
+            <Component class="javax.swing.JComboBox" name="jStartOpstillingUdeSe">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="1">
@@ -850,6 +872,9 @@
                   </StringArray>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBegivenhedSpillerRedigerActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jBegivenhedTidRediger">
               <Properties>
@@ -1986,6 +2011,94 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jSpillerSamletBed&#xf8;mmelseRediger">
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel10">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="S&#xe6;son">
+                <Property name="tabTitle" type="java.lang.String" value="S&#xe6;son"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                      <Component id="jOpretsæson" min="-2" pref="108" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jAktivsæson" min="-2" pref="116" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jInaktivesæsoner" min="-2" pref="157" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jVælgSæson" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="19" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jOpretsæson" pref="49" max="32767" attributes="0"/>
+                          <Component id="jAktivsæson" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jInaktivesæsoner" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jVælgSæson" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="159" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JButton" name="jOprets&#xe6;son">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Opret s&#xe6;son"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jOprets&#xe6;sonActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jAktivs&#xe6;son">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Aktiv s&#xe6;son"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jAktivs&#xe6;sonActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jInaktives&#xe6;soner">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel10">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Inaktive s&#xe6;soner"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jV&#xe6;lgS&#xe6;son">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="V&#xe6;lg"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jV&#xe6;lgS&#xe6;sonActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
