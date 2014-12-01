@@ -24,7 +24,7 @@ public class Turneringsstilling {
         }
     }
 
-    public void turneringsstillingPoint() {
+    public Klub[] turneringsstillingPoint() {
         for (int i = 0; i < holdliste.length; i++) {
             if (holdliste[i].getPointSum() < holdliste[i + 1].getPointSum()) {
                 Klub tmpHold = holdliste[i];
@@ -32,6 +32,7 @@ public class Turneringsstilling {
                 holdliste[i + 1] = tmpHold;
             }
         }
+        return holdliste;
     }
     
 }
