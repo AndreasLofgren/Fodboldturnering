@@ -5,6 +5,10 @@
  */
 package fodboldturnering;
 
+import handler.DBHandler;
+import handler.HoldHandler;
+import handler.KampHandler;
+import handler.SpillerHandler;
 import java.util.ArrayList;
 
 /**
@@ -18,6 +22,14 @@ public class TurneringsGUI extends javax.swing.JFrame {
      */
     public TurneringsGUI() {
         DBHandler dbh = DBHandler.getInstance();
+        KampHandler kh = new KampHandler();
+
+        int count = 0;
+        while (!kh.getKamprapporter().isEmpty()) {
+            jKamprapporter.setSelectedItem(kh.getKamprapporter().get(count).toString());
+            count++;
+        }
+
         initComponents();
     }
 
@@ -55,6 +67,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jSøgeknap = new javax.swing.JButton();
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
+        jSøgeResultater = new javax.swing.JComboBox();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -239,14 +252,13 @@ public class TurneringsGUI extends javax.swing.JFrame {
             }
         });
 
-        jKamprapporter.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jKamprapporter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jKamprapporterActionPerformed(evt);
             }
         });
 
-        jTurneringsstilling.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Division 1", "Division 2", "Division 3" }));
+        jTurneringsstilling.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "Division 1", "Division 2", "Division 3" }));
         jTurneringsstilling.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTurneringsstillingActionPerformed(evt);
@@ -283,8 +295,10 @@ public class TurneringsGUI extends javax.swing.JFrame {
                             .addComponent(jLabel49)
                             .addComponent(jLabel48))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jSøgefelt, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jSøgeResultater, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jSøgefelt, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addComponent(jSøgeknap)))
                 .addContainerGap())
@@ -306,7 +320,9 @@ public class TurneringsGUI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jSøgefelt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSøgeknap))
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jSøgeResultater, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(173, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Oversigt", jPanel1);
@@ -1354,14 +1370,20 @@ public class TurneringsGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jOpretKampActionPerformed
 
     private void jSøgeknapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSøgeknapActionPerformed
-//        if (jSøgefelt.getText() == spiller) {
-//            jTabbedPane1.setSelectedIndex(7);
-//        }
-//        if (jSøgefelt.getText() == klub) {
-//            jTabbedPane1.setSelectedIndex(5);
-//        } else {
-//            System.out.println("Ugyldig søgning");
-//        }
+        jSøgeResultater.removeAllItems();
+        SpillerHandler sh = new SpillerHandler();
+        HoldHandler hh = new HoldHandler();
+
+        while (!sh.getSpillere(jSøgefelt.getText()).isEmpty()) {
+            jSøgeResultater.addItem(sh);
+        }
+        
+        if (hh.getKlubInfo(jSøgefelt.getText())!= null) {
+            jSøgeResultater.addItem(sh);            
+        } 
+        if (jSøgeResultater.getItemCount() == 0) {
+            System.out.println("Ugyldig søgning");
+        }
     }//GEN-LAST:event_jSøgeknapActionPerformed
 
     private void jKamprapporterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jKamprapporterActionPerformed
@@ -1401,7 +1423,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                 jMålUdeSe.addItem(jBegivenhedSpillerRediger + jBegivenhedTidRediger.getText());
             }
         }
-        
+
         if (jBegivenhedRediger.getSelectedItem() == "Selvmål") {
             if (jBegivenhedHoldRediger.getSelectedItem() == "Hjemmehold") {
                 jSelvmålHjemmeSe.addItem(jBegivenhedSpillerRediger + jBegivenhedTidRediger.getText());
@@ -1409,7 +1431,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                 jSelvmålUdeSe.addItem(jBegivenhedSpillerRediger + jBegivenhedTidRediger.getText());
             }
         }
-        
+
         if (jBegivenhedRediger.getSelectedItem() == "Advarsel") {
             if (jBegivenhedHoldRediger.getSelectedItem() == "Hjemmehold") {
                 jAdvarselHjemmeSe.addItem(jBegivenhedSpillerRediger + jBegivenhedTidRediger.getText());
@@ -1417,7 +1439,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
                 jAdvarselUdeSe.addItem(jBegivenhedSpillerRediger + jBegivenhedTidRediger.getText());
             }
         }
-        
+
         if (jBegivenhedRediger.getSelectedItem() == "Udvisning") {
             if (jBegivenhedHoldRediger.getSelectedItem() == "Hjemmehold") {
                 jUdvisningHjemmeSe.addItem(jBegivenhedSpillerRediger + jBegivenhedTidRediger.getText());
@@ -1469,27 +1491,27 @@ public class TurneringsGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jAntalTilskuerActionPerformed
 
     private void jStartopstillingSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jStartopstillingSeActionPerformed
-        
+
     }//GEN-LAST:event_jStartopstillingSeActionPerformed
 
     private void jHjemmeholdSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHjemmeholdSeActionPerformed
         SpillerHandler sh = new SpillerHandler();
-        sh.getSpiller(jHjemmeholdSe.getText());
+        sh.getSpillere(jHjemmeholdSe.getText());
     }//GEN-LAST:event_jHjemmeholdSeActionPerformed
 
     private void jUdeSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUdeSeActionPerformed
         SpillerHandler sh = new SpillerHandler();
-        sh.getSpiller(jUdeSe.getText());
+        sh.getSpillere(jUdeSe.getText());
     }//GEN-LAST:event_jUdeSeActionPerformed
 
     private void jHoldSpillerSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHoldSpillerSeActionPerformed
         SpillerHandler sh = new SpillerHandler();
-        ArrayList<SpillerProfil> sp = sh.getSpiller(jHoldNavnSe.getText());
+        ArrayList<SpillerProfil> sp = sh.getSpillere(jHoldNavnSe.getText());
         for (int i = 0; i < sp.size(); i++) {
             jHoldSpillerSe.addItem(sp.get(i));
         }
-        
-        
+
+
     }//GEN-LAST:event_jHoldSpillerSeActionPerformed
 
     /**
@@ -1699,6 +1721,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private javax.swing.JTextField jStedOpret;
     private javax.swing.JTextField jStedSe;
     private javax.swing.JButton jStillingTilbage;
+    private javax.swing.JComboBox jSøgeResultater;
     private javax.swing.JTextField jSøgefelt;
     private javax.swing.JButton jSøgeknap;
     private javax.swing.JTabbedPane jTabbedPane1;

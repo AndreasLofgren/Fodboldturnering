@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fodboldturnering;
+package handler;
 
+import fodboldturnering.Division;
+import fodboldturnering.Klub;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;

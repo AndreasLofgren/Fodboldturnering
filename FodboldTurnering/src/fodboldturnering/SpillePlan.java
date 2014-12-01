@@ -37,7 +37,7 @@ public class SpillePlan {
             ArrayList<Kamprapport> rundeKampe = new ArrayList<>();
             for (int i = frieKampe.size() - 1; i >= 0; i--) {
                 System.out.println(i+" - "+frieKampe.size());
-                if (!isOneOfTheTeamsAlreadyInList(frieKampe.get(i), rundeKampe)) {
+                if (!spillerAllerede(frieKampe.get(i), rundeKampe)) {
                     rundeKampe.add(frieKampe.remove(i));
                 }
             }
@@ -55,7 +55,7 @@ public class SpillePlan {
 
     }
 
-    public boolean isOneOfTheTeamsAlreadyInList(Kamprapport kamp, ArrayList<Kamprapport> rundeKampe) {
+    public boolean spillerAllerede(Kamprapport kamp, ArrayList<Kamprapport> rundeKampe) {
         boolean found = false;
         for (int i = 0; i < rundeKampe.size(); i++) {
             if (rundeKampe.get(i).getHjemmehold().equals(kamp.getHjemmehold())) {

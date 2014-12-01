@@ -7,27 +7,26 @@
       <Entity type="Class">
         <Name>Klub</Name>
         <Access>Public</Access>
-        <Location left="62" top="50" />
-        <Size width="162" height="281" />
+        <Location left="237" top="35" />
+        <Size width="162" height="264" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private String klubNavn</Member>
         <Member type="Field">private String adresse</Member>
+        <Member type="Field">private String[] hjemmefarver</Member>
+        <Member type="Field">private String[] udefarver</Member>
         <Member type="Field">private int sejre</Member>
         <Member type="Field">private int uafgjorte</Member>
         <Member type="Field">private int tabte</Member>
-        <Member type="Field">private int antalKampe</Member>
         <Member type="Field">private int pointSum</Member>
         <Member type="Field">private int sæsonPlacering</Member>
         <Member type="Field">private int antalMål</Member>
         <Member type="Field">private String trænerNavn</Member>
-        <Member type="Field">private String[] udefarver</Member>
-        <Member type="Field">private String[] hjemmefarver</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Division</Name>
         <Access>Public</Access>
-        <Location left="62" top="378" />
+        <Location left="464" top="35" />
         <Size width="162" height="94" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private int divisionsnummer</Member>
@@ -36,28 +35,30 @@
       <Entity type="Class">
         <Name>Spillerprofil</Name>
         <Access>Public</Access>
-        <Location left="314" top="50" />
-        <Size width="162" height="281" />
+        <Location left="22" top="12" />
+        <Size width="162" height="315" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private String cpr</Member>
         <Member type="Field">private String fnavn</Member>
         <Member type="Field">private String enavn</Member>
         <Member type="Field">private int alder</Member>
         <Member type="Field">private int antalMål</Member>
-        <Member type="Field">private int antalSelvmål</Member>
+        <Member type="Field">private int antalKampe</Member>
+        <Member type="Field">private int antalSelvMål</Member>
         <Member type="Field">private int antalAdvarsler</Member>
         <Member type="Field">private int antalUdvisninger</Member>
-        <Member type="Field">private int antalKampe</Member>
         <Member type="Field">private int maksMål</Member>
         <Member type="Field">private int samletPoint</Member>
+        <Member type="Field">private int antalAdvarsler</Member>
+        <Member type="Field">private int antalUdvisninger</Member>
         <Member type="Field">private int bedømmelse</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Kamprapport</Name>
         <Access>Public</Access>
-        <Location left="603" top="259" />
-        <Size width="162" height="315" />
+        <Location left="495" top="201" />
+        <Size width="180" height="230" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private String spilledag</Member>
         <Member type="Field">private String tidspunkt</Member>
@@ -66,11 +67,6 @@
         <Member type="Field">private String sted</Member>
         <Member type="Field">private String[] startOpstillingHjemme</Member>
         <Member type="Field">private String[] startOpstillingUde</Member>
-        <Member type="Field">private int scoredeMålHjemme</Member>
-        <Member type="Field">private int scoredeMålUde</Member>
-        <Member type="Field">private int selvmål</Member>
-        <Member type="Field">private int guleKort</Member>
-        <Member type="Field">private int rødeKort</Member>
         <Member type="Field">private int runde</Member>
         <Member type="Field">private int antalTilskuer</Member>
         <Modifier>None</Modifier>
@@ -78,7 +74,7 @@
       <Entity type="Class">
         <Name>Sæson</Name>
         <Access>Public</Access>
-        <Location left="314" top="356" />
+        <Location left="685" top="35" />
         <Size width="162" height="111" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private String periode</Member>
@@ -88,16 +84,34 @@
       <Entity type="Class">
         <Name>Dommer</Name>
         <Access>Public</Access>
-        <Location left="543" top="81" />
+        <Location left="749" top="232" />
         <Size width="162" height="111" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private String navn</Member>
         <Member type="Field">private int bedømmelse</Member>
         <Modifier>None</Modifier>
       </Entity>
+      <Entity type="Class">
+        <Name>Kampbegivenhed</Name>
+        <Access>Public</Access>
+        <Location left="237" top="326" />
+        <Size width="162" height="213" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int målHjemme</Member>
+        <Member type="Field">private int målUde</Member>
+        <Member type="Field">private int selvmålHjemme</Member>
+        <Member type="Field">private int selvmålUde</Member>
+        <Member type="Field">private int advarselHjemme</Member>
+        <Member type="Field">private int advarselUde</Member>
+        <Member type="Field">private int udvisningHjemme</Member>
+        <Member type="Field">private int UdvisningUde</Member>
+        <Modifier>None</Modifier>
+      </Entity>
     </Entities>
     <Relationships>
       <Relationship type="Association" first="2" second="0">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -106,18 +120,18 @@
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="0" second="1">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
-        <BendPoint relativeToStartShape="False">
-          <X>137</X>
-          <Y>353</Y>
-        </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
         <StartMultiplicity>*</StartMultiplicity>
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="1" second="4">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -126,20 +140,17 @@
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="3" second="4">
-<<<<<<< HEAD
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
-=======
-        <StartOrientation>Horizontal</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
->>>>>>> origin/master
         <BendPoint relativeToStartShape="True">
-          <X>561</X>
-          <Y>389</Y>
+          <X>575</X>
+          <Y>173</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>509</X>
-          <Y>411</Y>
+          <X>765</X>
+          <Y>172</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
@@ -147,17 +158,11 @@
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="1" second="3">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
-        <BendPoint relativeToStartShape="True">
-          <X>140</X>
-          <Y>497</Y>
-        </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>570</X>
-          <Y>441</Y>
+          <X>470</X>
+          <Y>253</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
@@ -165,9 +170,6 @@
         <EndMultiplicity>*</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="5" second="3">
-        <Label>
-        </Label>
-<<<<<<< HEAD
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -176,16 +178,12 @@
         <EndMultiplicity>*</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="6" second="3">
-        <Label>
-        </Label>
-=======
->>>>>>> origin/master
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
-        <StartMultiplicity>1</StartMultiplicity>
-        <EndMultiplicity>*</EndMultiplicity>
+        <StartMultiplicity>*</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
     </Relationships>
   </ProjectItem>
@@ -206,18 +204,17 @@
       <Entity type="Class">
         <Name>Kamprapport</Name>
         <Access>Public</Access>
-        <Location left="301" top="166" />
-        <Size width="182" height="128" />
+        <Location left="261" top="365" />
+        <Size width="182" height="111" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private Dommer dommer</Member>
-        <Member type="Field">private Klub udehold</Member>
-        <Member type="Field">private Klub hjemmehold</Member>
+        <Member type="Field">private Turneringsrunde runde</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Division</Name>
         <Access>Public</Access>
-        <Location left="10" top="427" />
+        <Location left="29" top="187" />
         <Size width="162" height="94" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private Klub[] klubber</Member>
@@ -226,7 +223,7 @@
       <Entity type="Class">
         <Name>Dommer</Name>
         <Access>Public</Access>
-        <Location left="624" top="182" />
+        <Location left="517" top="365" />
         <Size width="162" height="77" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
@@ -234,89 +231,112 @@
       <Entity type="Class">
         <Name>Sæson</Name>
         <Access>Public</Access>
-        <Location left="301" top="442" />
-        <Size width="182" height="128" />
+        <Location left="261" top="187" />
+        <Size width="162" height="111" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private Division[] divisioner</Member>
-        <Member type="Field">private Kamprapport[] kamprapporter</Member>
-        <Member type="Field">privateSpillePlan spilleplan</Member>
+        <Member type="Field">private Turneringsrunde[] runder</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Spillerprofil</Name>
         <Access>Public</Access>
-        <Location left="624" top="35" />
+        <Location left="261" top="35" />
+        <Size width="162" height="77" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>FodboldTurnering</Name>
+        <Access>Public</Access>
+        <Location left="517" top="187" />
+        <Size width="162" height="94" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Sæson sæson</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Turneringsrunde</Name>
+        <Access>Public</Access>
+        <Location left="42" top="365" />
         <Size width="162" height="77" />
         <Collapsed>False</Collapsed>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>
     <Relationships>
-      <Relationship type="Association" first="0" second="5">
+      <Relationship type="Association" first="4" second="6">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
-        <BendPoint relativeToStartShape="False">
-          <X>599</X>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="5" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>236</X>
           <Y>78</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="0" second="2">
-        <StartOrientation>Vertical</StartOrientation>
-        <EndOrientation>Vertical</EndOrientation>
-        <Direction>Bidirectional</Direction>
-        <AssociationType>Association</AssociationType>
-      </Relationship>
-      <Relationship type="Association" first="4" second="2">
-        <StartOrientation>Horizontal</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
-        <BendPoint relativeToStartShape="True">
-          <X>276</X>
-          <Y>488</Y>
-        </BendPoint>
-        <Direction>Unidirectional</Direction>
-        <AssociationType>Association</AssociationType>
-      </Relationship>
-      <Relationship type="Association" first="1" second="3">
-        <StartOrientation>Horizontal</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
-        <BendPoint relativeToStartShape="True">
-          <X>508</X>
-          <Y>227</Y>
-        </BendPoint>
-        <BendPoint relativeToStartShape="False">
-          <X>599</X>
-          <Y>227</Y>
-        </BendPoint>
-        <Direction>Unidirectional</Direction>
-        <AssociationType>Association</AssociationType>
-      </Relationship>
-<<<<<<< HEAD
-      <Relationship type="Association" first="1" second="4">
-=======
-      <Relationship type="Association" first="4" second="1">
-<<<<<<< HEAD
-=======
         <Label>
         </Label>
->>>>>>> 8473887d0df18ec015c89c4c796b0fb101b9a24a
->>>>>>> origin/master
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
-      <Relationship type="Association" first="1" second="0">
+      <Relationship type="Association" first="2" second="4">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>236</X>
+          <Y>233</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="3" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>492</X>
+          <Y>410</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="1" second="4">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>314</X>
-          <Y>319</Y>
+          <X>343</X>
+          <Y>340</Y>
         </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="7" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="False">
-          <X>176</X>
-          <Y>171</Y>
+          <X>236</X>
+          <Y>411</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
@@ -328,119 +348,141 @@
     <Language>Java</Language>
     <Entities>
       <Entity type="Class">
-        <Name>Turneringsrunde</Name>
+        <Name>Kampbegivenhed</Name>
         <Access>Public</Access>
-        <Location left="82" top="631" />
-        <Size width="162" height="94" />
+        <Location left="229" top="334" />
+        <Size width="183" height="230" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">private int rundenummer</Member>
-        <Modifier>None</Modifier>
-      </Entity>
-      <Entity type="Class">
-        <Name>Dommer</Name>
-        <Access>Public</Access>
-        <Location left="558" top="555" />
-        <Size width="162" height="111" />
-        <Collapsed>False</Collapsed>
-        <Member type="Field">private String navn</Member>
-        <Member type="Field">private int bedømmelse</Member>
-        <Modifier>None</Modifier>
-      </Entity>
-      <Entity type="Class">
-        <Name>Sæson</Name>
-        <Access>Public</Access>
-        <Location left="334" top="358" />
-        <Size width="162" height="94" />
-        <Collapsed>False</Collapsed>
-        <Member type="Field">private String periode</Member>
+        <Member type="Field">private int målHjemme</Member>
+        <Member type="Field">private int målUde</Member>
+        <Member type="Field">private int selvmålHjemme</Member>
+        <Member type="Field">private int selvmålUde</Member>
+        <Member type="Field">private int advarselHjemme</Member>
+        <Member type="Field">private int advarselUde</Member>
+        <Member type="Field">private int udvisningHjemme</Member>
+        <Member type="Field">private int UdvisningUde</Member>
+        <Member type="Constructor">public Kampbegivenhed(String alle)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Kamprapport</Name>
         <Access>Public</Access>
-        <Location left="334" top="540" />
-        <Size width="162" height="230" />
+        <Location left="487" top="209" />
+        <Size width="192" height="264" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private String spilledag</Member>
         <Member type="Field">private String tidspunkt</Member>
         <Member type="Field">private String hjemmehold</Member>
         <Member type="Field">private String udehold</Member>
         <Member type="Field">private String sted</Member>
-        <Member type="Field">private String[] startOpstilling</Member>
-        <Member type="Field">private int scoredeMål</Member>
+        <Member type="Field">private String[] startOpstillingHjemme</Member>
+        <Member type="Field">private String[] startOpstillingUde</Member>
+        <Member type="Field">private int runde</Member>
         <Member type="Field">private int antalTilskuer</Member>
-        <Member type="Field">private Turneringsrunde runde</Member>
+        <Member type="Constructor">public Kamprapport(String alle)</Member>
+        <Member type="Method">public String toString()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
-        <Name>Spillerprofil</Name>
+        <Name>Dommer</Name>
         <Access>Public</Access>
-        <Location left="582" top="286" />
-        <Size width="162" height="230" />
+        <Location left="757" top="234" />
+        <Size width="162" height="128" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private String navn</Member>
-        <Member type="Field">private int alder</Member>
-        <Member type="Field">private int antalMål</Member>
-        <Member type="Field">private int antalKampe</Member>
-        <Member type="Field">private int maksMål</Member>
-        <Member type="Field">private int ranglistePoint</Member>
-        <Member type="Field">private int antalAdvarsler</Member>
-        <Member type="Field">private int antalUdvisninger</Member>
         <Member type="Field">private int bedømmelse</Member>
+        <Member type="Constructor">public Dommer(String alle)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Sæson</Name>
+        <Access>Public</Access>
+        <Location left="674" top="20" />
+        <Size width="162" height="128" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String periode</Member>
+        <Member type="Field">private int[] runder</Member>
+        <Member type="Constructor">public Sæson(String alle)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Division</Name>
         <Access>Public</Access>
-        <Location left="82" top="358" />
-        <Size width="162" height="94" />
+        <Location left="456" top="43" />
+        <Size width="162" height="111" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private int divisionsnummer</Member>
+        <Member type="Constructor">public Division(String alle)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Klub</Name>
         <Access>Public</Access>
-        <Location left="82" top="70" />
-        <Size width="162" height="230" />
+        <Location left="229" top="43" />
+        <Size width="162" height="281" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private String klubNavn</Member>
         <Member type="Field">private String adresse</Member>
         <Member type="Field">private String[] hjemmefarver</Member>
         <Member type="Field">private String[] udefarver</Member>
         <Member type="Field">private int sejre</Member>
+        <Member type="Field">private int uafgjorte</Member>
+        <Member type="Field">private int tabte</Member>
         <Member type="Field">private int pointSum</Member>
         <Member type="Field">private int sæsonPlacering</Member>
         <Member type="Field">private int antalMål</Member>
         <Member type="Field">private String trænerNavn</Member>
+        <Member type="Constructor">public Klub(String alle)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
-        <Name>SpillerBegivenhed</Name>
+        <Name>Spillerprofil</Name>
         <Access>Public</Access>
-        <Location left="854" top="189" />
-        <Size width="162" height="111" />
+        <Location left="14" top="20" />
+        <Size width="162" height="332" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">private SpillerProfil spiller</Member>
-        <Member type="Field">private String tidspunkt</Member>
-        <Modifier>None</Modifier>
-      </Entity>
-      <Entity type="Class">
-        <Name>Holdbegivenhed</Name>
-        <Access>Public</Access>
-        <Location left="558" top="100" />
-        <Size width="162" height="128" />
-        <Collapsed>False</Collapsed>
-        <Member type="Field">private Klub hold</Member>
+        <Member type="Field">private String cpr</Member>
+        <Member type="Field">private String fnavn</Member>
+        <Member type="Field">private String enavn</Member>
+        <Member type="Field">private int alder</Member>
+        <Member type="Field">private int antalMål</Member>
+        <Member type="Field">private int antalKampe</Member>
+        <Member type="Field">private int antalSelvMål</Member>
+        <Member type="Field">private int antalAdvarsler</Member>
+        <Member type="Field">private int antalUdvisninger</Member>
+        <Member type="Field">private int maksMål</Member>
+        <Member type="Field">private int samletPoint</Member>
+        <Member type="Field">private int antalAdvarsler</Member>
+        <Member type="Field">private int antalUdvisninger</Member>
+        <Member type="Field">private int bedømmelse</Member>
+        <Member type="Constructor">public Spillerprofil(String alle)</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>
     <Relationships>
-      <Relationship type="Association" first="0" second="3">
-        <Label>
-        </Label>
+      <Relationship type="Association" first="0" second="1">
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>*</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="2" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="4" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>462</X>
+          <Y>261</Y>
+        </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
         <StartMultiplicity>1</StartMultiplicity>
@@ -449,90 +491,156 @@
       <Relationship type="Association" first="1" second="3">
         <Label>
         </Label>
-        <StartOrientation>Horizontal</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
-        <Direction>Unidirectional</Direction>
-        <AssociationType>Association</AssociationType>
-        <StartMultiplicity>1</StartMultiplicity>
-        <EndMultiplicity>*</EndMultiplicity>
-      </Relationship>
-      <Relationship type="Association" first="5" second="3">
-        <Label>
-        </Label>
-        <StartOrientation>Vertical</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
-        <BendPoint relativeToStartShape="False">
-          <X>309</X>
-          <Y>592</Y>
-        </BendPoint>
-        <Direction>Unidirectional</Direction>
-        <AssociationType>Association</AssociationType>
-        <StartMultiplicity>1</StartMultiplicity>
-        <EndMultiplicity>*</EndMultiplicity>
-      </Relationship>
-      <Relationship type="Association" first="3" second="2">
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>414</X>
-          <Y>512</Y>
+          <X>567</X>
+          <Y>181</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>414</X>
-          <Y>478</Y>
+          <X>754</X>
+          <Y>174</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
         <StartMultiplicity>*</StartMultiplicity>
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
-      <Relationship type="Association" first="5" second="2">
+      <Relationship type="Association" first="4" second="3">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>*</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="5" second="4">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
         <StartMultiplicity>*</StartMultiplicity>
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="6" second="5">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>*</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Designmodel handler</Name>
+    <Language>Java</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>DBHandler</Name>
+        <Access>Public</Access>
+        <Location left="12" top="34" />
+        <Size width="162" height="196" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private DBHandler instance</Member>
+        <Member type="Field">private Statement stmt</Member>
+        <Member type="Constructor">private DBHandler()</Member>
+        <Member type="Method">public static DBHandler getInstance()</Member>
+        <Member type="Method">public String[] loadFromFile()</Member>
+        <Member type="Method">public void startForbindelse()</Member>
+        <Member type="Method">public Statement getStmt()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>KampHandler</Name>
+        <Access>Public</Access>
+        <Location left="244" top="262" />
+        <Size width="162" height="94" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public KampHandler()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HoldHandler</Name>
+        <Access>Public</Access>
+        <Location left="25" top="276" />
+        <Size width="162" height="94" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public HoldHandler()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SpillerHandler</Name>
+        <Access>Public</Access>
+        <Location left="244" top="46" />
+        <Size width="162" height="94" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public SpillerHandler()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Spilleplan</Name>
+        <Access>Public</Access>
+        <Location left="226" top="407" />
+        <Size width="371" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public Spilleplan(ArrayList&lt;Klub&gt; Holdliste, ArrayList&lt;Integer&gt; rundeListe)</Member>
+        <Member type="Method">public boolean spillerAllerede()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Turneringsstilling</Name>
+        <Access>Public</Access>
+        <Location left="25" top="407" />
+        <Size width="162" height="111" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public Turneringsstilling()</Member>
+        <Member type="Method">public void turneringsstillingPoint()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="3" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>199</X>
+          <Y>101</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>*</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="2" second="0">
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>165</X>
-          <Y>331</Y>
+          <X>103</X>
+          <Y>251</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
         <StartMultiplicity>*</StartMultiplicity>
         <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
-      <Relationship type="Association" first="4" second="6">
-        <StartOrientation>Horizontal</StartOrientation>
+      <Relationship type="Association" first="1" second="0">
+        <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
-        <BendPoint relativeToStartShape="True">
-          <X>555</X>
-          <Y>332</Y>
+        <BendPoint relativeToStartShape="False">
+          <X>236</X>
+          <Y>202</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
         <StartMultiplicity>*</StartMultiplicity>
         <EndMultiplicity>1</EndMultiplicity>
-      </Relationship>
-      <Relationship type="Association" first="4" second="7">
-        <StartOrientation>Horizontal</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
-        <Direction>Unidirectional</Direction>
-        <AssociationType>Association</AssociationType>
-        <StartMultiplicity>1</StartMultiplicity>
-        <EndMultiplicity>*</EndMultiplicity>
-      </Relationship>
-      <Relationship type="Association" first="6" second="8">
-        <StartOrientation>Horizontal</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
-        <Direction>Unidirectional</Direction>
-        <AssociationType>Association</AssociationType>
-        <StartMultiplicity>1</StartMultiplicity>
-        <EndMultiplicity>*</EndMultiplicity>
       </Relationship>
     </Relationships>
   </ProjectItem>

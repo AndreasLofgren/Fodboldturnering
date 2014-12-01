@@ -132,8 +132,11 @@
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jSøgefelt" pref="266" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jSøgeResultater" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jSøgefelt" pref="266" max="32767" attributes="0"/>
+                              </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jSøgeknap" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -161,7 +164,9 @@
                           <Component id="jSøgefelt" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jSøgeknap" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="211" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jSøgeResultater" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="173" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -178,12 +183,7 @@
             <Component class="javax.swing.JComboBox" name="jKamprapporter">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
+                  <StringArray count="0"/>
                 </Property>
               </Properties>
               <Events>
@@ -193,10 +193,11 @@
             <Component class="javax.swing.JComboBox" name="jTurneringsstilling">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="3">
-                    <StringItem index="0" value="Division 1"/>
-                    <StringItem index="1" value="Division 2"/>
-                    <StringItem index="2" value="Division 3"/>
+                  <StringArray count="4">
+                    <StringItem index="0" value=" "/>
+                    <StringItem index="1" value="Division 1"/>
+                    <StringItem index="2" value="Division 2"/>
+                    <StringItem index="3" value="Division 3"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -225,6 +226,13 @@
             <Component class="javax.swing.JLabel" name="jLabel49">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Turneringsstilling"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jS&#xf8;geResultater">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
               </Properties>
             </Component>
           </SubComponents>
