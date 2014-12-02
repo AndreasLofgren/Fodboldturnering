@@ -75,11 +75,12 @@ public class DBHandler {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn;
             String url = "jdbc:mysql://"+parameter[0]+":"+parameter[1]+"/"+parameter[2];
+            System.out.println("url: "+url);
             conn = DriverManager.getConnection(url, parameter[3], parameter[4]);
             stmt = conn.createStatement();
             
         } catch (SQLException e) {
-            System.out.println("SQLException" + e.getMessage());
+            System.out.println("SQLException: " + e.getMessage());
         } catch (ClassNotFoundException ex) {
             System.out.println("Class not found" + ex.getLocalizedMessage());
         }

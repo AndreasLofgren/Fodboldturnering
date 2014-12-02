@@ -5,6 +5,8 @@
  */
 package fodboldturnering;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Andreas
@@ -16,8 +18,8 @@ public class Kamprapport {
     private String sted;
     private Klub hjemmehold;
     private Klub udehold;
-    private String[] startOpstillingHjemme;
-    private String[] startOpstillingUde;
+    private ArrayList<SpillerProfil> startOpstillingHjemme;
+    private ArrayList<SpillerProfil> startOpstillingUde;
     private int antalTilskuer;
     private int runde;
     private Dommer dommer;
@@ -27,7 +29,7 @@ public class Kamprapport {
         this.udehold = udehold;
     }  
 
-    public Kamprapport(String spilledag, String tidspunkt, String sted, Klub hjemmehold, Klub udehold, String[] startOpstillingHjemme, String[] startOpstillingUde, int antalTilskuer, int runde, Dommer dommer) {
+    public Kamprapport(String spilledag, String tidspunkt, String sted, Klub hjemmehold, Klub udehold, ArrayList<SpillerProfil> startOpstillingHjemme, ArrayList<SpillerProfil> startOpstillingUde, int antalTilskuer, int runde, Dommer dommer) {
         this.spilledag = spilledag;
         this.tidspunkt = tidspunkt;
         this.sted = sted;
@@ -80,19 +82,19 @@ public class Kamprapport {
         this.udehold = udehold;
     }
 
-    public String[] getStartOpstillingHjemme() {
+    public ArrayList<SpillerProfil> getStartOpstillingHjemme() {
         return startOpstillingHjemme;
     }
 
-    public void setStartOpstillingHjemme(String[] startOpstillingHjemme) {
+    public void setStartOpstillingHjemme(ArrayList<SpillerProfil> startOpstillingHjemme) {
         this.startOpstillingHjemme = startOpstillingHjemme;
     }
 
-    public String[] getStartOpstillingUde() {
+    public ArrayList<SpillerProfil> getStartOpstillingUde() {
         return startOpstillingUde;
     }
 
-    public void setStartOpstillingUde(String[] startOpstillingUde) {
+    public void setStartOpstillingUde(ArrayList<SpillerProfil> startOpstillingUde) {
         this.startOpstillingUde = startOpstillingUde;
     }
 

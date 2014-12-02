@@ -16,9 +16,8 @@ public class SpillePlan {
 
     private ArrayList<Kamprapport> kampe;
 
-    public SpillePlan(ArrayList<Klub> holdListe, ArrayList<Integer> rundeListe) {
+    public SpillePlan(ArrayList<Klub> holdListe) {
         kampe = new ArrayList<>();
-        int antalHold = holdListe.size();
         ArrayList<Kamprapport> frieKampe = new ArrayList<>();
 
         for (int i = 0; i < holdListe.size(); i++) {

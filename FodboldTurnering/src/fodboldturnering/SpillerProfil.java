@@ -10,7 +10,8 @@ package fodboldturnering;
  * @author Andreas
  */
 public class SpillerProfil {
-
+    
+    private String cpr;
     private String fnavn;
     private String enavn;
     private int alder;
@@ -18,9 +19,11 @@ public class SpillerProfil {
     private int maksMål;
     private int bedømmelse;
     private int samletPoint;
-    private String cpr;
+    private Klub klub;
+    
 
-    public SpillerProfil(String fnavn, String enavn, int alder, int antalMål, int antalKampe, int antalAdvarsler, int antalUdvisninger, int antalSelvmål, int maksMål, int bedømmelse, int samletPoint, String cpr) {
+    public SpillerProfil(String cpr, String fnavn, String enavn, int alder, int antalMål, int antalKampe, int antalAdvarsler, int antalUdvisninger, int antalSelvmål, int maksMål, int bedømmelse, int samletPoint, Klub klub) {
+        this.cpr = cpr;
         this.fnavn = fnavn;
         this.enavn = enavn;
         this.alder = alder;
@@ -31,8 +34,8 @@ public class SpillerProfil {
         this.antalSelvmål = antalSelvmål;
         this.maksMål = maksMål;
         this.bedømmelse = bedømmelse;
-        this.samletPoint = samletPoint;
-        this.cpr = cpr;
+        this.samletPoint = samletPoint;        
+        this.klub = klub;
     }
 
     public String getFnavn() {
@@ -129,6 +132,14 @@ public class SpillerProfil {
 
     public void setSamletPoint(int samletPoint) {
         this.samletPoint = samletPoint;
+    }
+
+    public Klub getKlub() {
+        return klub;
+    }
+
+    public void setKlub(Klub klub) {
+        this.klub = klub;
     }
 
 }

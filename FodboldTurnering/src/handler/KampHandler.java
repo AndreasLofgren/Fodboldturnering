@@ -8,6 +8,7 @@ package handler;
 import fodboldturnering.Dommer;
 import fodboldturnering.Kamprapport;
 import fodboldturnering.Klub;
+import fodboldturnering.Saeson;
 import fodboldturnering.SpillerProfil;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -33,7 +34,7 @@ public class KampHandler {
 
     }
 
-    public ArrayList<Kamprapport> getKamprapporter() {
+    public ArrayList<Kamprapport> getKamprapporter(Saeson periode) {
         ArrayList<Kamprapport> resultat = new ArrayList<>();
 
         try {
@@ -47,8 +48,8 @@ public class KampHandler {
                 String sted = rs.getString("sted");
                 Klub hjemmehold = holdhandler.getKlubInfo(rs.getString("hjemmehold"));
                 Klub udehold = holdhandler.getKlubInfo(rs.getString("udehold"));
-//                ArrayList<SpillerProfil> startOpstillingHjemme = spillerhandler.getSpillere(rs);
-//                String[] startOpstillingUde;
+                ArrayList<SpillerProfil> startOpstillingHjemme = new ArrayList<>();
+                ArrayList<SpillerProfil> startOpstillingUde = new ArrayList<>();
                 int antalTilskuer = rs.getInt("antalTilskuer");
                 int runde = rs.getInt("runde");
                 Dommer dommer = dommerhandler.getDommer(rs.getString("dommer"));
