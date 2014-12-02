@@ -38,4 +38,14 @@ public class SaesonHandler {
         return result;
     }
     
+    public void insertSaeson(String periode) {
+        try {
+            String sql = "insert into Saeson values('"+periode+"');";
+            Statement stmt = dbhandler.getStmt();
+            ResultSet rs = stmt.executeQuery(sql);            
+        } catch (SQLException ex) {
+            System.out.println("SQLException" + ex.getMessage());
+        }
+    }
+    
 }

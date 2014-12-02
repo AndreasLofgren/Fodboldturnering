@@ -42,7 +42,7 @@ public class HoldHandler {
                 int sæsonPlacering = rs.getInt("sæsonplacering");
                 int antalMål = rs.getInt("antalMål");
                 String trænerNavn = rs.getString("trænerNavn");
-                Division divisionsnummer = new Division(rs.getInt("divisionsnummmer"));
+                Division divisionsnummer = new Division(rs.getInt("divisionsnummer"));
 
                 Klub k1 = new Klub(klubNavn, adresse, sejre, uafgjorte, tabte, pointSum, antalKampe, sæsonPlacering, antalMål, trænerNavn, divisionsnummer);
                 resultat = k1;
@@ -71,7 +71,7 @@ public class HoldHandler {
                 int sæsonPlacering = rs.getInt("sæsonplacering");
                 int antalMål = rs.getInt("antalMål");
                 String trænerNavn = rs.getString("trænerNavn");
-                Division divisionsnummer = new Division(rs.getInt("divisionsnummmer"));
+                Division divisionsnummer = new Division(rs.getInt("divisionsnummer"));
 
                 Klub k1 = new Klub(klubNavn, adresse, sejre, uafgjorte, tabte, pointSum, antalKampe, sæsonPlacering, antalMål, trænerNavn, divisionsnummer);
                 resultat.add(k1);
@@ -103,7 +103,7 @@ public class HoldHandler {
                 int sæsonPlacering = rs.getInt("sæsonplacering");
                 int antalMål = rs.getInt("antalMål");
                 String trænerNavn = rs.getString("trænerNavn");
-                Division divisionsnummer = new Division(rs.getInt("divisionsnummmer"));
+                Division divisionsnummer = new Division(rs.getInt("divisionsnummer"));
 
                 Klub k1 = new Klub(klubNavn, adresse, sejre, uafgjorte, tabte, pointSum, antalKampe, sæsonPlacering, antalMål, trænerNavn, divisionsnummer);
                 resultat.add(k1);
@@ -114,8 +114,7 @@ public class HoldHandler {
         return resultat;
     }
     
-    public ArrayList<Klub> turneringsstillingPoint() {
-        ArrayList<Klub> holdliste = new ArrayList<>();
+    public ArrayList<Klub> turneringsstillingPoint(ArrayList<Klub> holdliste) {
         for (int i = 0; i < holdliste.size(); i++) {
             if (holdliste.get(i).getPointSum() < holdliste.get(i+1).getPointSum()) {
                 Klub tmpHold = holdliste.get(i);

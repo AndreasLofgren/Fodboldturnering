@@ -65,6 +65,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jLabel49 = new javax.swing.JLabel();
         jSøgeResultater = new javax.swing.JComboBox();
         jVælgSøgning = new javax.swing.JButton();
+        jOversigtTilbage = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -119,8 +120,6 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jBegivenhedRediger = new javax.swing.JComboBox();
         jPanel5 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jHoldListe = new javax.swing.JList();
         jStillingTilbage = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPlaceringsListe = new javax.swing.JList();
@@ -135,6 +134,8 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jHoldliste = new javax.swing.JTextArea();
         jPanel6 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jHoldPlaceringSe = new javax.swing.JTextField();
@@ -298,31 +299,43 @@ public class TurneringsGUI extends javax.swing.JFrame {
             }
         });
 
+        jOversigtTilbage.setText("Tilbage");
+        jOversigtTilbage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jOversigtTilbageActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTurneringsstilling, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel49)
-                            .addComponent(jLabel48))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jKamprapporter, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(jOpretKamp))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTurneringsstilling, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel49)
+                                    .addComponent(jLabel48))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jKamprapporter, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jOpretKamp))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jSøgeResultater, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jSøgefelt, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE))
+                                .addGap(18, 18, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jVælgSøgning, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jSøgeknap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jSøgeResultater, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jSøgefelt, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE))
-                        .addGap(18, 18, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jVælgSøgning, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jSøgeknap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jOversigtTilbage)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -346,7 +359,9 @@ public class TurneringsGUI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jSøgeResultater, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jVælgSøgning))
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
+                .addComponent(jOversigtTilbage)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Spilleplan", jPanel1);
@@ -736,8 +751,6 @@ public class TurneringsGUI extends javax.swing.JFrame {
 
         jLabel19.setText("Turneringsstilling");
 
-        jScrollPane1.setViewportView(jHoldListe);
-
         jStillingTilbage.setText("Tilbage");
         jStillingTilbage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -778,6 +791,10 @@ public class TurneringsGUI extends javax.swing.JFrame {
 
         jLabel18.setText("Resultat");
 
+        jHoldliste.setColumns(20);
+        jHoldliste.setRows(5);
+        jScrollPane6.setViewportView(jHoldliste);
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -792,9 +809,9 @@ public class TurneringsGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel15)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel19))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel18)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -833,10 +850,10 @@ public class TurneringsGUI extends javax.swing.JFrame {
                 .addGap(11, 11, 11)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1)
                     .addComponent(jScrollPane3)
                     .addComponent(jScrollPane5)
-                    .addComponent(jScrollPane4))
+                    .addComponent(jScrollPane4)
+                    .addComponent(jScrollPane6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jStillingTilbage)
                 .addContainerGap())
@@ -1435,6 +1452,13 @@ public class TurneringsGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTurneringsstillingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTurneringsstillingActionPerformed
+//        HoldHandler hh = new HoldHandler();
+//        ArrayList<Klub> holdliste = hh.getDivisionKlubber(jTurneringsstilling.getSelectedItem());
+//        holdliste = hh.turneringsstillingPoint(holdliste);
+//        for (int i = 0; i < holdliste.size(); i++) {
+//            jHoldliste.append(holdliste.get(i)+"\n");
+//        }        
+        
         jTabbedPane1.setSelectedIndex(4);
     }//GEN-LAST:event_jTurneringsstillingActionPerformed
 
@@ -1454,14 +1478,13 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jSøgeResultater.removeAllItems();
         SpillerHandler sh = new SpillerHandler();
         HoldHandler hh = new HoldHandler();
-
-        while (!sh.getSpillere(jSøgefelt.getText()).isEmpty()) {
-            jSøgeResultater.addItem(sh);
+        
+        for (int i = 0; i < hh.getAlleKlubber().size(); i++) {
+            if (jSøgefelt.getText().equals(hh.getAlleKlubber().get(i).getKlubNavn())) {
+                jSøgeResultater.addItem(hh.getKlubInfo(jSøgefelt.getText()));
+            }            
         }
 
-        if (hh.getKlubInfo(jSøgefelt.getText()) != null) {
-            jSøgeResultater.addItem(sh);
-        }
         if (jSøgeResultater.getItemCount() == 0) {
             System.out.println("Ugyldig søgning");
         }
@@ -1478,7 +1501,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jDatoSe.setText(jDatoOpret.getText());
         jTidSe.setText(jTidOpret.getText());
         jRundenrSe.setText(jRundenrOpret.getText());
-        jDommerSe.setText(""+jDommerOpret.getSelectedItem());
+        jDommerSe.setText("" + jDommerOpret.getSelectedItem());
         SpillerHandler sh = new SpillerHandler();
         for (int i = 0; i < 11; i++) {
             jStartopstillingHjemmeSe.addItem(sh.getSpillere(jHjemmeholdSe.getText()));
@@ -1486,7 +1509,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
         for (int i = 0; i < 11; i++) {
             jStartOpstillingUdeSe.addItem(sh.getSpillere(jUdeSe.getText()));
         }
-        
+
         jTabbedPane1.setSelectedIndex(2);
     }//GEN-LAST:event_jOpretStartRapportActionPerformed
 
@@ -1501,9 +1524,9 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private void jBegivenhedSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBegivenhedSeActionPerformed
         jBegivenhedHoldRediger.setSelectedIndex(1);
         jBegivenhedHoldRediger.setSelectedItem(jUdeSe.getText());
-        jBegivenhedHoldRediger.setSelectedIndex(0);        
+        jBegivenhedHoldRediger.setSelectedIndex(0);
         jBegivenhedHoldRediger.setSelectedItem(jHjemmeholdSe.getText());
-        
+
         jTabbedPane1.setSelectedIndex(3);
     }//GEN-LAST:event_jBegivenhedSeActionPerformed
 
@@ -1617,56 +1640,83 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private void jOpretsæsonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jOpretsæsonActionPerformed
         String svar = JOptionPane.showInputDialog("Periode", "");
         System.out.println("svar: " + svar);
-        
+
         HoldHandler hh = new HoldHandler();
         SpillePlan sp = new SpillePlan(hh.getAlleKlubber());
         KampHandler kh = new KampHandler();
 
         int count = 0;
         Saeson periode = new Saeson(svar);
-        jSæsoner.addItem(periode);
-        
+        jSæsoner.addItem(periode.getPeriode());
+
         while (!kh.getKamprapporter(periode).isEmpty()) {
             jKamprapporter.addItem(kh.getKamprapporter(periode).get(count).toString());
-            count++;            
+            count++;
         }
 
         jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_jOpretsæsonActionPerformed
 
     private void jSøgefeltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSøgefeltActionPerformed
-        
+
     }//GEN-LAST:event_jSøgefeltActionPerformed
 
     private void jBegivenhedSpillerRedigerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBegivenhedSpillerRedigerActionPerformed
         SpillerHandler sh = new SpillerHandler();
         for (int i = 0; i < 11; i++) {
-            jBegivenhedSpillerRediger.addItem(sh.getSpillere(""+jBegivenhedHoldRediger.getSelectedItem()));
-        }        
+            jBegivenhedSpillerRediger.addItem(sh.getSpillere("" + jBegivenhedHoldRediger.getSelectedItem()));
+        }
     }//GEN-LAST:event_jBegivenhedSpillerRedigerActionPerformed
 
     private void jVælgSæsonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVælgSæsonActionPerformed
         SaesonHandler sh = new SaesonHandler();
-        sh.getSaeson(""+jSæsoner.getSelectedItem());
+        sh.getSaeson("" + jSæsoner.getSelectedItem());
         jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_jVælgSæsonActionPerformed
 
     private void jVælgSøgningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVælgSøgningActionPerformed
-        SpillerHandler sh = new SpillerHandler();        
-        SpillerProfil sp = sh.getSpiller(jSøgefelt.getText());
-        if (jSøgeResultater.getSelectedItem() == sp) {
-            jTabbedPane1.setSelectedIndex(7);
-        }
+        SpillerHandler sh = new SpillerHandler();
+        
+//        if (jSøgeResultater.getSelectedItem() == sp) {
+//            jSpillerNavnSe.setText(sp.getFnavn()+" "+sp.getEnavn());
+//            jSpillerAlderSe.setText(""+sp.getAlder());
+//            jSpillerKampeSe.setText(""+sp.getAntalKampe());
+//            jSpillerMålSe.setText(""+sp.getAntalMål());
+//            jSpillerSelvmålSe.setText(""+sp.getAntalSelvmål());
+//            jSpillerAdvarselSe.setText(""+sp.getAntalAdvarsler());
+//            jSpillerUdvisningSe.setText(""+sp.getAntalUdvisninger());
+//            jSpillerHøjesteMålSe.setText(""+sp.getMaksMål());
+//            jSpillerSamletBedømmelseSe.setText(""+sp.getSamletPoint());
+//            jTabbedPane1.setSelectedIndex(7);
+//        }
         HoldHandler hh = new HoldHandler();
         Klub k = hh.getKlubInfo(jSøgefelt.getText());
-        if (jSøgeResultater.getSelectedItem() == k) {
+//        if (jSøgeResultater.getSelectedItem().equals(k)) {
+            jHoldNavnSe.setText(k.getKlubNavn());
+            jHoldAdresseSe.setText(k.getAdresse());
+            jHoldTrænerSe.setText(k.getTrænerNavn());
+            jHoldKampeSe.setText(""+k.getAntalKampe());
+            jHoldMålSe.setText(""+k.getAntalMål());
+            jHoldSejreSe.setText(""+k.getSejre());
+            jHoldUafgjortSe.setText(""+k.getUafgjorte());
+            jHoldTabteSe.setText(""+k.getTabte());
+            jHoldPointSe.setText(""+k.getPointSum());
+            jHoldPlaceringSe.setText(""+k.getSæsonPlacering());
+            for (int i = 0; i < sh.getSpillere(jSøgefelt.getText()).size(); i++) {
+                SpillerProfil sp = sh.getSpillere(jSøgefelt.getText()).get(i);
+                jHoldSpillerSe.addItem(sh.getSpillere(jSøgefelt.getText()).get(i));
+            }
             jTabbedPane1.setSelectedIndex(5);
-        }
+//        }
     }//GEN-LAST:event_jVælgSøgningActionPerformed
 
     private void jSøgeResultaterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSøgeResultaterActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jSøgeResultaterActionPerformed
+
+    private void jOversigtTilbageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jOversigtTilbageActionPerformed
+        jTabbedPane1.setSelectedIndex(9);
+    }//GEN-LAST:event_jOversigtTilbageActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1728,7 +1778,6 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private javax.swing.JButton jHoldGem;
     private javax.swing.JTextField jHoldKampeRediger;
     private javax.swing.JTextField jHoldKampeSe;
-    private javax.swing.JList jHoldListe;
     private javax.swing.JTextField jHoldMålRediger;
     private javax.swing.JTextField jHoldMålSe;
     private javax.swing.JTextField jHoldNavnSe;
@@ -1746,6 +1795,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private javax.swing.JTextField jHoldTrænerSe;
     private javax.swing.JTextField jHoldUafgjortRediger;
     private javax.swing.JTextField jHoldUafgjortSe;
+    private javax.swing.JTextArea jHoldliste;
     private javax.swing.JButton jKampRedigerSe;
     private javax.swing.JButton jKampTilbageSe;
     private javax.swing.JComboBox jKamprapporter;
@@ -1822,6 +1872,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private javax.swing.JButton jOpretKamp;
     private javax.swing.JButton jOpretStartRapport;
     private javax.swing.JButton jOpretsæson;
+    private javax.swing.JButton jOversigtTilbage;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
@@ -1837,11 +1888,11 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private javax.swing.JList jResultatListe;
     private javax.swing.JTextField jRundenrOpret;
     private javax.swing.JTextField jRundenrSe;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JComboBox jSelvmålHjemmeSe;
     private javax.swing.JComboBox jSelvmålUdeSe;
     private javax.swing.JTextField jSpillerAdvarselRediger;

@@ -5,9 +5,9 @@ use fodboldturnering;
 drop table if exists spiller;
 create table spiller
 (
+cpr				char(10),
 fnavn			varchar(20),
 enavn			varchar(20),
-cpr				char(10),
 alder			int,
 antalMål		int,
 antalKampe		int,
@@ -25,7 +25,10 @@ create table klub
 klubNavn		varchar(25),
 adresse			varchar(35),
 sejre			int,
+uafgjorte		int,
+tabte			int,
 pointSum		int,
+antalKampe		int,
 sæsonPlacering	int,
 antalMål		int,
 trænerNavn		varchar(25)

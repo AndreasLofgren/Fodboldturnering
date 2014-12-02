@@ -35,7 +35,6 @@ public class SpillePlan {
             Collections.shuffle(frieKampe);
             ArrayList<Kamprapport> rundeKampe = new ArrayList<>();
             for (int i = frieKampe.size() - 1; i >= 0; i--) {
-                System.out.println(i+" - "+frieKampe.size());
                 if (!spillerAllerede(frieKampe.get(i), rundeKampe)) {
                     rundeKampe.add(frieKampe.remove(i));
                 }
@@ -48,6 +47,7 @@ public class SpillePlan {
         }
 
         for (int i = 0; i < kampe.size(); i++) {
+            
             System.out.println(kampe.get(i));
 
         }

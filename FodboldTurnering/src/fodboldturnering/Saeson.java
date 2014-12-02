@@ -65,6 +65,4 @@ public class Saeson {
     public void setSpilleplan(SpillePlan spilleplan) {
         this.spilleplan = spilleplan;
     }
-    
-    
 }

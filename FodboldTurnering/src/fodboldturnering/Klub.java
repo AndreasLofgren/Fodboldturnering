@@ -12,9 +12,9 @@ package fodboldturnering;
 public class Klub {
     private String klubNavn;
     private String adresse;
-    private String[] hjemmefarver;
-    private String[] udefarver;
-    private int sejre, uafgjorte, tabte;
+    private int sejre;
+    private int uafgjorte;
+    private int tabte;
     private int pointSum;
     private int antalKampe;
     private int sæsonPlacering;
@@ -59,23 +59,7 @@ public class Klub {
     public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
-
-    public String[] getHjemmefarver() {
-        return hjemmefarver;
-    }
-
-    public void setHjemmefarver(String[] hjemmefarver) {
-        this.hjemmefarver = hjemmefarver;
-    }
-
-    public String[] getUdefarver() {
-        return udefarver;
-    }
-
-    public void setUdefarver(String[] udefarver) {
-        this.udefarver = udefarver;
-    }
-
+    
     public int getSejre() {
         return sejre;
     }
@@ -144,7 +128,7 @@ public class Klub {
 
     @Override
     public String toString() {
-        return "Fodboldklub";
+        return klubNavn;
     }
     
     

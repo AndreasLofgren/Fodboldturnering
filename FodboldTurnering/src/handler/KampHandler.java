@@ -55,6 +55,7 @@ public class KampHandler {
                 Dommer dommer = dommerhandler.getDommer(rs.getString("dommer"));
 
                 Kamprapport k1 = new Kamprapport(spilledag, tidspunkt, sted, hjemmehold, udehold, startOpstillingHjemme, startOpstillingUde, antalTilskuer, runde, dommer);
+                resultat.add(k1);
             }
 
         } catch (SQLException ex) {
