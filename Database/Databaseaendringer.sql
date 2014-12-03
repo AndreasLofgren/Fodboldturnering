@@ -2,8 +2,8 @@ drop database if exists fodboldturnering;
 create database fodboldturnering;
 use fodboldturnering;
 
-drop table if exists spiller(Profil);
-create table spiller(profil)
+drop table if exists spiller;
+create table spiller
 (
 fnavn			varchar(20),
 enavn			varchar(20),
@@ -28,14 +28,10 @@ create table klub
 klubNavn		varchar(25),
 adresse			varchar(35),
 sejre			int,
-
 uafgjorte		int,
 tabte			int,
-
 pointSum		int,
-
 antalKampe		int,
-
 sæsonPlacering	int,
 antalMål		int,
 trænerNavn		varchar(25)
@@ -49,8 +45,8 @@ divisionsnummer	int
 )
 Engine = InnoDB;
 
-drop table if exists s(æ)son;
-create table s(æ)son
+drop table if exists sæson;
+create table sæson
 (
 periode			varchar(20)
 )
