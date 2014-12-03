@@ -5,15 +5,16 @@ use fodboldturnering;
 drop table if exists spiller;
 create table spiller
 (
-cpr				char(10),
 fnavn			varchar(20),
 enavn			varchar(20),
+cpr				char(10),
 alder			int,
 antalMål		int,
 antalKampe		int,
 maksMål			int,
 samletPoint		int,
-advarsler		int,
+antalSelvmål	int,
+antaladvarsler 	int,
 udvisninger		int,
 bedømmelse		int
 ) 
@@ -52,11 +53,11 @@ Engine = InnoDB;
 drop table if exists kamprapport;
 create table kamprapport
 (
-spilledag			varchar(20),
-tidspunkt			varchar(20),
-hjemmehold			varchar(20),
-udehold				varchar(20),
-sted				varchar(20),
+spilledag		varchar(20),
+tidspunkt		varchar(20),
+hjemmehold		varchar(20),
+udehold			varchar(20),
+sted			varchar(20),
 hjemmeMål			int,
 udeMål				int,
 selvmålHjemme		int,
@@ -66,7 +67,8 @@ advarslerUde		int,
 runde				int,
 udvisningerUde		int,
 udvisningerHjemme	int,
-antalTilskuere		int
+antalTilskuere		int,
+rundenummer		int
 )
 Engine = InnoDB;
 
