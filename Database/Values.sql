@@ -3,7 +3,7 @@ use fodboldturnering;
 delete from Spiller;
 insert into Spiller
 values 
-('0000000001', 'Peter', 'Møller', 0, 0, 0, 0 ,0 ,0, 0, 0, 'FC København');
+('0000000001', 'Peter', 'Møller', 0, 0, 0, 0 ,0 ,0, 0, 0, 'Aab');
 
 
 delete from Klub;
@@ -58,3 +58,5 @@ values
 ('Rishøj', null, 0, 0, 0, 0, 0, 0, 0, 'Træner47',3),
 ('Svebølle', null, 0, 0, 0, 0, 0, 0, 0, 'Træner48',3)
 ;
+
+select * from Spiller;
