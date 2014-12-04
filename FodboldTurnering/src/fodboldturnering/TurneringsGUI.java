@@ -698,6 +698,11 @@ public class TurneringsGUI extends javax.swing.JFrame {
         });
 
         jBegivenhedHoldRediger.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hjemmehold", "Udehold" }));
+        jBegivenhedHoldRediger.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBegivenhedHoldRedigerActionPerformed(evt);
+            }
+        });
 
         jBegivenhedSpillerRediger.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Spiller" }));
         jBegivenhedSpillerRediger.addActionListener(new java.awt.event.ActionListener() {
@@ -1452,13 +1457,14 @@ public class TurneringsGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTurneringsstillingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTurneringsstillingActionPerformed
-//        HoldHandler hh = new HoldHandler();
-//        ArrayList<Klub> holdliste = hh.getDivisionKlubber(jTurneringsstilling.getSelectedItem());
-//        holdliste = hh.turneringsstillingPoint(holdliste);
-//        for (int i = 0; i < holdliste.size(); i++) {
-//            jHoldliste.append(holdliste.get(i)+"\n");
-//        }        
-        
+        HoldHandler hh = new HoldHandler();
+        ArrayList<Klub> holdliste = hh.getAlleKlubber();
+        hh.turneringsstillingPoint(holdliste);
+
+        for (int i = 0; i < holdliste.size(); i++) {
+            jHoldliste.append("" + holdliste.get(i) + "\n");
+        }
+
         jTabbedPane1.setSelectedIndex(4);
     }//GEN-LAST:event_jTurneringsstillingActionPerformed
 
@@ -1478,11 +1484,11 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jSøgeResultater.removeAllItems();
         SpillerHandler sh = new SpillerHandler();
         HoldHandler hh = new HoldHandler();
-        
+
         for (int i = 0; i < hh.getAlleKlubber().size(); i++) {
             if (jSøgefelt.getText().equals(hh.getAlleKlubber().get(i).getKlubNavn())) {
                 jSøgeResultater.addItem(hh.getKlubInfo(jSøgefelt.getText()));
-            }            
+            }
         }
 
         if (jSøgeResultater.getItemCount() == 0) {
@@ -1491,6 +1497,22 @@ public class TurneringsGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jSøgeknapActionPerformed
 
     private void jKamprapporterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jKamprapporterActionPerformed
+        jHjemmeholdSe.setText("" + jKamprapporter.getSelectedItem());
+        jUdeSe.setText("" + jKamprapporter.getSelectedItem());
+        jStedSe.setText("Ingen data");
+        jDatoSe.setText("Ingen data");
+        jTidSe.setText("Ingen data");
+        jRundenrSe.setText("Ingen data");
+        jDommerSe.setText("Ingen data");
+//        SpillerHandler sh = new SpillerHandler();
+//        ArrayList<SpillerProfil> sps = new ArrayList<>();
+//        sps = sh.getSpillere(jHjemmeholdSe.getText());
+//        for (int i = 0; i < 11; i++) {
+//            jStartopstillingHjemmeSe.addItem(sps.get(i));
+//        }
+//        for (int i = 0; i < 11; i++) {
+//            jStartOpstillingUdeSe.addItem(sps.get(i));
+//        }
         jTabbedPane1.setSelectedIndex(2);
     }//GEN-LAST:event_jKamprapporterActionPerformed
 
@@ -1504,10 +1526,10 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jDommerSe.setText("" + jDommerOpret.getSelectedItem());
         SpillerHandler sh = new SpillerHandler();
         for (int i = 0; i < 11; i++) {
-            jStartopstillingHjemmeSe.addItem(sh.getSpillere(jHjemmeholdSe.getText()));
+            jStartopstillingHjemmeSe.addItem(sh.getSpillere(jHjemmeholdSe.getText()).get(i));
         }
         for (int i = 0; i < 11; i++) {
-            jStartOpstillingUdeSe.addItem(sh.getSpillere(jUdeSe.getText()));
+            jStartOpstillingUdeSe.addItem(sh.getSpillere(jUdeSe.getText()).get(i));
         }
 
         jTabbedPane1.setSelectedIndex(2);
@@ -1649,9 +1671,8 @@ public class TurneringsGUI extends javax.swing.JFrame {
         Saeson periode = new Saeson(svar);
         jSæsoner.addItem(periode.getPeriode());
 
-        while (!kh.getKamprapporter(periode).isEmpty()) {
-            jKamprapporter.addItem(kh.getKamprapporter(periode).get(count).toString());
-            count++;
+        for (int i = 0; i < hh.getAlleKlubber().size(); i++) {
+            jKamprapporter.addItem(sp.lavSpillePlan(hh.getAlleKlubber()).get(i));
         }
 
         jTabbedPane1.setSelectedIndex(0);
@@ -1676,7 +1697,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
 
     private void jVælgSøgningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVælgSøgningActionPerformed
         SpillerHandler sh = new SpillerHandler();
-        
+
 //        if (jSøgeResultater.getSelectedItem() == sp) {
 //            jSpillerNavnSe.setText(sp.getFnavn()+" "+sp.getEnavn());
 //            jSpillerAlderSe.setText(""+sp.getAlder());
@@ -1692,21 +1713,21 @@ public class TurneringsGUI extends javax.swing.JFrame {
         HoldHandler hh = new HoldHandler();
         Klub k = hh.getKlubInfo(jSøgefelt.getText());
 //        if (jSøgeResultater.getSelectedItem().equals(k)) {
-            jHoldNavnSe.setText(k.getKlubNavn());
-            jHoldAdresseSe.setText(k.getAdresse());
-            jHoldTrænerSe.setText(k.getTrænerNavn());
-            jHoldKampeSe.setText(""+k.getAntalKampe());
-            jHoldMålSe.setText(""+k.getAntalMål());
-            jHoldSejreSe.setText(""+k.getSejre());
-            jHoldUafgjortSe.setText(""+k.getUafgjorte());
-            jHoldTabteSe.setText(""+k.getTabte());
-            jHoldPointSe.setText(""+k.getPointSum());
-            jHoldPlaceringSe.setText(""+k.getSæsonPlacering());
-            for (int i = 0; i < sh.getSpillere(jSøgefelt.getText()).size(); i++) {
-                SpillerProfil sp = sh.getSpillere(jSøgefelt.getText()).get(i);
-                jHoldSpillerSe.addItem(sh.getSpillere(jSøgefelt.getText()).get(i));
-            }
-            jTabbedPane1.setSelectedIndex(5);
+        jHoldNavnSe.setText(k.getKlubNavn());
+        jHoldAdresseSe.setText(k.getAdresse());
+        jHoldTrænerSe.setText(k.getTrænerNavn());
+        jHoldKampeSe.setText("" + k.getAntalKampe());
+        jHoldMålSe.setText("" + k.getAntalMål());
+        jHoldSejreSe.setText("" + k.getSejre());
+        jHoldUafgjortSe.setText("" + k.getUafgjorte());
+        jHoldTabteSe.setText("" + k.getTabte());
+        jHoldPointSe.setText("" + k.getPointSum());
+        jHoldPlaceringSe.setText("" + k.getSæsonPlacering());
+        for (int i = 0; i < sh.getSpillere(jSøgefelt.getText()).size(); i++) {
+            SpillerProfil sp = sh.getSpillere(jSøgefelt.getText()).get(i);
+            jHoldSpillerSe.addItem(sh.getSpillere(jSøgefelt.getText()).get(i));
+        }
+        jTabbedPane1.setSelectedIndex(5);
 //        }
     }//GEN-LAST:event_jVælgSøgningActionPerformed
 
@@ -1717,6 +1738,10 @@ public class TurneringsGUI extends javax.swing.JFrame {
     private void jOversigtTilbageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jOversigtTilbageActionPerformed
         jTabbedPane1.setSelectedIndex(9);
     }//GEN-LAST:event_jOversigtTilbageActionPerformed
+
+    private void jBegivenhedHoldRedigerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBegivenhedHoldRedigerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBegivenhedHoldRedigerActionPerformed
 
     /**
      * @param args the command line arguments

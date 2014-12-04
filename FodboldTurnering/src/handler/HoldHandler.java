@@ -52,11 +52,11 @@ public class HoldHandler {
         }
         return resultat;
     }
-    
-    public ArrayList<Klub> getDivisionKlubber(Division division) {
+
+    public ArrayList<Klub> getDivisionKlubber(int division) {
         ArrayList<Klub> resultat = new ArrayList<>();
         try {
-            String sql = "Select * From Klub Where divsion ='" + division +"';";
+            String sql = "Select * From Klub Where divisionsnummer ='" + division + "';";
             Statement stmt = dbhandler.getStmt();
             ResultSet rs = stmt.executeQuery(sql);
 
@@ -87,7 +87,7 @@ public class HoldHandler {
         try {
             String sql = "Select * From Klub;";
             Statement stmt = dbhandler.getStmt();
-            if(stmt == null){
+            if (stmt == null) {
                 System.out.println("statement er null");
             }
             ResultSet rs = stmt.executeQuery(sql);
@@ -113,15 +113,15 @@ public class HoldHandler {
         }
         return resultat;
     }
-    
-    public ArrayList<Klub> turneringsstillingPoint(ArrayList<Klub> holdliste) {
-        for (int i = 0; i < holdliste.size(); i++) {
-            if (holdliste.get(i).getPointSum() < holdliste.get(i+1).getPointSum()) {
-                Klub tmpHold = holdliste.get(i);
-                holdliste.set(i, holdliste.get(i+1));
-                holdliste.set(i+1, tmpHold);
+
+    public void turneringsstillingPoint(ArrayList<Klub> holdliste) {
+        for (int i = 1; i < holdliste.size(); i++) {
+            Klub tmpHold = holdliste.get(i);
+            int j;
+            for (j = i - 1; j >= 0 && tmpHold.getPointSum() < holdliste.get(j).getPointSum(); j--) {
+                holdliste.set(j + 1, holdliste.get(j));
             }
+            holdliste.set(j + 1, tmpHold);
         }
-        return holdliste;
     }
 }

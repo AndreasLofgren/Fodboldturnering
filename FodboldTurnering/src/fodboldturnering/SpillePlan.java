@@ -15,8 +15,13 @@ import java.util.Collections;
 public class SpillePlan {
 
     private ArrayList<Kamprapport> kampe;
+    private ArrayList<Klub> holdListe;
 
     public SpillePlan(ArrayList<Klub> holdListe) {
+        this.holdListe = holdListe;
+    }
+
+    public ArrayList<Kamprapport> lavSpillePlan(ArrayList<Klub> holdListe) {
         kampe = new ArrayList<>();
         ArrayList<Kamprapport> frieKampe = new ArrayList<>();
 
@@ -46,12 +51,12 @@ public class SpillePlan {
             }
         }
 
-        for (int i = 0; i < kampe.size(); i++) {
-            
-            System.out.println(kampe.get(i));
-
-        }
-
+//        for (int i = 0; i < kampe.size(); i++) {
+//
+//            System.out.println(kampe.get(i));
+//
+//        }
+        return kampe;
     }
 
     public boolean spillerAllerede(Kamprapport kamp, ArrayList<Kamprapport> rundeKampe) {
