@@ -94,7 +94,5 @@ public class KampBegivenhed {
     public void setUdvisningUde(int udvisningUde) {
         this.udvisningUde = udvisningUde;
     }
-    
-    
-    
+
 }

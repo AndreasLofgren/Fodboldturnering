@@ -27,7 +27,7 @@ public class Kamprapport {
     public Kamprapport(Klub hjemmehold, Klub udehold) {
         this.hjemmehold = hjemmehold;
         this.udehold = udehold;
-    }  
+    }
 
     public Kamprapport(String spilledag, String tidspunkt, String sted, Klub hjemmehold, Klub udehold, ArrayList<SpillerProfil> startOpstillingHjemme, ArrayList<SpillerProfil> startOpstillingUde, int antalTilskuer, int runde, Dommer dommer) {
         this.spilledag = spilledag;
@@ -41,7 +41,7 @@ public class Kamprapport {
         this.runde = runde;
         this.dommer = dommer;
     }
-    
+
     public String getSpilledag() {
         return spilledag;
     }

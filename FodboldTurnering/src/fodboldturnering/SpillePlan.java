@@ -51,6 +51,7 @@ public class SpillePlan {
             }
         }
 
+//        Udskriver kampene.
 //        for (int i = 0; i < kampe.size(); i++) {
 //
 //            System.out.println(kampe.get(i));

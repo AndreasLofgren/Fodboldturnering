@@ -10,6 +10,7 @@ package fodboldturnering;
  * @author Andreas
  */
 public class Division {
+
     private int divisionsnummer;
     private Klub[] klubber;
 
@@ -33,6 +34,5 @@ public class Division {
     public void setKlubber(Klub[] klubber) {
         this.klubber = klubber;
     }
-    
-    
+
 }

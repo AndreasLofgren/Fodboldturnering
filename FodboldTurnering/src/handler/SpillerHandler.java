@@ -24,7 +24,7 @@ public class SpillerHandler {
     public SpillerHandler() {
         dbhandler = DBHandler.getInstance();
         holdhandler = new HoldHandler();
-        
+
     }
 
     public SpillerProfil getSpiller(String navn) {
@@ -47,9 +47,9 @@ public class SpillerHandler {
             int bedømmelse = rs.getInt("bedømmelse");
             int samletPoint = rs.getInt("samletPoint");
             Klub klub = holdhandler.getKlubInfo(rs.getString("klubNavn"));
-            
+
             sp = new SpillerProfil(cpr, fnavn, enavn, alder, mål, kampe, advarsler, udvisninger, selvmål, maksMål, bedømmelse, samletPoint, klub);
-            
+
         } catch (SQLException ex) {
             System.out.println("SQLException" + ex.getMessage());
         }

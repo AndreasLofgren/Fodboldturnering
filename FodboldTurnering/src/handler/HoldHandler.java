@@ -115,13 +115,14 @@ public class HoldHandler {
     }
 
     public void turneringsstillingPoint(ArrayList<Klub> holdliste) {
-        for (int i = 1; i < holdliste.size(); i++) {
-            Klub tmpHold = holdliste.get(i);
-            int j;
-            for (j = i - 1; j >= 0 && tmpHold.getPointSum() < holdliste.get(j).getPointSum(); j--) {
-                holdliste.set(j + 1, holdliste.get(j));
+        for (int j = 2; j < holdliste.size(); j++) {
+            Klub tmpHold = holdliste.get(j);
+            int i = j - 1;
+            while (i > 0 && holdliste.get(i).getPointSum() > tmpHold.getPointSum()) {
+                holdliste.set(i + 1, holdliste.get(i));
+                i = i - 1;
+                holdliste.set(i + 1, tmpHold);
             }
-            holdliste.set(j + 1, tmpHold);
         }
     }
 }

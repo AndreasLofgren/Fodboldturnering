@@ -1482,7 +1482,6 @@ public class TurneringsGUI extends javax.swing.JFrame {
 
     private void jSøgeknapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSøgeknapActionPerformed
         jSøgeResultater.removeAllItems();
-        SpillerHandler sh = new SpillerHandler();
         HoldHandler hh = new HoldHandler();
 
         for (int i = 0; i < hh.getAlleKlubber().size(); i++) {
@@ -1504,6 +1503,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
         jTidSe.setText("Ingen data");
         jRundenrSe.setText("Ingen data");
         jDommerSe.setText("Ingen data");
+//        Startopstilling, hvis man vælger en kamp fra comboboxen.
 //        SpillerHandler sh = new SpillerHandler();
 //        ArrayList<SpillerProfil> sps = new ArrayList<>();
 //        sps = sh.getSpillere(jHjemmeholdSe.getText());
@@ -1665,9 +1665,6 @@ public class TurneringsGUI extends javax.swing.JFrame {
 
         HoldHandler hh = new HoldHandler();
         SpillePlan sp = new SpillePlan(hh.getAlleKlubber());
-        KampHandler kh = new KampHandler();
-
-        int count = 0;
         Saeson periode = new Saeson(svar);
         jSæsoner.addItem(periode.getPeriode());
 
@@ -1697,7 +1694,7 @@ public class TurneringsGUI extends javax.swing.JFrame {
 
     private void jVælgSøgningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVælgSøgningActionPerformed
         SpillerHandler sh = new SpillerHandler();
-
+//        Søgning på spillernavn.
 //        if (jSøgeResultater.getSelectedItem() == sp) {
 //            jSpillerNavnSe.setText(sp.getFnavn()+" "+sp.getEnavn());
 //            jSpillerAlderSe.setText(""+sp.getAlder());

@@ -5,13 +5,12 @@
  */
 package fodboldturnering;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author Andreas
  */
 public class Saeson {
+
     private String periode;
     private Division[] divisioner;
     private Kamprapport[] kamprapporter;
@@ -23,8 +22,8 @@ public class Saeson {
         divisioner = new Division[3];
         kamprapporter = new Kamprapport[240];
         runder = new int[40];
-        
-    } 
+
+    }
 
     public String getPeriode() {
         return periode;

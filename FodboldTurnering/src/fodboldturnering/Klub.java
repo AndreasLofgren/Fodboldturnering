@@ -10,6 +10,7 @@ package fodboldturnering;
  * @author Andreas
  */
 public class Klub {
+
     private String klubNavn;
     private String adresse;
     private int sejre;
@@ -35,7 +36,7 @@ public class Klub {
         this.trænerNavn = trænerNavn;
         this.divisionsnummer = divisionsnummer;
     }
-    
+
     public Division getDivisionsnummer() {
         return divisionsnummer;
     }
@@ -59,7 +60,7 @@ public class Klub {
     public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
-    
+
     public int getSejre() {
         return sejre;
     }
@@ -83,7 +84,6 @@ public class Klub {
     public void setTabte(int tabte) {
         this.tabte = tabte;
     }
-    
 
     public int getPointSum() {
         return pointSum;
@@ -100,7 +100,6 @@ public class Klub {
     public void setAntalKampe(int antalKampe) {
         this.antalKampe = antalKampe;
     }
-    
 
     public int getSæsonPlacering() {
         return sæsonPlacering;
@@ -130,6 +129,5 @@ public class Klub {
     public String toString() {
         return klubNavn;
     }
-    
-    
+
 }

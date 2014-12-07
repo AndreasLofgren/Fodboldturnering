@@ -15,37 +15,37 @@ import java.sql.Statement;
  * @author Andreas
  */
 public class SaesonHandler {
-    
+
     private DBHandler dbhandler;
-    
+
     public SaesonHandler() {
         DBHandler.getInstance();
     }
-    
+
     public Saeson getSaeson(String periode) {
         Saeson result = null;
         try {
             String sql = "Select * From Saeson Where periode = '" + periode + "';";
             Statement stmt = dbhandler.getStmt();
             ResultSet rs = stmt.executeQuery(sql);
-            
+
             String sæson = rs.getString("periode");
             result = new Saeson(sæson);
-            
+
         } catch (SQLException ex) {
             System.out.println("SQLException " + ex.getMessage());
         }
         return result;
     }
-    
+
     public void insertSaeson(String periode) {
         try {
-            String sql = "insert into Saeson values('"+periode+"');";
+            String sql = "insert into Saeson values('" + periode + "');";
             Statement stmt = dbhandler.getStmt();
-            ResultSet rs = stmt.executeQuery(sql);            
+            ResultSet rs = stmt.executeQuery(sql);
         } catch (SQLException ex) {
             System.out.println("SQLException" + ex.getMessage());
         }
     }
-    
+
 }
